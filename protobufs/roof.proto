@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+enum RoofAction {
+    OPEN = 0;
+    CLOSE = 1;
+    CHECK = 2;
+}
+
+message RoofRequest {
+    RoofAction action = 1;
+}
+
+enum RoofStatus {
+    CLOSED = 0;
+    STOPPED = 1;
+    OPENED = 2;
+    CLOSING = 3;
+    OPENING = 4;
+
+    // danger zone - threat it as a movement statuses
+    // (but we hope it has stopped)
+    // user should manually reset the steps after checking visually
+    // the curtains status
+    DANGER = 5;
+    ERROR = 6;
+}
+
+message RoofResponse {
+    RoofStatus status = 1;
+}
+
+service Roof {
+    rpc SetAction (RoofRequest) returns (RoofResponse);
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+enum ButtonAction {
+    TURN_ON = 0;
+    TURN_OFF = 1;
+    CHECK = 2;
+}
+
+enum ButtonType {
+    CCD = 0;
+    TELE = 1;
+    FLAT = 2;
+    LIGHT = 3;
+}
+
+message ButtonRequest {
+    ButtonAction action = 1;
+    ButtonType type = 2;
+}
+
+enum ButtonStatus {
+    ON = 0;
+    OFF = 1;
+}
+
+message ButtonResponse {
+    ButtonStatus status = 1;
+}
+
+service Button {
+    rpc SetAction (ButtonRequest) returns (ButtonResponse);
+}
