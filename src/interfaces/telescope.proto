@@ -1,10 +1,11 @@
 syntax = "proto3";
 
 enum TelescopeAction {
-    SYNC = 0;
-    PARK = 1;
-    FLAT = 2;
-    CHECK = 3;
+    TELESCOPE_DEFAULT_ACTION = 0;
+    SYNC_POSITION = 1;
+    PARK_POSITION = 2;
+    FLAT_POSITION = 3;
+    CHECK_TELESCOPE = 4;
 }
 
 message TelescopeRequest {
@@ -12,28 +13,30 @@ message TelescopeRequest {
 }
 
 enum TelescopeStatus {
-    PARKED = 0;
-    FLATTER = 1;
-    SECURE = 2;
+    TELESCOPE_DEFAULT_STATUS = 0;
+    PARKED = 1;
+    FLATTER = 2;
+    SECURE = 3;
 
-    NORTHEAST = 3;
-    EAST = 4;
-    SOUTHEAST = 5;
-    SOUTHWEST = 6;
-    WEST = 7;
-    NORTHWEST = 8;
+    NORTHEAST = 4;
+    EAST = 5;
+    SOUTHEAST = 6;
+    SOUTHWEST = 7;
+    WEST = 8;
+    NORTHWEST = 9;
 
     // danger zone - threat it as an operational status
     // (but we hope it has stopped)
     // user should manually reset the steps after checking visually
     // the curtains status
-    LOST = 9;
-    ERROR = 10;
+    LOST = 10;
+    ERROR = 11;
 }
 
 enum PierSide {
-    EAST_SIDE = 0;
-    WEST_SIDE = 1;
+    DEFAULT_PIERSIDE = 0;
+    EAST_SIDE = 1;
+    WEST_SIDE = 2;
 }
 
 message EquatorialCoords {
@@ -55,6 +58,6 @@ message TelescopeResponse {
     PierSide pierSide = 6;
 }
 
-service Button {
+service Telescope {
     rpc SetAction (TelescopeRequest) returns (TelescopeResponse);
 }

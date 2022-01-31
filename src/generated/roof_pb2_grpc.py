@@ -2,10 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import telescope_pb2 as telescope__pb2
+from generated import roof_pb2 as generated_dot_roof__pb2
 
 
-class ButtonStub(object):
+class RoofStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,13 +15,13 @@ class ButtonStub(object):
             channel: A grpc.Channel.
         """
         self.SetAction = channel.unary_unary(
-                '/Button/SetAction',
-                request_serializer=telescope__pb2.TelescopeRequest.SerializeToString,
-                response_deserializer=telescope__pb2.TelescopeResponse.FromString,
+                '/Roof/SetAction',
+                request_serializer=generated_dot_roof__pb2.RoofRequest.SerializeToString,
+                response_deserializer=generated_dot_roof__pb2.RoofResponse.FromString,
                 )
 
 
-class ButtonServicer(object):
+class RoofServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SetAction(self, request, context):
@@ -31,21 +31,21 @@ class ButtonServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ButtonServicer_to_server(servicer, server):
+def add_RoofServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=telescope__pb2.TelescopeRequest.FromString,
-                    response_serializer=telescope__pb2.TelescopeResponse.SerializeToString,
+                    request_deserializer=generated_dot_roof__pb2.RoofRequest.FromString,
+                    response_serializer=generated_dot_roof__pb2.RoofResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Button', rpc_method_handlers)
+            'Roof', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class Button(object):
+class Roof(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -59,8 +59,8 @@ class Button(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Button/SetAction',
-            telescope__pb2.TelescopeRequest.SerializeToString,
-            telescope__pb2.TelescopeResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Roof/SetAction',
+            generated_dot_roof__pb2.RoofRequest.SerializeToString,
+            generated_dot_roof__pb2.RoofResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -2,10 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import roof_pb2 as roof__pb2
+from generated import telescope_pb2 as generated_dot_telescope__pb2
 
 
-class RoofStub(object):
+class TelescopeStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,13 +15,13 @@ class RoofStub(object):
             channel: A grpc.Channel.
         """
         self.SetAction = channel.unary_unary(
-                '/Roof/SetAction',
-                request_serializer=roof__pb2.RoofRequest.SerializeToString,
-                response_deserializer=roof__pb2.RoofResponse.FromString,
+                '/Telescope/SetAction',
+                request_serializer=generated_dot_telescope__pb2.TelescopeRequest.SerializeToString,
+                response_deserializer=generated_dot_telescope__pb2.TelescopeResponse.FromString,
                 )
 
 
-class RoofServicer(object):
+class TelescopeServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SetAction(self, request, context):
@@ -31,21 +31,21 @@ class RoofServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_RoofServicer_to_server(servicer, server):
+def add_TelescopeServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=roof__pb2.RoofRequest.FromString,
-                    response_serializer=roof__pb2.RoofResponse.SerializeToString,
+                    request_deserializer=generated_dot_telescope__pb2.TelescopeRequest.FromString,
+                    response_serializer=generated_dot_telescope__pb2.TelescopeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Roof', rpc_method_handlers)
+            'Telescope', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class Roof(object):
+class Telescope(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -59,8 +59,8 @@ class Roof(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Roof/SetAction',
-            roof__pb2.RoofRequest.SerializeToString,
-            roof__pb2.RoofResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Telescope/SetAction',
+            generated_dot_telescope__pb2.TelescopeRequest.SerializeToString,
+            generated_dot_telescope__pb2.TelescopeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

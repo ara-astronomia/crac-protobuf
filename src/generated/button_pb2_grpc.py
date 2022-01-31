@@ -2,10 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import curtains_pb2 as curtains__pb2
+from generated import button_pb2 as generated_dot_button__pb2
 
 
-class CurtainStub(object):
+class ButtonStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,13 +15,13 @@ class CurtainStub(object):
             channel: A grpc.Channel.
         """
         self.SetAction = channel.unary_unary(
-                '/Curtain/SetAction',
-                request_serializer=curtains__pb2.CurtainRequest.SerializeToString,
-                response_deserializer=curtains__pb2.CurtainResponse.FromString,
+                '/Button/SetAction',
+                request_serializer=generated_dot_button__pb2.ButtonRequest.SerializeToString,
+                response_deserializer=generated_dot_button__pb2.ButtonResponse.FromString,
                 )
 
 
-class CurtainServicer(object):
+class ButtonServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SetAction(self, request, context):
@@ -31,21 +31,21 @@ class CurtainServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_CurtainServicer_to_server(servicer, server):
+def add_ButtonServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=curtains__pb2.CurtainRequest.FromString,
-                    response_serializer=curtains__pb2.CurtainResponse.SerializeToString,
+                    request_deserializer=generated_dot_button__pb2.ButtonRequest.FromString,
+                    response_serializer=generated_dot_button__pb2.ButtonResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Curtain', rpc_method_handlers)
+            'Button', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class Curtain(object):
+class Button(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -59,8 +59,8 @@ class Curtain(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Curtain/SetAction',
-            curtains__pb2.CurtainRequest.SerializeToString,
-            curtains__pb2.CurtainResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Button/SetAction',
+            generated_dot_button__pb2.ButtonRequest.SerializeToString,
+            generated_dot_button__pb2.ButtonResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -1,9 +1,10 @@
 syntax = "proto3";
 
 enum RoofAction {
-    OPEN = 0;
-    CLOSE = 1;
-    CHECK = 2;
+    ROOF_DEFAULT_ACTION = 0;
+    OPEN = 1;
+    CLOSE = 2;
+    CHECK_ROOF = 3;
 }
 
 message RoofRequest {
@@ -11,18 +12,19 @@ message RoofRequest {
 }
 
 enum RoofStatus {
-    CLOSED = 0;
-    STOPPED = 1;
-    OPENED = 2;
-    CLOSING = 3;
-    OPENING = 4;
+    ROOF_DEFAULT_STATUS = 0;
+    ROOF_CLOSED = 1;
+    ROOF_STOPPED = 2;
+    ROOF_OPENED = 3;
+    ROOF_CLOSING = 4;
+    ROOF_OPENING = 5;
 
     // danger zone - threat it as a movement statuses
     // (but we hope it has stopped)
     // user should manually reset the steps after checking visually
     // the curtains status
-    DANGER = 5;
-    ERROR = 6;
+    ROOF_DANGER = 6;
+    ROOF_ERROR = 7;
 }
 
 message RoofResponse {

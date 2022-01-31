@@ -1,16 +1,18 @@
 syntax = "proto3";
 
 enum ButtonAction {
-    TURN_ON = 0;
-    TURN_OFF = 1;
-    CHECK = 2;
+    BUTTON_DEFAULT_ACTION = 0;
+    TURN_ON = 1;
+    TURN_OFF = 2;
+    CHECK_BUTTON = 3;
 }
 
 enum ButtonType {
-    CCD = 0;
-    TELE = 1;
-    FLAT = 2;
-    LIGHT = 3;
+    BUTTON_DEFAULT_TYPE = 0;
+    CCD_SWITCH = 1;
+    TELE_SWITCH = 2;
+    FLAT_LIGHT = 3;
+    DOME_LIGHT = 4;
 }
 
 message ButtonRequest {
@@ -19,8 +21,9 @@ message ButtonRequest {
 }
 
 enum ButtonStatus {
-    ON = 0;
-    OFF = 1;
+    BUTTON_DEFAULT_STATUS = 0;
+    ON = 1;
+    OFF = 2;
 }
 
 message ButtonResponse {

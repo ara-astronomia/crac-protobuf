@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+enum CurtainAction {
+    CURTAIN_DEFAULT_ACTION = 0;
+    ENABLE = 1;
+    DISABLE = 2;
+    CALIBRATE_CURTAINS = 3;
+    CHECK_CURTAIN = 4;
+}
+
+enum CurtainOrientation {
+    CURTAIN_DEFAULT_ORIENTATION = 0;
+    CURTAIN_EAST = 1;
+    CURTAIN_WEST = 2;
+}
+
+message CurtainRequest {
+    CurtainOrientation orientation = 1;
+    CurtainAction action = 2;
+    int32 steps = 3;
+}
+
+message CurtainsRequest {
+    CurtainRequest curtain_east = 1;
+    CurtainRequest curtain_west = 2;
+}
+
+enum CurtainStatus {
+    CURTAIN_DEFAULT_STATUS = 0;
+    CURTAIN_DISABLED = 1;
+    CURTAIN_CLOSED = 2;
+    CURTAIN_STOPPED = 3;
+    CURTAIN_OPENED = 4;
+
+    CURTAIN_CLOSING = 5;
+    CURTAIN_OPENING = 6;
+
+    // danger zone - threat it as a movement statuses
+    // (but we hope it has stopped)
+    // user should manually reset the steps after checking
+    // visually the curtains status
+    CURTAIN_DANGER = 7;
+    CURTAIN_ERROR = 8;
+}
+
+message CurtainResponse {
+    CurtainOrientation orientation = 1;
+    int32 steps = 2;
+    CurtainStatus status = 3;
+}
+
+message CurtainsResponse {
+    CurtainResponse curtain_east = 1;
+    CurtainResponse curtain_west = 2;
+}
+
+service Curtain {
+    rpc SetAction (CurtainsRequest) returns (CurtainsResponse);
+}
