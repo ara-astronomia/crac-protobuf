@@ -32,5 +32,5 @@ message RoofResponse {
 }
 
 service Roof {
-    rpc SetAction (RoofRequest) returns (RoofResponse);
+    rpc SetAction(RoofRequest) returns (RoofResponse);
 }

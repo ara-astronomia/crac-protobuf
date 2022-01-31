@@ -12,6 +12,14 @@ message TelescopeRequest {
     TelescopeAction action = 1;
 }
 
+message TelescopeEquatorialMovementRequest {
+    EquatorialCoords eq_coords = 1;
+}
+
+message TelescopeAltazimutalMovementRequest {
+    AltazimutalCoords az_coords = 1;
+}
+
 enum TelescopeStatus {
     TELESCOPE_DEFAULT_STATUS = 0;
     PARKED = 1;
@@ -59,5 +67,7 @@ message TelescopeResponse {
 }
 
 service Telescope {
-    rpc SetAction (TelescopeRequest) returns (TelescopeResponse);
+    rpc SetAction(TelescopeRequest) returns (TelescopeResponse);
+    rpc EqMove(TelescopeEquatorialMovementRequest) returns (TelescopeResponse);
+    rpc AAMove(TelescopeAltazimutalMovementRequest) returns (TelescopeResponse);
 }

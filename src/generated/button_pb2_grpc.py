@@ -19,12 +19,23 @@ class ButtonStub(object):
                 request_serializer=generated_dot_button__pb2.ButtonRequest.SerializeToString,
                 response_deserializer=generated_dot_button__pb2.ButtonResponse.FromString,
                 )
+        self.GetStatus = channel.unary_unary(
+                '/Button/GetStatus',
+                request_serializer=generated_dot_button__pb2.ButtonsRequest.SerializeToString,
+                response_deserializer=generated_dot_button__pb2.ButtonsResponse.FromString,
+                )
 
 
 class ButtonServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SetAction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetStatus(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +48,11 @@ def add_ButtonServicer_to_server(servicer, server):
                     servicer.SetAction,
                     request_deserializer=generated_dot_button__pb2.ButtonRequest.FromString,
                     response_serializer=generated_dot_button__pb2.ButtonResponse.SerializeToString,
+            ),
+            'GetStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStatus,
+                    request_deserializer=generated_dot_button__pb2.ButtonsRequest.FromString,
+                    response_serializer=generated_dot_button__pb2.ButtonsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +78,22 @@ class Button(object):
         return grpc.experimental.unary_unary(request, target, '/Button/SetAction',
             generated_dot_button__pb2.ButtonRequest.SerializeToString,
             generated_dot_button__pb2.ButtonResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/Button/GetStatus',
+            generated_dot_button__pb2.ButtonsRequest.SerializeToString,
+            generated_dot_button__pb2.ButtonsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

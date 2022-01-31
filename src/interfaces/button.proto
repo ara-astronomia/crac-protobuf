@@ -15,9 +15,16 @@ enum ButtonType {
     DOME_LIGHT = 4;
 }
 
+message ButtonsRequest { }
+
 message ButtonRequest {
     ButtonAction action = 1;
     ButtonType type = 2;
+}
+
+message ButtonEntry {
+    ButtonType key = 1;
+    ButtonResponse value = 2;
 }
 
 enum ButtonStatus {
@@ -26,10 +33,15 @@ enum ButtonStatus {
     OFF = 2;
 }
 
+message ButtonsResponse {
+    repeated ButtonEntry buttons = 1;
+}
+
 message ButtonResponse {
     ButtonStatus status = 1;
 }
 
 service Button {
-    rpc SetAction (ButtonRequest) returns (ButtonResponse);
+    rpc SetAction(ButtonRequest) returns (ButtonResponse);
+    rpc GetStatus(ButtonsRequest) returns (ButtonsResponse);
 }

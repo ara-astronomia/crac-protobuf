@@ -14,15 +14,22 @@ enum CurtainOrientation {
     CURTAIN_WEST = 2;
 }
 
-message CurtainRequest {
+message CurtainEntryRequest {
     CurtainOrientation orientation = 1;
     CurtainAction action = 2;
-    int32 steps = 3;
+}
+
+message CurtainMovementEntryRequest {
+    CurtainOrientation orientation = 1;
+    int32 steps = 2;
 }
 
 message CurtainsRequest {
-    CurtainRequest curtain_east = 1;
-    CurtainRequest curtain_west = 2;
+    repeated CurtainEntryRequest curtains = 1;
+}
+
+message CurtainsMovementRequest {
+    repeated CurtainMovementEntryRequest curtains = 1;
 }
 
 enum CurtainStatus {
@@ -43,17 +50,17 @@ enum CurtainStatus {
     CURTAIN_ERROR = 8;
 }
 
-message CurtainResponse {
+message CurtainEntryResponse {
     CurtainOrientation orientation = 1;
     int32 steps = 2;
     CurtainStatus status = 3;
 }
 
 message CurtainsResponse {
-    CurtainResponse curtain_east = 1;
-    CurtainResponse curtain_west = 2;
+    repeated CurtainEntryResponse curtains = 1;
 }
 
 service Curtain {
-    rpc SetAction (CurtainsRequest) returns (CurtainsResponse);
+    rpc SetAction(CurtainsRequest) returns (CurtainsResponse);
+    rpc Move(CurtainsMovementRequest) returns (CurtainsResponse);
 }

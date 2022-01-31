@@ -19,6 +19,16 @@ class TelescopeStub(object):
                 request_serializer=generated_dot_telescope__pb2.TelescopeRequest.SerializeToString,
                 response_deserializer=generated_dot_telescope__pb2.TelescopeResponse.FromString,
                 )
+        self.EqMove = channel.unary_unary(
+                '/Telescope/EqMove',
+                request_serializer=generated_dot_telescope__pb2.TelescopeEquatorialMovementRequest.SerializeToString,
+                response_deserializer=generated_dot_telescope__pb2.TelescopeResponse.FromString,
+                )
+        self.AAMove = channel.unary_unary(
+                '/Telescope/AAMove',
+                request_serializer=generated_dot_telescope__pb2.TelescopeAltazimutalMovementRequest.SerializeToString,
+                response_deserializer=generated_dot_telescope__pb2.TelescopeResponse.FromString,
+                )
 
 
 class TelescopeServicer(object):
@@ -30,12 +40,34 @@ class TelescopeServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def EqMove(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AAMove(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TelescopeServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
                     request_deserializer=generated_dot_telescope__pb2.TelescopeRequest.FromString,
+                    response_serializer=generated_dot_telescope__pb2.TelescopeResponse.SerializeToString,
+            ),
+            'EqMove': grpc.unary_unary_rpc_method_handler(
+                    servicer.EqMove,
+                    request_deserializer=generated_dot_telescope__pb2.TelescopeEquatorialMovementRequest.FromString,
+                    response_serializer=generated_dot_telescope__pb2.TelescopeResponse.SerializeToString,
+            ),
+            'AAMove': grpc.unary_unary_rpc_method_handler(
+                    servicer.AAMove,
+                    request_deserializer=generated_dot_telescope__pb2.TelescopeAltazimutalMovementRequest.FromString,
                     response_serializer=generated_dot_telescope__pb2.TelescopeResponse.SerializeToString,
             ),
     }
@@ -61,6 +93,40 @@ class Telescope(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Telescope/SetAction',
             generated_dot_telescope__pb2.TelescopeRequest.SerializeToString,
+            generated_dot_telescope__pb2.TelescopeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EqMove(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/Telescope/EqMove',
+            generated_dot_telescope__pb2.TelescopeEquatorialMovementRequest.SerializeToString,
+            generated_dot_telescope__pb2.TelescopeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AAMove(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/Telescope/AAMove',
+            generated_dot_telescope__pb2.TelescopeAltazimutalMovementRequest.SerializeToString,
             generated_dot_telescope__pb2.TelescopeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

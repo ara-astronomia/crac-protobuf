@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16generated/button.proto\"I\n\rButtonRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.ButtonAction\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\"/\n\x0e\x42uttonResponse\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ButtonStatus*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02\x32\x36\n\x06\x42utton\x12,\n\tSetAction\x12\x0e.ButtonRequest\x1a\x0f.ButtonResponseb\x06proto3'
+  serialized_pb=b'\n\x16generated/button.proto\"\x10\n\x0e\x42uttonsRequest\"I\n\rButtonRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.ButtonAction\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\"G\n\x0b\x42uttonEntry\x12\x18\n\x03key\x18\x01 \x01(\x0e\x32\x0b.ButtonType\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.ButtonResponse\"0\n\x0f\x42uttonsResponse\x12\x1d\n\x07\x62uttons\x18\x01 \x03(\x0b\x32\x0c.ButtonEntry\"/\n\x0e\x42uttonResponse\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ButtonStatus*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02\x32\x66\n\x06\x42utton\x12,\n\tSetAction\x12\x0e.ButtonRequest\x1a\x0f.ButtonResponse\x12.\n\tGetStatus\x12\x0f.ButtonsRequest\x1a\x10.ButtonsResponseb\x06proto3'
 )
 
 _BUTTONACTION = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _BUTTONACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=150,
-  serialized_end=236,
+  serialized_start=291,
+  serialized_end=377,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONACTION)
 
@@ -94,8 +94,8 @@ _BUTTONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=238,
-  serialized_end=340,
+  serialized_start=379,
+  serialized_end=481,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONTYPE)
 
@@ -125,8 +125,8 @@ _BUTTONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=342,
-  serialized_end=400,
+  serialized_start=483,
+  serialized_end=541,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONSTATUS)
 
@@ -144,6 +144,31 @@ BUTTON_DEFAULT_STATUS = 0
 ON = 1
 OFF = 2
 
+
+
+_BUTTONSREQUEST = _descriptor.Descriptor(
+  name='ButtonsRequest',
+  full_name='ButtonsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=26,
+  serialized_end=42,
+)
 
 
 _BUTTONREQUEST = _descriptor.Descriptor(
@@ -180,8 +205,79 @@ _BUTTONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26,
-  serialized_end=99,
+  serialized_start=44,
+  serialized_end=117,
+)
+
+
+_BUTTONENTRY = _descriptor.Descriptor(
+  name='ButtonEntry',
+  full_name='ButtonEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='ButtonEntry.key', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='ButtonEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=119,
+  serialized_end=190,
+)
+
+
+_BUTTONSRESPONSE = _descriptor.Descriptor(
+  name='ButtonsResponse',
+  full_name='ButtonsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='buttons', full_name='ButtonsResponse.buttons', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=192,
+  serialized_end=240,
 )
 
 
@@ -212,19 +308,32 @@ _BUTTONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=101,
-  serialized_end=148,
+  serialized_start=242,
+  serialized_end=289,
 )
 
 _BUTTONREQUEST.fields_by_name['action'].enum_type = _BUTTONACTION
 _BUTTONREQUEST.fields_by_name['type'].enum_type = _BUTTONTYPE
+_BUTTONENTRY.fields_by_name['key'].enum_type = _BUTTONTYPE
+_BUTTONENTRY.fields_by_name['value'].message_type = _BUTTONRESPONSE
+_BUTTONSRESPONSE.fields_by_name['buttons'].message_type = _BUTTONENTRY
 _BUTTONRESPONSE.fields_by_name['status'].enum_type = _BUTTONSTATUS
+DESCRIPTOR.message_types_by_name['ButtonsRequest'] = _BUTTONSREQUEST
 DESCRIPTOR.message_types_by_name['ButtonRequest'] = _BUTTONREQUEST
+DESCRIPTOR.message_types_by_name['ButtonEntry'] = _BUTTONENTRY
+DESCRIPTOR.message_types_by_name['ButtonsResponse'] = _BUTTONSRESPONSE
 DESCRIPTOR.message_types_by_name['ButtonResponse'] = _BUTTONRESPONSE
 DESCRIPTOR.enum_types_by_name['ButtonAction'] = _BUTTONACTION
 DESCRIPTOR.enum_types_by_name['ButtonType'] = _BUTTONTYPE
 DESCRIPTOR.enum_types_by_name['ButtonStatus'] = _BUTTONSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+ButtonsRequest = _reflection.GeneratedProtocolMessageType('ButtonsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BUTTONSREQUEST,
+  '__module__' : 'generated.button_pb2'
+  # @@protoc_insertion_point(class_scope:ButtonsRequest)
+  })
+_sym_db.RegisterMessage(ButtonsRequest)
 
 ButtonRequest = _reflection.GeneratedProtocolMessageType('ButtonRequest', (_message.Message,), {
   'DESCRIPTOR' : _BUTTONREQUEST,
@@ -232,6 +341,20 @@ ButtonRequest = _reflection.GeneratedProtocolMessageType('ButtonRequest', (_mess
   # @@protoc_insertion_point(class_scope:ButtonRequest)
   })
 _sym_db.RegisterMessage(ButtonRequest)
+
+ButtonEntry = _reflection.GeneratedProtocolMessageType('ButtonEntry', (_message.Message,), {
+  'DESCRIPTOR' : _BUTTONENTRY,
+  '__module__' : 'generated.button_pb2'
+  # @@protoc_insertion_point(class_scope:ButtonEntry)
+  })
+_sym_db.RegisterMessage(ButtonEntry)
+
+ButtonsResponse = _reflection.GeneratedProtocolMessageType('ButtonsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _BUTTONSRESPONSE,
+  '__module__' : 'generated.button_pb2'
+  # @@protoc_insertion_point(class_scope:ButtonsResponse)
+  })
+_sym_db.RegisterMessage(ButtonsResponse)
 
 ButtonResponse = _reflection.GeneratedProtocolMessageType('ButtonResponse', (_message.Message,), {
   'DESCRIPTOR' : _BUTTONRESPONSE,
@@ -249,8 +372,8 @@ _BUTTON = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=402,
-  serialized_end=456,
+  serialized_start=543,
+  serialized_end=645,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetAction',
@@ -259,6 +382,16 @@ _BUTTON = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_BUTTONREQUEST,
     output_type=_BUTTONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetStatus',
+    full_name='Button.GetStatus',
+    index=1,
+    containing_service=None,
+    input_type=_BUTTONSREQUEST,
+    output_type=_BUTTONSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

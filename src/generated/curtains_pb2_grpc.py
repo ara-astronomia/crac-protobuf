@@ -19,6 +19,11 @@ class CurtainStub(object):
                 request_serializer=generated_dot_curtains__pb2.CurtainsRequest.SerializeToString,
                 response_deserializer=generated_dot_curtains__pb2.CurtainsResponse.FromString,
                 )
+        self.Move = channel.unary_unary(
+                '/Curtain/Move',
+                request_serializer=generated_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
+                response_deserializer=generated_dot_curtains__pb2.CurtainsResponse.FromString,
+                )
 
 
 class CurtainServicer(object):
@@ -30,12 +35,23 @@ class CurtainServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CurtainServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
                     request_deserializer=generated_dot_curtains__pb2.CurtainsRequest.FromString,
+                    response_serializer=generated_dot_curtains__pb2.CurtainsResponse.SerializeToString,
+            ),
+            'Move': grpc.unary_unary_rpc_method_handler(
+                    servicer.Move,
+                    request_deserializer=generated_dot_curtains__pb2.CurtainsMovementRequest.FromString,
                     response_serializer=generated_dot_curtains__pb2.CurtainsResponse.SerializeToString,
             ),
     }
@@ -61,6 +77,23 @@ class Curtain(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Curtain/SetAction',
             generated_dot_curtains__pb2.CurtainsRequest.SerializeToString,
+            generated_dot_curtains__pb2.CurtainsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Move(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/Curtain/Move',
+            generated_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
             generated_dot_curtains__pb2.CurtainsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

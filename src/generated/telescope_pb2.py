@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x19generated/telescope.proto\"4\n\x10TelescopeRequest\x12 \n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x10.TelescopeAction\"+\n\x10\x45quatorialCoords\x12\n\n\x02\x61r\x18\x01 \x01(\x01\x12\x0b\n\x03\x64\x65\x63\x18\x02 \x01(\x01\",\n\x11\x41ltazimutalCoords\x12\x0b\n\x03\x61lt\x18\x01 \x01(\x01\x12\n\n\x02\x61z\x18\x02 \x01(\x01\"\xc2\x01\n\x11TelescopeResponse\x12 \n\x06status\x18\x01 \x01(\x0e\x32\x10.TelescopeStatus\x12$\n\teq_coords\x18\x02 \x01(\x0b\x32\x11.EquatorialCoords\x12%\n\taa_coords\x18\x03 \x01(\x0b\x32\x12.AltazimutalCoords\x12\x10\n\x08tracking\x18\x04 \x01(\x08\x12\x0f\n\x07slewing\x18\x05 \x01(\x08\x12\x1b\n\x08pierSide\x18\x06 \x01(\x0e\x32\t.PierSide*}\n\x0fTelescopeAction\x12\x1c\n\x18TELESCOPE_DEFAULT_ACTION\x10\x00\x12\x11\n\rSYNC_POSITION\x10\x01\x12\x11\n\rPARK_POSITION\x10\x02\x12\x11\n\rFLAT_POSITION\x10\x03\x12\x13\n\x0f\x43HECK_TELESCOPE\x10\x04*\xb9\x01\n\x0fTelescopeStatus\x12\x1c\n\x18TELESCOPE_DEFAULT_STATUS\x10\x00\x12\n\n\x06PARKED\x10\x01\x12\x0b\n\x07\x46LATTER\x10\x02\x12\n\n\x06SECURE\x10\x03\x12\r\n\tNORTHEAST\x10\x04\x12\x08\n\x04\x45\x41ST\x10\x05\x12\r\n\tSOUTHEAST\x10\x06\x12\r\n\tSOUTHWEST\x10\x07\x12\x08\n\x04WEST\x10\x08\x12\r\n\tNORTHWEST\x10\t\x12\x08\n\x04LOST\x10\n\x12\t\n\x05\x45RROR\x10\x0b*>\n\x08PierSide\x12\x14\n\x10\x44\x45\x46\x41ULT_PIERSIDE\x10\x00\x12\r\n\tEAST_SIDE\x10\x01\x12\r\n\tWEST_SIDE\x10\x02\x32?\n\tTelescope\x12\x32\n\tSetAction\x12\x11.TelescopeRequest\x1a\x12.TelescopeResponseb\x06proto3'
+  serialized_pb=b'\n\x19generated/telescope.proto\"4\n\x10TelescopeRequest\x12 \n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x10.TelescopeAction\"J\n\"TelescopeEquatorialMovementRequest\x12$\n\teq_coords\x18\x01 \x01(\x0b\x32\x11.EquatorialCoords\"L\n#TelescopeAltazimutalMovementRequest\x12%\n\taz_coords\x18\x01 \x01(\x0b\x32\x12.AltazimutalCoords\"+\n\x10\x45quatorialCoords\x12\n\n\x02\x61r\x18\x01 \x01(\x01\x12\x0b\n\x03\x64\x65\x63\x18\x02 \x01(\x01\",\n\x11\x41ltazimutalCoords\x12\x0b\n\x03\x61lt\x18\x01 \x01(\x01\x12\n\n\x02\x61z\x18\x02 \x01(\x01\"\xc2\x01\n\x11TelescopeResponse\x12 \n\x06status\x18\x01 \x01(\x0e\x32\x10.TelescopeStatus\x12$\n\teq_coords\x18\x02 \x01(\x0b\x32\x11.EquatorialCoords\x12%\n\taa_coords\x18\x03 \x01(\x0b\x32\x12.AltazimutalCoords\x12\x10\n\x08tracking\x18\x04 \x01(\x08\x12\x0f\n\x07slewing\x18\x05 \x01(\x08\x12\x1b\n\x08pierSide\x18\x06 \x01(\x0e\x32\t.PierSide*}\n\x0fTelescopeAction\x12\x1c\n\x18TELESCOPE_DEFAULT_ACTION\x10\x00\x12\x11\n\rSYNC_POSITION\x10\x01\x12\x11\n\rPARK_POSITION\x10\x02\x12\x11\n\rFLAT_POSITION\x10\x03\x12\x13\n\x0f\x43HECK_TELESCOPE\x10\x04*\xb9\x01\n\x0fTelescopeStatus\x12\x1c\n\x18TELESCOPE_DEFAULT_STATUS\x10\x00\x12\n\n\x06PARKED\x10\x01\x12\x0b\n\x07\x46LATTER\x10\x02\x12\n\n\x06SECURE\x10\x03\x12\r\n\tNORTHEAST\x10\x04\x12\x08\n\x04\x45\x41ST\x10\x05\x12\r\n\tSOUTHEAST\x10\x06\x12\r\n\tSOUTHWEST\x10\x07\x12\x08\n\x04WEST\x10\x08\x12\r\n\tNORTHWEST\x10\t\x12\x08\n\x04LOST\x10\n\x12\t\n\x05\x45RROR\x10\x0b*>\n\x08PierSide\x12\x14\n\x10\x44\x45\x46\x41ULT_PIERSIDE\x10\x00\x12\r\n\tEAST_SIDE\x10\x01\x12\r\n\tWEST_SIDE\x10\x02\x32\xc6\x01\n\tTelescope\x12\x32\n\tSetAction\x12\x11.TelescopeRequest\x1a\x12.TelescopeResponse\x12\x41\n\x06\x45qMove\x12#.TelescopeEquatorialMovementRequest\x1a\x12.TelescopeResponse\x12\x42\n\x06\x41\x41Move\x12$.TelescopeAltazimutalMovementRequest\x1a\x12.TelescopeResponseb\x06proto3'
 )
 
 _TELESCOPEACTION = _descriptor.EnumDescriptor(
@@ -58,8 +58,8 @@ _TELESCOPEACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=371,
-  serialized_end=496,
+  serialized_start=525,
+  serialized_end=650,
 )
 _sym_db.RegisterEnumDescriptor(_TELESCOPEACTION)
 
@@ -134,8 +134,8 @@ _TELESCOPESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=499,
-  serialized_end=684,
+  serialized_start=653,
+  serialized_end=838,
 )
 _sym_db.RegisterEnumDescriptor(_TELESCOPESTATUS)
 
@@ -165,8 +165,8 @@ _PIERSIDE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=686,
-  serialized_end=748,
+  serialized_start=840,
+  serialized_end=902,
 )
 _sym_db.RegisterEnumDescriptor(_PIERSIDE)
 
@@ -226,6 +226,70 @@ _TELESCOPEREQUEST = _descriptor.Descriptor(
 )
 
 
+_TELESCOPEEQUATORIALMOVEMENTREQUEST = _descriptor.Descriptor(
+  name='TelescopeEquatorialMovementRequest',
+  full_name='TelescopeEquatorialMovementRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='eq_coords', full_name='TelescopeEquatorialMovementRequest.eq_coords', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=83,
+  serialized_end=157,
+)
+
+
+_TELESCOPEALTAZIMUTALMOVEMENTREQUEST = _descriptor.Descriptor(
+  name='TelescopeAltazimutalMovementRequest',
+  full_name='TelescopeAltazimutalMovementRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='az_coords', full_name='TelescopeAltazimutalMovementRequest.az_coords', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=159,
+  serialized_end=235,
+)
+
+
 _EQUATORIALCOORDS = _descriptor.Descriptor(
   name='EquatorialCoords',
   full_name='EquatorialCoords',
@@ -260,8 +324,8 @@ _EQUATORIALCOORDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=83,
-  serialized_end=126,
+  serialized_start=237,
+  serialized_end=280,
 )
 
 
@@ -299,8 +363,8 @@ _ALTAZIMUTALCOORDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=128,
-  serialized_end=172,
+  serialized_start=282,
+  serialized_end=326,
 )
 
 
@@ -366,16 +430,20 @@ _TELESCOPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=175,
-  serialized_end=369,
+  serialized_start=329,
+  serialized_end=523,
 )
 
 _TELESCOPEREQUEST.fields_by_name['action'].enum_type = _TELESCOPEACTION
+_TELESCOPEEQUATORIALMOVEMENTREQUEST.fields_by_name['eq_coords'].message_type = _EQUATORIALCOORDS
+_TELESCOPEALTAZIMUTALMOVEMENTREQUEST.fields_by_name['az_coords'].message_type = _ALTAZIMUTALCOORDS
 _TELESCOPERESPONSE.fields_by_name['status'].enum_type = _TELESCOPESTATUS
 _TELESCOPERESPONSE.fields_by_name['eq_coords'].message_type = _EQUATORIALCOORDS
 _TELESCOPERESPONSE.fields_by_name['aa_coords'].message_type = _ALTAZIMUTALCOORDS
 _TELESCOPERESPONSE.fields_by_name['pierSide'].enum_type = _PIERSIDE
 DESCRIPTOR.message_types_by_name['TelescopeRequest'] = _TELESCOPEREQUEST
+DESCRIPTOR.message_types_by_name['TelescopeEquatorialMovementRequest'] = _TELESCOPEEQUATORIALMOVEMENTREQUEST
+DESCRIPTOR.message_types_by_name['TelescopeAltazimutalMovementRequest'] = _TELESCOPEALTAZIMUTALMOVEMENTREQUEST
 DESCRIPTOR.message_types_by_name['EquatorialCoords'] = _EQUATORIALCOORDS
 DESCRIPTOR.message_types_by_name['AltazimutalCoords'] = _ALTAZIMUTALCOORDS
 DESCRIPTOR.message_types_by_name['TelescopeResponse'] = _TELESCOPERESPONSE
@@ -390,6 +458,20 @@ TelescopeRequest = _reflection.GeneratedProtocolMessageType('TelescopeRequest', 
   # @@protoc_insertion_point(class_scope:TelescopeRequest)
   })
 _sym_db.RegisterMessage(TelescopeRequest)
+
+TelescopeEquatorialMovementRequest = _reflection.GeneratedProtocolMessageType('TelescopeEquatorialMovementRequest', (_message.Message,), {
+  'DESCRIPTOR' : _TELESCOPEEQUATORIALMOVEMENTREQUEST,
+  '__module__' : 'generated.telescope_pb2'
+  # @@protoc_insertion_point(class_scope:TelescopeEquatorialMovementRequest)
+  })
+_sym_db.RegisterMessage(TelescopeEquatorialMovementRequest)
+
+TelescopeAltazimutalMovementRequest = _reflection.GeneratedProtocolMessageType('TelescopeAltazimutalMovementRequest', (_message.Message,), {
+  'DESCRIPTOR' : _TELESCOPEALTAZIMUTALMOVEMENTREQUEST,
+  '__module__' : 'generated.telescope_pb2'
+  # @@protoc_insertion_point(class_scope:TelescopeAltazimutalMovementRequest)
+  })
+_sym_db.RegisterMessage(TelescopeAltazimutalMovementRequest)
 
 EquatorialCoords = _reflection.GeneratedProtocolMessageType('EquatorialCoords', (_message.Message,), {
   'DESCRIPTOR' : _EQUATORIALCOORDS,
@@ -421,8 +503,8 @@ _TELESCOPE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=750,
-  serialized_end=813,
+  serialized_start=905,
+  serialized_end=1103,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetAction',
@@ -430,6 +512,26 @@ _TELESCOPE = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_TELESCOPEREQUEST,
+    output_type=_TELESCOPERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='EqMove',
+    full_name='Telescope.EqMove',
+    index=1,
+    containing_service=None,
+    input_type=_TELESCOPEEQUATORIALMOVEMENTREQUEST,
+    output_type=_TELESCOPERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='AAMove',
+    full_name='Telescope.AAMove',
+    index=2,
+    containing_service=None,
+    input_type=_TELESCOPEALTAZIMUTALMOVEMENTREQUEST,
     output_type=_TELESCOPERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
