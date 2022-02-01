@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "crac-protobuf"
+version = "0.1.0"
+description = "Protobuf contrat for client/server communication"
+authors = ["Alessio Caradossi <alessio@theeyes.org>"]
+license = "GPL3"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+grpcio-tools = "^1.43.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

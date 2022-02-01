@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from generated import roof_pb2 as generated_dot_roof__pb2
+from crac_protobuf import roof_pb2 as crac__protobuf_dot_roof__pb2
 
 
 class RoofStub(object):
@@ -16,8 +16,8 @@ class RoofStub(object):
         """
         self.SetAction = channel.unary_unary(
                 '/Roof/SetAction',
-                request_serializer=generated_dot_roof__pb2.RoofRequest.SerializeToString,
-                response_deserializer=generated_dot_roof__pb2.RoofResponse.FromString,
+                request_serializer=crac__protobuf_dot_roof__pb2.RoofRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_roof__pb2.RoofResponse.FromString,
                 )
 
 
@@ -35,8 +35,8 @@ def add_RoofServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=generated_dot_roof__pb2.RoofRequest.FromString,
-                    response_serializer=generated_dot_roof__pb2.RoofResponse.SerializeToString,
+                    request_deserializer=crac__protobuf_dot_roof__pb2.RoofRequest.FromString,
+                    response_serializer=crac__protobuf_dot_roof__pb2.RoofResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -60,7 +60,7 @@ class Roof(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Roof/SetAction',
-            generated_dot_roof__pb2.RoofRequest.SerializeToString,
-            generated_dot_roof__pb2.RoofResponse.FromString,
+            crac__protobuf_dot_roof__pb2.RoofRequest.SerializeToString,
+            crac__protobuf_dot_roof__pb2.RoofResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

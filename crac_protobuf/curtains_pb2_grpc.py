@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from generated import curtains_pb2 as generated_dot_curtains__pb2
+from crac_protobuf import curtains_pb2 as crac__protobuf_dot_curtains__pb2
 
 
 class CurtainStub(object):
@@ -16,13 +16,13 @@ class CurtainStub(object):
         """
         self.SetAction = channel.unary_unary(
                 '/Curtain/SetAction',
-                request_serializer=generated_dot_curtains__pb2.CurtainsRequest.SerializeToString,
-                response_deserializer=generated_dot_curtains__pb2.CurtainsResponse.FromString,
+                request_serializer=crac__protobuf_dot_curtains__pb2.CurtainsRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
                 )
         self.Move = channel.unary_unary(
                 '/Curtain/Move',
-                request_serializer=generated_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
-                response_deserializer=generated_dot_curtains__pb2.CurtainsResponse.FromString,
+                request_serializer=crac__protobuf_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
                 )
 
 
@@ -46,13 +46,13 @@ def add_CurtainServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=generated_dot_curtains__pb2.CurtainsRequest.FromString,
-                    response_serializer=generated_dot_curtains__pb2.CurtainsResponse.SerializeToString,
+                    request_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsRequest.FromString,
+                    response_serializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.SerializeToString,
             ),
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
-                    request_deserializer=generated_dot_curtains__pb2.CurtainsMovementRequest.FromString,
-                    response_serializer=generated_dot_curtains__pb2.CurtainsResponse.SerializeToString,
+                    request_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsMovementRequest.FromString,
+                    response_serializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -76,8 +76,8 @@ class Curtain(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Curtain/SetAction',
-            generated_dot_curtains__pb2.CurtainsRequest.SerializeToString,
-            generated_dot_curtains__pb2.CurtainsResponse.FromString,
+            crac__protobuf_dot_curtains__pb2.CurtainsRequest.SerializeToString,
+            crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -93,7 +93,7 @@ class Curtain(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Curtain/Move',
-            generated_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
-            generated_dot_curtains__pb2.CurtainsResponse.FromString,
+            crac__protobuf_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
+            crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

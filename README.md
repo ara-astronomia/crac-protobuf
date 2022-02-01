@@ -1,16 +1,17 @@
 # Install Dependencies and Configure environment
 
+We are using Poetry as a dependency management and packaging
+Go to https://python-poetry.org/ and install it
+
 ```
-$ python -m venv crac
-$ source crac/bin/activate  # Linux/macOS only
-(crac) $ python -m pip install -r requirements.txt
-(crac) $ python -m pip install --upgrade build
+poetry shell
+poetry install
 ```
 
 # Generate boilerplates
 
 ```
-(crac) $ python -m pip install -e ./
+(crac) $ python generate_proto_code.py
 ```
 
 # Compile and create package

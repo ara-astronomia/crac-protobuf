@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from generated import button_pb2 as generated_dot_button__pb2
+from crac_protobuf import button_pb2 as crac__protobuf_dot_button__pb2
 
 
 class ButtonStub(object):
@@ -16,13 +16,13 @@ class ButtonStub(object):
         """
         self.SetAction = channel.unary_unary(
                 '/Button/SetAction',
-                request_serializer=generated_dot_button__pb2.ButtonRequest.SerializeToString,
-                response_deserializer=generated_dot_button__pb2.ButtonResponse.FromString,
+                request_serializer=crac__protobuf_dot_button__pb2.ButtonRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_button__pb2.ButtonResponse.FromString,
                 )
         self.GetStatus = channel.unary_unary(
                 '/Button/GetStatus',
-                request_serializer=generated_dot_button__pb2.ButtonsRequest.SerializeToString,
-                response_deserializer=generated_dot_button__pb2.ButtonsResponse.FromString,
+                request_serializer=crac__protobuf_dot_button__pb2.ButtonsRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_button__pb2.ButtonsResponse.FromString,
                 )
 
 
@@ -46,13 +46,13 @@ def add_ButtonServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=generated_dot_button__pb2.ButtonRequest.FromString,
-                    response_serializer=generated_dot_button__pb2.ButtonResponse.SerializeToString,
+                    request_deserializer=crac__protobuf_dot_button__pb2.ButtonRequest.FromString,
+                    response_serializer=crac__protobuf_dot_button__pb2.ButtonResponse.SerializeToString,
             ),
             'GetStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetStatus,
-                    request_deserializer=generated_dot_button__pb2.ButtonsRequest.FromString,
-                    response_serializer=generated_dot_button__pb2.ButtonsResponse.SerializeToString,
+                    request_deserializer=crac__protobuf_dot_button__pb2.ButtonsRequest.FromString,
+                    response_serializer=crac__protobuf_dot_button__pb2.ButtonsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -76,8 +76,8 @@ class Button(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Button/SetAction',
-            generated_dot_button__pb2.ButtonRequest.SerializeToString,
-            generated_dot_button__pb2.ButtonResponse.FromString,
+            crac__protobuf_dot_button__pb2.ButtonRequest.SerializeToString,
+            crac__protobuf_dot_button__pb2.ButtonResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -93,7 +93,7 @@ class Button(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Button/GetStatus',
-            generated_dot_button__pb2.ButtonsRequest.SerializeToString,
-            generated_dot_button__pb2.ButtonsResponse.FromString,
+            crac__protobuf_dot_button__pb2.ButtonsRequest.SerializeToString,
+            crac__protobuf_dot_button__pb2.ButtonsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
