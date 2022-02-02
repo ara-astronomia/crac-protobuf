@@ -2,7 +2,7 @@
 name = "grpcio"
 version = "1.43.0"
 description = "HTTP/2-based RPC framework"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -16,7 +16,7 @@ protobuf = ["grpcio-tools (>=1.43.0)"]
 name = "grpcio-tools"
 version = "1.43.0"
 description = "Protobuf code generator for gRPC"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -28,7 +28,7 @@ protobuf = ">=3.5.0.post1,<4.0dev"
 name = "protobuf"
 version = "3.19.4"
 description = "Protocol Buffers"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.5"
 
@@ -36,14 +36,14 @@ python-versions = ">=3.5"
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c887814d008cc922404ad020a3f8be47c8dcda1285c113dd46e9492e70d84a86"
+content-hash = "222308322e212f50b4641e5be9b05dcfcdb5f7ae7bd6a7cba458bf20a92909fa"
 
 [metadata.files]
 grpcio = [
