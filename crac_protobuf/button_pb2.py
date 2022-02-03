@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1a\x63rac_protobuf/button.proto\"\x10\n\x0e\x42uttonsRequest\"I\n\rButtonRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.ButtonAction\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\"G\n\x0b\x42uttonEntry\x12\x18\n\x03key\x18\x01 \x01(\x0e\x32\x0b.ButtonType\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.ButtonResponse\"0\n\x0f\x42uttonsResponse\x12\x1d\n\x07\x62uttons\x18\x01 \x03(\x0b\x32\x0c.ButtonEntry\"/\n\x0e\x42uttonResponse\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ButtonStatus*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02\x32\x66\n\x06\x42utton\x12,\n\tSetAction\x12\x0e.ButtonRequest\x1a\x0f.ButtonResponse\x12.\n\tGetStatus\x12\x0f.ButtonsRequest\x1a\x10.ButtonsResponseb\x06proto3'
+  serialized_pb=b'\n\x1a\x63rac_protobuf/button.proto\"\x10\n\x0e\x42uttonsRequest\"I\n\rButtonRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.ButtonAction\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\"G\n\x0b\x42uttonEntry\x12\x18\n\x03key\x18\x01 \x01(\x0e\x32\x0b.ButtonType\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.ButtonResponse\"0\n\x0f\x42uttonsResponse\x12\x1d\n\x07\x62uttons\x18\x01 \x03(\x0b\x32\x0c.ButtonEntry\"J\n\x0e\x42uttonResponse\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ButtonStatus\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02\x32\x66\n\x06\x42utton\x12,\n\tSetAction\x12\x0e.ButtonRequest\x1a\x0f.ButtonResponse\x12.\n\tGetStatus\x12\x0f.ButtonsRequest\x1a\x10.ButtonsResponseb\x06proto3'
 )
 
 _BUTTONACTION = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _BUTTONACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=295,
-  serialized_end=381,
+  serialized_start=322,
+  serialized_end=408,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONACTION)
 
@@ -94,8 +94,8 @@ _BUTTONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=383,
-  serialized_end=485,
+  serialized_start=410,
+  serialized_end=512,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONTYPE)
 
@@ -125,8 +125,8 @@ _BUTTONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=487,
-  serialized_end=545,
+  serialized_start=514,
+  serialized_end=572,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONSTATUS)
 
@@ -296,6 +296,13 @@ _BUTTONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='ButtonResponse.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -309,7 +316,7 @@ _BUTTONRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=246,
-  serialized_end=293,
+  serialized_end=320,
 )
 
 _BUTTONREQUEST.fields_by_name['action'].enum_type = _BUTTONACTION
@@ -318,6 +325,7 @@ _BUTTONENTRY.fields_by_name['key'].enum_type = _BUTTONTYPE
 _BUTTONENTRY.fields_by_name['value'].message_type = _BUTTONRESPONSE
 _BUTTONSRESPONSE.fields_by_name['buttons'].message_type = _BUTTONENTRY
 _BUTTONRESPONSE.fields_by_name['status'].enum_type = _BUTTONSTATUS
+_BUTTONRESPONSE.fields_by_name['type'].enum_type = _BUTTONTYPE
 DESCRIPTOR.message_types_by_name['ButtonsRequest'] = _BUTTONSREQUEST
 DESCRIPTOR.message_types_by_name['ButtonRequest'] = _BUTTONREQUEST
 DESCRIPTOR.message_types_by_name['ButtonEntry'] = _BUTTONENTRY
@@ -372,8 +380,8 @@ _BUTTON = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=547,
-  serialized_end=649,
+  serialized_start=574,
+  serialized_end=676,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetAction',

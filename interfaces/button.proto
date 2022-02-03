@@ -39,6 +39,7 @@ message ButtonsResponse {
 
 message ButtonResponse {
     ButtonStatus status = 1;
+    ButtonType type = 2;
 }
 
 service Button {

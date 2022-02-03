@@ -2,7 +2,7 @@ syntax = "proto3";
 
 enum TelescopeAction {
     TELESCOPE_DEFAULT_ACTION = 0;
-    SYNC_POSITION = 1;
+    SYNC = 1;
     PARK_POSITION = 2;
     FLAT_POSITION = 3;
     CHECK_TELESCOPE = 4;
@@ -47,6 +47,13 @@ enum PierSide {
     WEST_SIDE = 2;
 }
 
+enum TelescopeSpeed {
+    DEFAULT = 0;
+    TRACKING = 1;
+    CENTERING = 2;
+    SLEWING = 3;
+}
+
 message EquatorialCoords {
     double ar = 1;
     double dec = 2;
@@ -61,8 +68,8 @@ message TelescopeResponse {
     TelescopeStatus status = 1;
     EquatorialCoords eq_coords = 2;
     AltazimutalCoords aa_coords = 3;
-    bool tracking = 4;
-    bool slewing = 5;
+    TelescopeSpeed speed = 4;
+    bool sync = 5;
     PierSide pierSide = 6;
 }
 
