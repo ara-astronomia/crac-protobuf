@@ -55,7 +55,7 @@ enum TelescopeSpeed {
 }
 
 message EquatorialCoords {
-    double ar = 1;
+    double ra = 1;
     double dec = 2;
 }
 
