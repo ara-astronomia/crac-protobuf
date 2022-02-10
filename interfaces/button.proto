@@ -22,11 +22,6 @@ message ButtonRequest {
     ButtonType type = 2;
 }
 
-message ButtonEntry {
-    ButtonType key = 1;
-    ButtonResponse value = 2;
-}
-
 enum ButtonStatus {
     BUTTON_DEFAULT_STATUS = 0;
     ON = 1;
@@ -34,7 +29,7 @@ enum ButtonStatus {
 }
 
 message ButtonsResponse {
-    repeated ButtonEntry buttons = 1;
+    repeated ButtonResponse buttons = 1;
 }
 
 message ButtonResponse {

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-enum CurtainAction {
+enum CurtainsAction {
     CURTAIN_DEFAULT_ACTION = 0;
     ENABLE = 1;
     DISABLE = 2;
@@ -14,18 +14,13 @@ enum CurtainOrientation {
     CURTAIN_WEST = 2;
 }
 
-message CurtainEntryRequest {
-    CurtainOrientation orientation = 1;
-    CurtainAction action = 2;
-}
-
 message CurtainMovementEntryRequest {
     CurtainOrientation orientation = 1;
     int32 steps = 2;
 }
 
 message CurtainsRequest {
-    repeated CurtainEntryRequest curtains = 1;
+    CurtainsAction action = 1;
 }
 
 message CurtainsMovementRequest {

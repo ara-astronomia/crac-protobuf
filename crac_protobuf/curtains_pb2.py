@@ -20,12 +20,12 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1c\x63rac_protobuf/curtains.proto\"_\n\x13\x43urtainEntryRequest\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\x1e\n\x06\x61\x63tion\x18\x02 \x01(\x0e\x32\x0e.CurtainAction\"V\n\x1b\x43urtainMovementEntryRequest\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\"9\n\x0f\x43urtainsRequest\x12&\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x14.CurtainEntryRequest\"I\n\x17\x43urtainsMovementRequest\x12.\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x1c.CurtainMovementEntryRequest\"o\n\x14\x43urtainEntryResponse\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\x12\x1e\n\x06status\x18\x03 \x01(\x0e\x32\x0e.CurtainStatus\";\n\x10\x43urtainsResponse\x12\'\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x15.CurtainEntryResponse*o\n\rCurtainAction\x12\x1a\n\x16\x43URTAIN_DEFAULT_ACTION\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x12\x16\n\x12\x43\x41LIBRATE_CURTAINS\x10\x03\x12\x11\n\rCHECK_CURTAIN\x10\x04*Y\n\x12\x43urtainOrientation\x12\x1f\n\x1b\x43URTAIN_DEFAULT_ORIENTATION\x10\x00\x12\x10\n\x0c\x43URTAIN_EAST\x10\x01\x12\x10\n\x0c\x43URTAIN_WEST\x10\x02*\xcf\x01\n\rCurtainStatus\x12\x1a\n\x16\x43URTAIN_DEFAULT_STATUS\x10\x00\x12\x14\n\x10\x43URTAIN_DISABLED\x10\x01\x12\x12\n\x0e\x43URTAIN_CLOSED\x10\x02\x12\x13\n\x0f\x43URTAIN_STOPPED\x10\x03\x12\x12\n\x0e\x43URTAIN_OPENED\x10\x04\x12\x13\n\x0f\x43URTAIN_CLOSING\x10\x05\x12\x13\n\x0f\x43URTAIN_OPENING\x10\x06\x12\x12\n\x0e\x43URTAIN_DANGER\x10\x07\x12\x11\n\rCURTAIN_ERROR\x10\x08\x32p\n\x07\x43urtain\x12\x30\n\tSetAction\x12\x10.CurtainsRequest\x1a\x11.CurtainsResponse\x12\x33\n\x04Move\x12\x18.CurtainsMovementRequest\x1a\x11.CurtainsResponseb\x06proto3'
+  serialized_pb=b'\n\x1c\x63rac_protobuf/curtains.proto\"V\n\x1b\x43urtainMovementEntryRequest\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\"2\n\x0f\x43urtainsRequest\x12\x1f\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0f.CurtainsAction\"I\n\x17\x43urtainsMovementRequest\x12.\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x1c.CurtainMovementEntryRequest\"o\n\x14\x43urtainEntryResponse\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\x12\x1e\n\x06status\x18\x03 \x01(\x0e\x32\x0e.CurtainStatus\";\n\x10\x43urtainsResponse\x12\'\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x15.CurtainEntryResponse*p\n\x0e\x43urtainsAction\x12\x1a\n\x16\x43URTAIN_DEFAULT_ACTION\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x12\x16\n\x12\x43\x41LIBRATE_CURTAINS\x10\x03\x12\x11\n\rCHECK_CURTAIN\x10\x04*Y\n\x12\x43urtainOrientation\x12\x1f\n\x1b\x43URTAIN_DEFAULT_ORIENTATION\x10\x00\x12\x10\n\x0c\x43URTAIN_EAST\x10\x01\x12\x10\n\x0c\x43URTAIN_WEST\x10\x02*\xcf\x01\n\rCurtainStatus\x12\x1a\n\x16\x43URTAIN_DEFAULT_STATUS\x10\x00\x12\x14\n\x10\x43URTAIN_DISABLED\x10\x01\x12\x12\n\x0e\x43URTAIN_CLOSED\x10\x02\x12\x13\n\x0f\x43URTAIN_STOPPED\x10\x03\x12\x12\n\x0e\x43URTAIN_OPENED\x10\x04\x12\x13\n\x0f\x43URTAIN_CLOSING\x10\x05\x12\x13\n\x0f\x43URTAIN_OPENING\x10\x06\x12\x12\n\x0e\x43URTAIN_DANGER\x10\x07\x12\x11\n\rCURTAIN_ERROR\x10\x08\x32p\n\x07\x43urtain\x12\x30\n\tSetAction\x12\x10.CurtainsRequest\x1a\x11.CurtainsResponse\x12\x33\n\x04Move\x12\x18.CurtainsMovementRequest\x1a\x11.CurtainsResponseb\x06proto3'
 )
 
-_CURTAINACTION = _descriptor.EnumDescriptor(
-  name='CurtainAction',
-  full_name='CurtainAction',
+_CURTAINSACTION = _descriptor.EnumDescriptor(
+  name='CurtainsAction',
+  full_name='CurtainsAction',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -58,12 +58,12 @@ _CURTAINACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=525,
-  serialized_end=636,
+  serialized_start=421,
+  serialized_end=533,
 )
-_sym_db.RegisterEnumDescriptor(_CURTAINACTION)
+_sym_db.RegisterEnumDescriptor(_CURTAINSACTION)
 
-CurtainAction = enum_type_wrapper.EnumTypeWrapper(_CURTAINACTION)
+CurtainsAction = enum_type_wrapper.EnumTypeWrapper(_CURTAINSACTION)
 _CURTAINORIENTATION = _descriptor.EnumDescriptor(
   name='CurtainOrientation',
   full_name='CurtainOrientation',
@@ -89,8 +89,8 @@ _CURTAINORIENTATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=638,
-  serialized_end=727,
+  serialized_start=535,
+  serialized_end=624,
 )
 _sym_db.RegisterEnumDescriptor(_CURTAINORIENTATION)
 
@@ -150,8 +150,8 @@ _CURTAINSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=730,
-  serialized_end=937,
+  serialized_start=627,
+  serialized_end=834,
 )
 _sym_db.RegisterEnumDescriptor(_CURTAINSTATUS)
 
@@ -174,45 +174,6 @@ CURTAIN_OPENING = 6
 CURTAIN_DANGER = 7
 CURTAIN_ERROR = 8
 
-
-
-_CURTAINENTRYREQUEST = _descriptor.Descriptor(
-  name='CurtainEntryRequest',
-  full_name='CurtainEntryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='orientation', full_name='CurtainEntryRequest.orientation', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='action', full_name='CurtainEntryRequest.action', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=32,
-  serialized_end=127,
-)
 
 
 _CURTAINMOVEMENTENTRYREQUEST = _descriptor.Descriptor(
@@ -249,8 +210,8 @@ _CURTAINMOVEMENTENTRYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=129,
-  serialized_end=215,
+  serialized_start=32,
+  serialized_end=118,
 )
 
 
@@ -263,9 +224,9 @@ _CURTAINSREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='curtains', full_name='CurtainsRequest.curtains', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='action', full_name='CurtainsRequest.action', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -281,8 +242,8 @@ _CURTAINSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=217,
-  serialized_end=274,
+  serialized_start=120,
+  serialized_end=170,
 )
 
 
@@ -313,8 +274,8 @@ _CURTAINSMOVEMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=276,
-  serialized_end=349,
+  serialized_start=172,
+  serialized_end=245,
 )
 
 
@@ -359,8 +320,8 @@ _CURTAINENTRYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=351,
-  serialized_end=462,
+  serialized_start=247,
+  serialized_end=358,
 )
 
 
@@ -391,35 +352,25 @@ _CURTAINSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=464,
-  serialized_end=523,
+  serialized_start=360,
+  serialized_end=419,
 )
 
-_CURTAINENTRYREQUEST.fields_by_name['orientation'].enum_type = _CURTAINORIENTATION
-_CURTAINENTRYREQUEST.fields_by_name['action'].enum_type = _CURTAINACTION
 _CURTAINMOVEMENTENTRYREQUEST.fields_by_name['orientation'].enum_type = _CURTAINORIENTATION
-_CURTAINSREQUEST.fields_by_name['curtains'].message_type = _CURTAINENTRYREQUEST
+_CURTAINSREQUEST.fields_by_name['action'].enum_type = _CURTAINSACTION
 _CURTAINSMOVEMENTREQUEST.fields_by_name['curtains'].message_type = _CURTAINMOVEMENTENTRYREQUEST
 _CURTAINENTRYRESPONSE.fields_by_name['orientation'].enum_type = _CURTAINORIENTATION
 _CURTAINENTRYRESPONSE.fields_by_name['status'].enum_type = _CURTAINSTATUS
 _CURTAINSRESPONSE.fields_by_name['curtains'].message_type = _CURTAINENTRYRESPONSE
-DESCRIPTOR.message_types_by_name['CurtainEntryRequest'] = _CURTAINENTRYREQUEST
 DESCRIPTOR.message_types_by_name['CurtainMovementEntryRequest'] = _CURTAINMOVEMENTENTRYREQUEST
 DESCRIPTOR.message_types_by_name['CurtainsRequest'] = _CURTAINSREQUEST
 DESCRIPTOR.message_types_by_name['CurtainsMovementRequest'] = _CURTAINSMOVEMENTREQUEST
 DESCRIPTOR.message_types_by_name['CurtainEntryResponse'] = _CURTAINENTRYRESPONSE
 DESCRIPTOR.message_types_by_name['CurtainsResponse'] = _CURTAINSRESPONSE
-DESCRIPTOR.enum_types_by_name['CurtainAction'] = _CURTAINACTION
+DESCRIPTOR.enum_types_by_name['CurtainsAction'] = _CURTAINSACTION
 DESCRIPTOR.enum_types_by_name['CurtainOrientation'] = _CURTAINORIENTATION
 DESCRIPTOR.enum_types_by_name['CurtainStatus'] = _CURTAINSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-CurtainEntryRequest = _reflection.GeneratedProtocolMessageType('CurtainEntryRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CURTAINENTRYREQUEST,
-  '__module__' : 'crac_protobuf.curtains_pb2'
-  # @@protoc_insertion_point(class_scope:CurtainEntryRequest)
-  })
-_sym_db.RegisterMessage(CurtainEntryRequest)
 
 CurtainMovementEntryRequest = _reflection.GeneratedProtocolMessageType('CurtainMovementEntryRequest', (_message.Message,), {
   'DESCRIPTOR' : _CURTAINMOVEMENTENTRYREQUEST,
@@ -465,8 +416,8 @@ _CURTAIN = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=939,
-  serialized_end=1051,
+  serialized_start=836,
+  serialized_end=948,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetAction',
