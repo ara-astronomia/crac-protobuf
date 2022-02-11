@@ -1,3 +1,6 @@
+# crac-protobuf
+Library for gRPC contracts and Servicer
+
 # Install Dependencies and Configure environment
 
 We are using Poetry as a dependency management and packaging
@@ -11,11 +14,11 @@ poetry install
 # Generate boilerplates
 
 ```
-(crac) $ python generate_proto_code.py
+$ python generate_proto_code.py
 ```
 
 # Compile and create package
 
 ```
-(crac) $ python -m build
+$ poetry build
 ```
