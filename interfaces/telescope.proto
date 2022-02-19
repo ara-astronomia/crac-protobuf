@@ -49,10 +49,11 @@ enum PierSide {
 }
 
 enum TelescopeSpeed {
-    DEFAULT = 0;
-    TRACKING = 1;
-    CENTERING = 2;
-    SLEWING = 3;
+    SPEED_NOT_TRACKING = 0;
+    SPEED_TRACKING = 1;
+    SPEED_CENTERING = 2;
+    SPEED_SLEWING = 3;
+    SPEED_ERROR = 4;
 }
 
 message EquatorialCoords {

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1d\x63rac_protobuf/telescope.proto\"G\n\x10TelescopeRequest\x12 \n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x10.TelescopeAction\x12\x11\n\tautolight\x18\x02 \x01(\x08\"J\n\"TelescopeEquatorialMovementRequest\x12$\n\teq_coords\x18\x01 \x01(\x0b\x32\x11.EquatorialCoords\"L\n#TelescopeAltazimutalMovementRequest\x12%\n\taz_coords\x18\x01 \x01(\x0b\x32\x12.AltazimutalCoords\"+\n\x10\x45quatorialCoords\x12\n\n\x02ra\x18\x01 \x01(\x01\x12\x0b\n\x03\x64\x65\x63\x18\x02 \x01(\x01\",\n\x11\x41ltazimutalCoords\x12\x0b\n\x03\x61lt\x18\x01 \x01(\x01\x12\n\n\x02\x61z\x18\x02 \x01(\x01\"\xcd\x01\n\x11TelescopeResponse\x12 \n\x06status\x18\x01 \x01(\x0e\x32\x10.TelescopeStatus\x12$\n\teq_coords\x18\x02 \x01(\x0b\x32\x11.EquatorialCoords\x12%\n\taa_coords\x18\x03 \x01(\x0b\x32\x12.AltazimutalCoords\x12\x1e\n\x05speed\x18\x04 \x01(\x0e\x32\x0f.TelescopeSpeed\x12\x0c\n\x04sync\x18\x05 \x01(\x08\x12\x1b\n\x08pierSide\x18\x06 \x01(\x0e\x32\t.PierSide*t\n\x0fTelescopeAction\x12\x1c\n\x18TELESCOPE_DEFAULT_ACTION\x10\x00\x12\x08\n\x04SYNC\x10\x01\x12\x11\n\rPARK_POSITION\x10\x02\x12\x11\n\rFLAT_POSITION\x10\x03\x12\x13\n\x0f\x43HECK_TELESCOPE\x10\x04*\xb9\x01\n\x0fTelescopeStatus\x12\x1c\n\x18TELESCOPE_DEFAULT_STATUS\x10\x00\x12\n\n\x06PARKED\x10\x01\x12\x0b\n\x07\x46LATTER\x10\x02\x12\n\n\x06SECURE\x10\x03\x12\r\n\tNORTHEAST\x10\x04\x12\x08\n\x04\x45\x41ST\x10\x05\x12\r\n\tSOUTHEAST\x10\x06\x12\r\n\tSOUTHWEST\x10\x07\x12\x08\n\x04WEST\x10\x08\x12\r\n\tNORTHWEST\x10\t\x12\x08\n\x04LOST\x10\n\x12\t\n\x05\x45RROR\x10\x0b*>\n\x08PierSide\x12\x14\n\x10\x44\x45\x46\x41ULT_PIERSIDE\x10\x00\x12\r\n\tEAST_SIDE\x10\x01\x12\r\n\tWEST_SIDE\x10\x02*G\n\x0eTelescopeSpeed\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0c\n\x08TRACKING\x10\x01\x12\r\n\tCENTERING\x10\x02\x12\x0b\n\x07SLEWING\x10\x03\x32\xc6\x01\n\tTelescope\x12\x32\n\tSetAction\x12\x11.TelescopeRequest\x1a\x12.TelescopeResponse\x12\x41\n\x06\x45qMove\x12#.TelescopeEquatorialMovementRequest\x1a\x12.TelescopeResponse\x12\x42\n\x06\x41\x41Move\x12$.TelescopeAltazimutalMovementRequest\x1a\x12.TelescopeResponseb\x06proto3'
+  serialized_pb=b'\n\x1d\x63rac_protobuf/telescope.proto\"G\n\x10TelescopeRequest\x12 \n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x10.TelescopeAction\x12\x11\n\tautolight\x18\x02 \x01(\x08\"J\n\"TelescopeEquatorialMovementRequest\x12$\n\teq_coords\x18\x01 \x01(\x0b\x32\x11.EquatorialCoords\"L\n#TelescopeAltazimutalMovementRequest\x12%\n\taz_coords\x18\x01 \x01(\x0b\x32\x12.AltazimutalCoords\"+\n\x10\x45quatorialCoords\x12\n\n\x02ra\x18\x01 \x01(\x01\x12\x0b\n\x03\x64\x65\x63\x18\x02 \x01(\x01\",\n\x11\x41ltazimutalCoords\x12\x0b\n\x03\x61lt\x18\x01 \x01(\x01\x12\n\n\x02\x61z\x18\x02 \x01(\x01\"\xcd\x01\n\x11TelescopeResponse\x12 \n\x06status\x18\x01 \x01(\x0e\x32\x10.TelescopeStatus\x12$\n\teq_coords\x18\x02 \x01(\x0b\x32\x11.EquatorialCoords\x12%\n\taa_coords\x18\x03 \x01(\x0b\x32\x12.AltazimutalCoords\x12\x1e\n\x05speed\x18\x04 \x01(\x0e\x32\x0f.TelescopeSpeed\x12\x0c\n\x04sync\x18\x05 \x01(\x08\x12\x1b\n\x08pierSide\x18\x06 \x01(\x0e\x32\t.PierSide*t\n\x0fTelescopeAction\x12\x1c\n\x18TELESCOPE_DEFAULT_ACTION\x10\x00\x12\x08\n\x04SYNC\x10\x01\x12\x11\n\rPARK_POSITION\x10\x02\x12\x11\n\rFLAT_POSITION\x10\x03\x12\x13\n\x0f\x43HECK_TELESCOPE\x10\x04*\xb9\x01\n\x0fTelescopeStatus\x12\x1c\n\x18TELESCOPE_DEFAULT_STATUS\x10\x00\x12\n\n\x06PARKED\x10\x01\x12\x0b\n\x07\x46LATTER\x10\x02\x12\n\n\x06SECURE\x10\x03\x12\r\n\tNORTHEAST\x10\x04\x12\x08\n\x04\x45\x41ST\x10\x05\x12\r\n\tSOUTHEAST\x10\x06\x12\r\n\tSOUTHWEST\x10\x07\x12\x08\n\x04WEST\x10\x08\x12\r\n\tNORTHWEST\x10\t\x12\x08\n\x04LOST\x10\n\x12\t\n\x05\x45RROR\x10\x0b*>\n\x08PierSide\x12\x14\n\x10\x44\x45\x46\x41ULT_PIERSIDE\x10\x00\x12\r\n\tEAST_SIDE\x10\x01\x12\r\n\tWEST_SIDE\x10\x02*u\n\x0eTelescopeSpeed\x12\x16\n\x12SPEED_NOT_TRACKING\x10\x00\x12\x12\n\x0eSPEED_TRACKING\x10\x01\x12\x13\n\x0fSPEED_CENTERING\x10\x02\x12\x11\n\rSPEED_SLEWING\x10\x03\x12\x0f\n\x0bSPEED_ERROR\x10\x04\x32\xc6\x01\n\tTelescope\x12\x32\n\tSetAction\x12\x11.TelescopeRequest\x1a\x12.TelescopeResponse\x12\x41\n\x06\x45qMove\x12#.TelescopeEquatorialMovementRequest\x1a\x12.TelescopeResponse\x12\x42\n\x06\x41\x41Move\x12$.TelescopeAltazimutalMovementRequest\x1a\x12.TelescopeResponseb\x06proto3'
 )
 
 _TELESCOPEACTION = _descriptor.EnumDescriptor(
@@ -179,22 +179,27 @@ _TELESCOPESPEED = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='DEFAULT', index=0, number=0,
+      name='SPEED_NOT_TRACKING', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='TRACKING', index=1, number=1,
+      name='SPEED_TRACKING', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='CENTERING', index=2, number=2,
+      name='SPEED_CENTERING', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='SLEWING', index=3, number=3,
+      name='SPEED_SLEWING', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SPEED_ERROR', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -202,7 +207,7 @@ _TELESCOPESPEED = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=929,
-  serialized_end=1000,
+  serialized_end=1046,
 )
 _sym_db.RegisterEnumDescriptor(_TELESCOPESPEED)
 
@@ -227,10 +232,11 @@ ERROR = 11
 DEFAULT_PIERSIDE = 0
 EAST_SIDE = 1
 WEST_SIDE = 2
-DEFAULT = 0
-TRACKING = 1
-CENTERING = 2
-SLEWING = 3
+SPEED_NOT_TRACKING = 0
+SPEED_TRACKING = 1
+SPEED_CENTERING = 2
+SPEED_SLEWING = 3
+SPEED_ERROR = 4
 
 
 
@@ -552,8 +558,8 @@ _TELESCOPE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1003,
-  serialized_end=1201,
+  serialized_start=1049,
+  serialized_end=1247,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetAction',
