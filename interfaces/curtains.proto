@@ -36,13 +36,14 @@ enum CurtainStatus {
 
     CURTAIN_CLOSING = 5;
     CURTAIN_OPENING = 6;
+    CURTAIN_DISABLING = 7;
 
     // danger zone - threat it as a movement statuses
     // (but we hope it has stopped)
     // user should manually reset the steps after checking
     // visually the curtains status
-    CURTAIN_DANGER = 7;
-    CURTAIN_ERROR = 8;
+    CURTAIN_DANGER = 8;
+    CURTAIN_ERROR = 9;
 }
 
 message CurtainEntryResponse {

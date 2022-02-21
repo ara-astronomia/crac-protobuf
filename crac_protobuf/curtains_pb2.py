@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1c\x63rac_protobuf/curtains.proto\"V\n\x1b\x43urtainMovementEntryRequest\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\"2\n\x0f\x43urtainsRequest\x12\x1f\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0f.CurtainsAction\"I\n\x17\x43urtainsMovementRequest\x12.\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x1c.CurtainMovementEntryRequest\"o\n\x14\x43urtainEntryResponse\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\x12\x1e\n\x06status\x18\x03 \x01(\x0e\x32\x0e.CurtainStatus\";\n\x10\x43urtainsResponse\x12\'\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x15.CurtainEntryResponse*p\n\x0e\x43urtainsAction\x12\x1a\n\x16\x43URTAIN_DEFAULT_ACTION\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x12\x16\n\x12\x43\x41LIBRATE_CURTAINS\x10\x03\x12\x11\n\rCHECK_CURTAIN\x10\x04*Y\n\x12\x43urtainOrientation\x12\x1f\n\x1b\x43URTAIN_DEFAULT_ORIENTATION\x10\x00\x12\x10\n\x0c\x43URTAIN_EAST\x10\x01\x12\x10\n\x0c\x43URTAIN_WEST\x10\x02*\xcf\x01\n\rCurtainStatus\x12\x1a\n\x16\x43URTAIN_DEFAULT_STATUS\x10\x00\x12\x14\n\x10\x43URTAIN_DISABLED\x10\x01\x12\x12\n\x0e\x43URTAIN_CLOSED\x10\x02\x12\x13\n\x0f\x43URTAIN_STOPPED\x10\x03\x12\x12\n\x0e\x43URTAIN_OPENED\x10\x04\x12\x13\n\x0f\x43URTAIN_CLOSING\x10\x05\x12\x13\n\x0f\x43URTAIN_OPENING\x10\x06\x12\x12\n\x0e\x43URTAIN_DANGER\x10\x07\x12\x11\n\rCURTAIN_ERROR\x10\x08\x32p\n\x07\x43urtain\x12\x30\n\tSetAction\x12\x10.CurtainsRequest\x1a\x11.CurtainsResponse\x12\x33\n\x04Move\x12\x18.CurtainsMovementRequest\x1a\x11.CurtainsResponseb\x06proto3'
+  serialized_pb=b'\n\x1c\x63rac_protobuf/curtains.proto\"V\n\x1b\x43urtainMovementEntryRequest\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\"2\n\x0f\x43urtainsRequest\x12\x1f\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0f.CurtainsAction\"I\n\x17\x43urtainsMovementRequest\x12.\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x1c.CurtainMovementEntryRequest\"o\n\x14\x43urtainEntryResponse\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\x12\x1e\n\x06status\x18\x03 \x01(\x0e\x32\x0e.CurtainStatus\";\n\x10\x43urtainsResponse\x12\'\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x15.CurtainEntryResponse*p\n\x0e\x43urtainsAction\x12\x1a\n\x16\x43URTAIN_DEFAULT_ACTION\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x12\x16\n\x12\x43\x41LIBRATE_CURTAINS\x10\x03\x12\x11\n\rCHECK_CURTAIN\x10\x04*Y\n\x12\x43urtainOrientation\x12\x1f\n\x1b\x43URTAIN_DEFAULT_ORIENTATION\x10\x00\x12\x10\n\x0c\x43URTAIN_EAST\x10\x01\x12\x10\n\x0c\x43URTAIN_WEST\x10\x02*\xe6\x01\n\rCurtainStatus\x12\x1a\n\x16\x43URTAIN_DEFAULT_STATUS\x10\x00\x12\x14\n\x10\x43URTAIN_DISABLED\x10\x01\x12\x12\n\x0e\x43URTAIN_CLOSED\x10\x02\x12\x13\n\x0f\x43URTAIN_STOPPED\x10\x03\x12\x12\n\x0e\x43URTAIN_OPENED\x10\x04\x12\x13\n\x0f\x43URTAIN_CLOSING\x10\x05\x12\x13\n\x0f\x43URTAIN_OPENING\x10\x06\x12\x15\n\x11\x43URTAIN_DISABLING\x10\x07\x12\x12\n\x0e\x43URTAIN_DANGER\x10\x08\x12\x11\n\rCURTAIN_ERROR\x10\t2p\n\x07\x43urtain\x12\x30\n\tSetAction\x12\x10.CurtainsRequest\x1a\x11.CurtainsResponse\x12\x33\n\x04Move\x12\x18.CurtainsMovementRequest\x1a\x11.CurtainsResponseb\x06proto3'
 )
 
 _CURTAINSACTION = _descriptor.EnumDescriptor(
@@ -138,12 +138,17 @@ _CURTAINSTATUS = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='CURTAIN_DANGER', index=7, number=7,
+      name='CURTAIN_DISABLING', index=7, number=7,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='CURTAIN_ERROR', index=8, number=8,
+      name='CURTAIN_DANGER', index=8, number=8,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CURTAIN_ERROR', index=9, number=9,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -151,7 +156,7 @@ _CURTAINSTATUS = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=627,
-  serialized_end=834,
+  serialized_end=857,
 )
 _sym_db.RegisterEnumDescriptor(_CURTAINSTATUS)
 
@@ -171,8 +176,9 @@ CURTAIN_STOPPED = 3
 CURTAIN_OPENED = 4
 CURTAIN_CLOSING = 5
 CURTAIN_OPENING = 6
-CURTAIN_DANGER = 7
-CURTAIN_ERROR = 8
+CURTAIN_DISABLING = 7
+CURTAIN_DANGER = 8
+CURTAIN_ERROR = 9
 
 
 
@@ -416,8 +422,8 @@ _CURTAIN = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=836,
-  serialized_end=948,
+  serialized_start=859,
+  serialized_end=971,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetAction',
