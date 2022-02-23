@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1a\x63rac_protobuf/button.proto\"\x10\n\x0e\x42uttonsRequest\"I\n\rButtonRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.ButtonAction\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\"3\n\x0f\x42uttonsResponse\x12 \n\x07\x62uttons\x18\x01 \x03(\x0b\x32\x0f.ButtonResponse\"J\n\x0e\x42uttonResponse\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ButtonStatus\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02\x32\x66\n\x06\x42utton\x12,\n\tSetAction\x12\x0e.ButtonRequest\x1a\x0f.ButtonResponse\x12.\n\tGetStatus\x12\x0f.ButtonsRequest\x1a\x10.ButtonsResponseb\x06proto3'
+  serialized_pb=b'\n\x1a\x63rac_protobuf/button.proto\"\x10\n\x0e\x42uttonsRequest\"h\n\rButtonRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.ButtonAction\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x10\n\x08metadata\x18\x04 \x01(\t\"3\n\x0f\x42uttonsResponse\x12 \n\x07\x62uttons\x18\x01 \x03(\x0b\x32\x0f.ButtonResponse\"j\n\x0e\x42uttonResponse\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ButtonStatus\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\x12\x1e\n\nbutton_gui\x18\x03 \x01(\x0b\x32\n.ButtonGui\"\xce\x01\n\tButtonGui\x12\x18\n\x03key\x18\x01 \x01(\x0e\x32\x0b.ButtonType\x12\x1f\n\x08metadata\x18\x02 \x01(\x0e\x32\r.ButtonAction\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0bis_disabled\x18\x04 \x01(\x08\x12\"\n\x0c\x62utton_color\x18\x05 \x01(\x0b\x32\x0c.ButtonColor\x12\x12\n\nis_visible\x18\x08 \x01(\x08\x12+\n\x15\x64isabled_button_color\x18\t \x01(\x0b\x32\x0c.ButtonColor\";\n\x0b\x42uttonColor\x12\x12\n\ntext_color\x18\x01 \x01(\t\x12\x18\n\x10\x62\x61\x63kground_color\x18\x02 \x01(\t\"Z\n\x0b\x42uttonImage\x12\x12\n\nimage_data\x18\x01 \x01(\t\x12\x17\n\x0fimage_subsample\x18\x02 \x01(\x05\x12\x1e\n\x04size\x18\x03 \x01(\x0b\x32\x10.ButtonImageSize\"0\n\x0f\x42uttonImageSize\x12\r\n\x05width\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02\x32\x66\n\x06\x42utton\x12,\n\tSetAction\x12\x0e.ButtonRequest\x1a\x0f.ButtonResponse\x12.\n\tGetStatus\x12\x0f.ButtonsRequest\x1a\x10.ButtonsResponseb\x06proto3'
 )
 
 _BUTTONACTION = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _BUTTONACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=252,
-  serialized_end=338,
+  serialized_start=727,
+  serialized_end=813,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONACTION)
 
@@ -94,8 +94,8 @@ _BUTTONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=340,
-  serialized_end=442,
+  serialized_start=815,
+  serialized_end=917,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONTYPE)
 
@@ -125,8 +125,8 @@ _BUTTONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=444,
-  serialized_end=502,
+  serialized_start=919,
+  serialized_end=977,
 )
 _sym_db.RegisterEnumDescriptor(_BUTTONSTATUS)
 
@@ -193,6 +193,20 @@ _BUTTONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='key', full_name='ButtonRequest.key', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='ButtonRequest.metadata', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -206,7 +220,7 @@ _BUTTONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=48,
-  serialized_end=121,
+  serialized_end=152,
 )
 
 
@@ -237,8 +251,8 @@ _BUTTONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=123,
-  serialized_end=174,
+  serialized_start=154,
+  serialized_end=205,
 )
 
 
@@ -264,6 +278,13 @@ _BUTTONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='button_gui', full_name='ButtonResponse.button_gui', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -276,8 +297,206 @@ _BUTTONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=176,
-  serialized_end=250,
+  serialized_start=207,
+  serialized_end=313,
+)
+
+
+_BUTTONGUI = _descriptor.Descriptor(
+  name='ButtonGui',
+  full_name='ButtonGui',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='ButtonGui.key', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='ButtonGui.metadata', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='ButtonGui.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='is_disabled', full_name='ButtonGui.is_disabled', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='button_color', full_name='ButtonGui.button_color', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='is_visible', full_name='ButtonGui.is_visible', index=5,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='disabled_button_color', full_name='ButtonGui.disabled_button_color', index=6,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=316,
+  serialized_end=522,
+)
+
+
+_BUTTONCOLOR = _descriptor.Descriptor(
+  name='ButtonColor',
+  full_name='ButtonColor',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='text_color', full_name='ButtonColor.text_color', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='background_color', full_name='ButtonColor.background_color', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=524,
+  serialized_end=583,
+)
+
+
+_BUTTONIMAGE = _descriptor.Descriptor(
+  name='ButtonImage',
+  full_name='ButtonImage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='image_data', full_name='ButtonImage.image_data', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='image_subsample', full_name='ButtonImage.image_subsample', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='size', full_name='ButtonImage.size', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=585,
+  serialized_end=675,
+)
+
+
+_BUTTONIMAGESIZE = _descriptor.Descriptor(
+  name='ButtonImageSize',
+  full_name='ButtonImageSize',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='width', full_name='ButtonImageSize.width', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='height', full_name='ButtonImageSize.height', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=677,
+  serialized_end=725,
 )
 
 _BUTTONREQUEST.fields_by_name['action'].enum_type = _BUTTONACTION
@@ -285,10 +504,20 @@ _BUTTONREQUEST.fields_by_name['type'].enum_type = _BUTTONTYPE
 _BUTTONSRESPONSE.fields_by_name['buttons'].message_type = _BUTTONRESPONSE
 _BUTTONRESPONSE.fields_by_name['status'].enum_type = _BUTTONSTATUS
 _BUTTONRESPONSE.fields_by_name['type'].enum_type = _BUTTONTYPE
+_BUTTONRESPONSE.fields_by_name['button_gui'].message_type = _BUTTONGUI
+_BUTTONGUI.fields_by_name['key'].enum_type = _BUTTONTYPE
+_BUTTONGUI.fields_by_name['metadata'].enum_type = _BUTTONACTION
+_BUTTONGUI.fields_by_name['button_color'].message_type = _BUTTONCOLOR
+_BUTTONGUI.fields_by_name['disabled_button_color'].message_type = _BUTTONCOLOR
+_BUTTONIMAGE.fields_by_name['size'].message_type = _BUTTONIMAGESIZE
 DESCRIPTOR.message_types_by_name['ButtonsRequest'] = _BUTTONSREQUEST
 DESCRIPTOR.message_types_by_name['ButtonRequest'] = _BUTTONREQUEST
 DESCRIPTOR.message_types_by_name['ButtonsResponse'] = _BUTTONSRESPONSE
 DESCRIPTOR.message_types_by_name['ButtonResponse'] = _BUTTONRESPONSE
+DESCRIPTOR.message_types_by_name['ButtonGui'] = _BUTTONGUI
+DESCRIPTOR.message_types_by_name['ButtonColor'] = _BUTTONCOLOR
+DESCRIPTOR.message_types_by_name['ButtonImage'] = _BUTTONIMAGE
+DESCRIPTOR.message_types_by_name['ButtonImageSize'] = _BUTTONIMAGESIZE
 DESCRIPTOR.enum_types_by_name['ButtonAction'] = _BUTTONACTION
 DESCRIPTOR.enum_types_by_name['ButtonType'] = _BUTTONTYPE
 DESCRIPTOR.enum_types_by_name['ButtonStatus'] = _BUTTONSTATUS
@@ -322,6 +551,34 @@ ButtonResponse = _reflection.GeneratedProtocolMessageType('ButtonResponse', (_me
   })
 _sym_db.RegisterMessage(ButtonResponse)
 
+ButtonGui = _reflection.GeneratedProtocolMessageType('ButtonGui', (_message.Message,), {
+  'DESCRIPTOR' : _BUTTONGUI,
+  '__module__' : 'crac_protobuf.button_pb2'
+  # @@protoc_insertion_point(class_scope:ButtonGui)
+  })
+_sym_db.RegisterMessage(ButtonGui)
+
+ButtonColor = _reflection.GeneratedProtocolMessageType('ButtonColor', (_message.Message,), {
+  'DESCRIPTOR' : _BUTTONCOLOR,
+  '__module__' : 'crac_protobuf.button_pb2'
+  # @@protoc_insertion_point(class_scope:ButtonColor)
+  })
+_sym_db.RegisterMessage(ButtonColor)
+
+ButtonImage = _reflection.GeneratedProtocolMessageType('ButtonImage', (_message.Message,), {
+  'DESCRIPTOR' : _BUTTONIMAGE,
+  '__module__' : 'crac_protobuf.button_pb2'
+  # @@protoc_insertion_point(class_scope:ButtonImage)
+  })
+_sym_db.RegisterMessage(ButtonImage)
+
+ButtonImageSize = _reflection.GeneratedProtocolMessageType('ButtonImageSize', (_message.Message,), {
+  'DESCRIPTOR' : _BUTTONIMAGESIZE,
+  '__module__' : 'crac_protobuf.button_pb2'
+  # @@protoc_insertion_point(class_scope:ButtonImageSize)
+  })
+_sym_db.RegisterMessage(ButtonImageSize)
+
 
 
 _BUTTON = _descriptor.ServiceDescriptor(
@@ -331,8 +588,8 @@ _BUTTON = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=504,
-  serialized_end=606,
+  serialized_start=979,
+  serialized_end=1081,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetAction',
