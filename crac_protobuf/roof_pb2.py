@@ -4,6 +4,7 @@
 """Generated protocol buffer code."""
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -12,108 +13,14 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from crac_protobuf import button_pb2 as crac__protobuf_dot_button__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='crac_protobuf/roof.proto',
-  package='',
-  syntax='proto3',
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18\x63rac_protobuf/roof.proto\"*\n\x0bRoofRequest\x12\x1b\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0b.RoofAction\"+\n\x0cRoofResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.RoofStatus*J\n\nRoofAction\x12\x17\n\x13ROOF_DEFAULT_ACTION\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\t\n\x05\x43LOSE\x10\x02\x12\x0e\n\nCHECK_ROOF\x10\x03*\x9e\x01\n\nRoofStatus\x12\x17\n\x13ROOF_DEFAULT_STATUS\x10\x00\x12\x0f\n\x0bROOF_CLOSED\x10\x01\x12\x10\n\x0cROOF_STOPPED\x10\x02\x12\x0f\n\x0bROOF_OPENED\x10\x03\x12\x10\n\x0cROOF_CLOSING\x10\x04\x12\x10\n\x0cROOF_OPENING\x10\x05\x12\x0f\n\x0bROOF_DANGER\x10\x06\x12\x0e\n\nROOF_ERROR\x10\x07\x32\x30\n\x04Roof\x12(\n\tSetAction\x12\x0c.RoofRequest\x1a\r.RoofResponseb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x63rac_protobuf/roof.proto\x1a\x1a\x63rac_protobuf/button.proto\"*\n\x0bRoofRequest\x12\x1b\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0b.RoofAction\"K\n\x0cRoofResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.RoofStatus\x12\x1e\n\nbutton_gui\x18\x02 \x01(\x0b\x32\n.ButtonGui*J\n\nRoofAction\x12\x17\n\x13ROOF_DEFAULT_ACTION\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\t\n\x05\x43LOSE\x10\x02\x12\x0e\n\nCHECK_ROOF\x10\x03*\x9e\x01\n\nRoofStatus\x12\x17\n\x13ROOF_DEFAULT_STATUS\x10\x00\x12\x0f\n\x0bROOF_CLOSED\x10\x01\x12\x10\n\x0cROOF_STOPPED\x10\x02\x12\x0f\n\x0bROOF_OPENED\x10\x03\x12\x10\n\x0cROOF_CLOSING\x10\x04\x12\x10\n\x0cROOF_OPENING\x10\x05\x12\x0f\n\x0bROOF_DANGER\x10\x06\x12\x0e\n\nROOF_ERROR\x10\x07\x32\x30\n\x04Roof\x12(\n\tSetAction\x12\x0c.RoofRequest\x1a\r.RoofResponseb\x06proto3')
 
-_ROOFACTION = _descriptor.EnumDescriptor(
-  name='RoofAction',
-  full_name='RoofAction',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_DEFAULT_ACTION', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='OPEN', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='CLOSE', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='CHECK_ROOF', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=117,
-  serialized_end=191,
-)
-_sym_db.RegisterEnumDescriptor(_ROOFACTION)
-
+_ROOFACTION = DESCRIPTOR.enum_types_by_name['RoofAction']
 RoofAction = enum_type_wrapper.EnumTypeWrapper(_ROOFACTION)
-_ROOFSTATUS = _descriptor.EnumDescriptor(
-  name='RoofStatus',
-  full_name='RoofStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_DEFAULT_STATUS', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_CLOSED', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_STOPPED', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_OPENED', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_CLOSING', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_OPENING', index=5, number=5,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_DANGER', index=6, number=6,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ROOF_ERROR', index=7, number=7,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=194,
-  serialized_end=352,
-)
-_sym_db.RegisterEnumDescriptor(_ROOFSTATUS)
-
+_ROOFSTATUS = DESCRIPTOR.enum_types_by_name['RoofStatus']
 RoofStatus = enum_type_wrapper.EnumTypeWrapper(_ROOFSTATUS)
 ROOF_DEFAULT_ACTION = 0
 OPEN = 1
@@ -129,78 +36,8 @@ ROOF_DANGER = 6
 ROOF_ERROR = 7
 
 
-
-_ROOFREQUEST = _descriptor.Descriptor(
-  name='RoofRequest',
-  full_name='RoofRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='action', full_name='RoofRequest.action', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=28,
-  serialized_end=70,
-)
-
-
-_ROOFRESPONSE = _descriptor.Descriptor(
-  name='RoofResponse',
-  full_name='RoofResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='RoofResponse.status', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=72,
-  serialized_end=115,
-)
-
-_ROOFREQUEST.fields_by_name['action'].enum_type = _ROOFACTION
-_ROOFRESPONSE.fields_by_name['status'].enum_type = _ROOFSTATUS
-DESCRIPTOR.message_types_by_name['RoofRequest'] = _ROOFREQUEST
-DESCRIPTOR.message_types_by_name['RoofResponse'] = _ROOFRESPONSE
-DESCRIPTOR.enum_types_by_name['RoofAction'] = _ROOFACTION
-DESCRIPTOR.enum_types_by_name['RoofStatus'] = _ROOFSTATUS
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_ROOFREQUEST = DESCRIPTOR.message_types_by_name['RoofRequest']
+_ROOFRESPONSE = DESCRIPTOR.message_types_by_name['RoofResponse']
 RoofRequest = _reflection.GeneratedProtocolMessageType('RoofRequest', (_message.Message,), {
   'DESCRIPTOR' : _ROOFREQUEST,
   '__module__' : 'crac_protobuf.roof_pb2'
@@ -215,31 +52,18 @@ RoofResponse = _reflection.GeneratedProtocolMessageType('RoofResponse', (_messag
   })
 _sym_db.RegisterMessage(RoofResponse)
 
+_ROOF = DESCRIPTOR.services_by_name['Roof']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-_ROOF = _descriptor.ServiceDescriptor(
-  name='Roof',
-  full_name='Roof',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=354,
-  serialized_end=402,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='SetAction',
-    full_name='Roof.SetAction',
-    index=0,
-    containing_service=None,
-    input_type=_ROOFREQUEST,
-    output_type=_ROOFRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ROOF)
-
-DESCRIPTOR.services_by_name['Roof'] = _ROOF
-
+  DESCRIPTOR._options = None
+  _ROOFACTION._serialized_start=177
+  _ROOFACTION._serialized_end=251
+  _ROOFSTATUS._serialized_start=254
+  _ROOFSTATUS._serialized_end=412
+  _ROOFREQUEST._serialized_start=56
+  _ROOFREQUEST._serialized_end=98
+  _ROOFRESPONSE._serialized_start=100
+  _ROOFRESPONSE._serialized_end=175
+  _ROOF._serialized_start=414
+  _ROOF._serialized_end=462
 # @@protoc_insertion_point(module_scope)

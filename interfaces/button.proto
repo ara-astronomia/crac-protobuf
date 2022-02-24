@@ -51,6 +51,7 @@ message ButtonGui {
     bool is_visible = 5;
     ButtonColor disabled_button_color = 6;
     ButtonImage button_image = 7;
+    string key = 8;
 }
 
 message ButtonColor {
