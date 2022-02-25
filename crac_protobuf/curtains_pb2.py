@@ -16,7 +16,7 @@ _sym_db = _symbol_database.Default()
 from crac_protobuf import button_pb2 as crac__protobuf_dot_button__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63rac_protobuf/curtains.proto\x1a\x1a\x63rac_protobuf/button.proto\"V\n\x1b\x43urtainMovementEntryRequest\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\"2\n\x0f\x43urtainsRequest\x12\x1f\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0f.CurtainsAction\"I\n\x17\x43urtainsMovementRequest\x12.\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x1c.CurtainMovementEntryRequest\"o\n\x14\x43urtainEntryResponse\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\x12\x1e\n\x06status\x18\x03 \x01(\x0e\x32\x0e.CurtainStatus\"\x8c\x01\n\x10\x43urtainsResponse\x12\'\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x15.CurtainEntryResponse\x12%\n\x11\x65nable_button_gui\x18\x02 \x01(\x0b\x32\n.ButtonGui\x12(\n\x14\x63\x61librate_button_gui\x18\x03 \x01(\x0b\x32\n.ButtonGui*p\n\x0e\x43urtainsAction\x12\x1a\n\x16\x43URTAIN_DEFAULT_ACTION\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x12\x16\n\x12\x43\x41LIBRATE_CURTAINS\x10\x03\x12\x11\n\rCHECK_CURTAIN\x10\x04*Y\n\x12\x43urtainOrientation\x12\x1f\n\x1b\x43URTAIN_DEFAULT_ORIENTATION\x10\x00\x12\x10\n\x0c\x43URTAIN_EAST\x10\x01\x12\x10\n\x0c\x43URTAIN_WEST\x10\x02*\xe6\x01\n\rCurtainStatus\x12\x1a\n\x16\x43URTAIN_DEFAULT_STATUS\x10\x00\x12\x14\n\x10\x43URTAIN_DISABLED\x10\x01\x12\x12\n\x0e\x43URTAIN_CLOSED\x10\x02\x12\x13\n\x0f\x43URTAIN_STOPPED\x10\x03\x12\x12\n\x0e\x43URTAIN_OPENED\x10\x04\x12\x13\n\x0f\x43URTAIN_CLOSING\x10\x05\x12\x13\n\x0f\x43URTAIN_OPENING\x10\x06\x12\x15\n\x11\x43URTAIN_DISABLING\x10\x07\x12\x12\n\x0e\x43URTAIN_DANGER\x10\x08\x12\x11\n\rCURTAIN_ERROR\x10\t2p\n\x07\x43urtain\x12\x30\n\tSetAction\x12\x10.CurtainsRequest\x1a\x11.CurtainsResponse\x12\x33\n\x04Move\x12\x18.CurtainsMovementRequest\x1a\x11.CurtainsResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63rac_protobuf/curtains.proto\x1a\x1a\x63rac_protobuf/button.proto\"V\n\x1b\x43urtainMovementEntryRequest\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\"2\n\x0f\x43urtainsRequest\x12\x1f\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0f.CurtainsAction\"I\n\x17\x43urtainsMovementRequest\x12.\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x1c.CurtainMovementEntryRequest\"o\n\x14\x43urtainEntryResponse\x12(\n\x0borientation\x18\x01 \x01(\x0e\x32\x13.CurtainOrientation\x12\r\n\x05steps\x18\x02 \x01(\x05\x12\x1e\n\x06status\x18\x03 \x01(\x0e\x32\x0e.CurtainStatus\"\\\n\x10\x43urtainsResponse\x12\'\n\x08\x63urtains\x18\x01 \x03(\x0b\x32\x15.CurtainEntryResponse\x12\x1f\n\x0b\x62uttons_gui\x18\x02 \x03(\x0b\x32\n.ButtonGui*p\n\x0e\x43urtainsAction\x12\x1a\n\x16\x43URTAIN_DEFAULT_ACTION\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x12\x16\n\x12\x43\x41LIBRATE_CURTAINS\x10\x03\x12\x11\n\rCHECK_CURTAIN\x10\x04*Y\n\x12\x43urtainOrientation\x12\x1f\n\x1b\x43URTAIN_DEFAULT_ORIENTATION\x10\x00\x12\x10\n\x0c\x43URTAIN_EAST\x10\x01\x12\x10\n\x0c\x43URTAIN_WEST\x10\x02*\xe6\x01\n\rCurtainStatus\x12\x1a\n\x16\x43URTAIN_DEFAULT_STATUS\x10\x00\x12\x14\n\x10\x43URTAIN_DISABLED\x10\x01\x12\x12\n\x0e\x43URTAIN_CLOSED\x10\x02\x12\x13\n\x0f\x43URTAIN_STOPPED\x10\x03\x12\x12\n\x0e\x43URTAIN_OPENED\x10\x04\x12\x13\n\x0f\x43URTAIN_CLOSING\x10\x05\x12\x13\n\x0f\x43URTAIN_OPENING\x10\x06\x12\x15\n\x11\x43URTAIN_DISABLING\x10\x07\x12\x12\n\x0e\x43URTAIN_DANGER\x10\x08\x12\x11\n\rCURTAIN_ERROR\x10\t2p\n\x07\x43urtain\x12\x30\n\tSetAction\x12\x10.CurtainsRequest\x1a\x11.CurtainsResponse\x12\x33\n\x04Move\x12\x18.CurtainsMovementRequest\x1a\x11.CurtainsResponseb\x06proto3')
 
 _CURTAINSACTION = DESCRIPTOR.enum_types_by_name['CurtainsAction']
 CurtainsAction = enum_type_wrapper.EnumTypeWrapper(_CURTAINSACTION)
@@ -88,12 +88,12 @@ _CURTAIN = DESCRIPTOR.services_by_name['Curtain']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _CURTAINSACTION._serialized_start=531
-  _CURTAINSACTION._serialized_end=643
-  _CURTAINORIENTATION._serialized_start=645
-  _CURTAINORIENTATION._serialized_end=734
-  _CURTAINSTATUS._serialized_start=737
-  _CURTAINSTATUS._serialized_end=967
+  _CURTAINSACTION._serialized_start=482
+  _CURTAINSACTION._serialized_end=594
+  _CURTAINORIENTATION._serialized_start=596
+  _CURTAINORIENTATION._serialized_end=685
+  _CURTAINSTATUS._serialized_start=688
+  _CURTAINSTATUS._serialized_end=918
   _CURTAINMOVEMENTENTRYREQUEST._serialized_start=60
   _CURTAINMOVEMENTENTRYREQUEST._serialized_end=146
   _CURTAINSREQUEST._serialized_start=148
@@ -102,8 +102,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CURTAINSMOVEMENTREQUEST._serialized_end=273
   _CURTAINENTRYRESPONSE._serialized_start=275
   _CURTAINENTRYRESPONSE._serialized_end=386
-  _CURTAINSRESPONSE._serialized_start=389
-  _CURTAINSRESPONSE._serialized_end=529
-  _CURTAIN._serialized_start=969
-  _CURTAIN._serialized_end=1081
+  _CURTAINSRESPONSE._serialized_start=388
+  _CURTAINSRESPONSE._serialized_end=480
+  _CURTAIN._serialized_start=920
+  _CURTAIN._serialized_end=1032
 # @@protoc_insertion_point(module_scope)

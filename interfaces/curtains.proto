@@ -55,8 +55,7 @@ message CurtainEntryResponse {
 
 message CurtainsResponse {
     repeated CurtainEntryResponse curtains = 1;
-    ButtonGui enable_button_gui = 2;
-    ButtonGui calibrate_button_gui = 3;
+    repeated ButtonGui buttons_gui = 2;
 }
 
 service Curtain {
