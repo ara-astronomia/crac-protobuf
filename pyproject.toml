@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "crac-protobuf"
-version = "0.1.13"
+version = "0.1.14"
 description = "Protobuf contrat for client/server communication"
 authors = ["Alessio Caradossi <alessio@theeyes.org>"]
 license = "GPL3"
