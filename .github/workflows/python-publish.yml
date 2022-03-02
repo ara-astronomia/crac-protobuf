@@ -30,7 +30,5 @@ jobs:
       uses: abatilo/actions-poetry@v2.1.3
     - name: Install package
       run: poetry install
-    - name: Enter poetry shell env
-      run: poetry shell
     - name: Build package
       run: poetry build
