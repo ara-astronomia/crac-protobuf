@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "crac_protobuf/button.proto";
 
 enum RoofAction {
     ROOF_DEFAULT_ACTION = 0;
@@ -29,6 +30,7 @@ enum RoofStatus {
 
 message RoofResponse {
     RoofStatus status = 1;
+    ButtonGui button_gui = 2;
 }
 
 service Roof {

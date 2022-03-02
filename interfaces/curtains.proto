@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "crac_protobuf/button.proto";
 
 enum CurtainsAction {
     CURTAIN_DEFAULT_ACTION = 0;
@@ -54,6 +55,7 @@ message CurtainEntryResponse {
 
 message CurtainsResponse {
     repeated CurtainEntryResponse curtains = 1;
+    repeated ButtonGui buttons_gui = 2;
 }
 
 service Curtain {

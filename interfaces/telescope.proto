@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "crac_protobuf/button.proto";
 
 enum TelescopeAction {
     TELESCOPE_DEFAULT_ACTION = 0;
@@ -73,6 +74,7 @@ message TelescopeResponse {
     TelescopeSpeed speed = 4;
     bool sync = 5;
     PierSide pierSide = 6;
+    repeated ButtonGui buttons_gui = 7;
 }
 
 service Telescope {
