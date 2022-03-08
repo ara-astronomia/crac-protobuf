@@ -7,6 +7,8 @@ enum TelescopeAction {
     PARK_POSITION = 2;
     FLAT_POSITION = 3;
     CHECK_TELESCOPE = 4;
+    TELESCOPE_CONNECT = 5;
+    TELESCOPE_DISCONNECT = 6;
 }
 
 message TelescopeRequest {
@@ -41,6 +43,7 @@ enum TelescopeStatus {
     // the curtains status
     LOST = 10;
     ERROR = 11;
+    DISCONNECTED = 12;
 }
 
 enum PierSide {
@@ -72,7 +75,6 @@ message TelescopeResponse {
     EquatorialCoords eq_coords = 2;
     AltazimutalCoords aa_coords = 3;
     TelescopeSpeed speed = 4;
-    bool sync = 5;
     PierSide pierSide = 6;
     repeated ButtonGui buttons_gui = 7;
 }

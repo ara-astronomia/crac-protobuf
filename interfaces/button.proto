@@ -84,6 +84,8 @@ enum ButtonLabel {
     LABEL_OPENING = 10;
     LABEL_CLOSING = 11;
     LABEL_CALIBRATE = 12;
+    LABEL_TELESCOPE_CONNECTED = 13;
+    LABEL_TELESCOPE_DISCONNECTED = 14;
 }
 
 enum ButtonKey {
@@ -98,4 +100,5 @@ enum ButtonKey {
     KEY_CCD_SWITCH = 8;
     KEY_FLAT_LIGHT = 9;
     KEY_DOME_LIGHT = 10;
+    KEY_TELESCOPE_CONNECTION_TOGGLE = 11;
 }
