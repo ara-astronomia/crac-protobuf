@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+enum Move {
+    MOVE_STOP = 0;
+    MOVE_UP = 1;
+    MOVE_TOP_RIGHT = 2;
+    MOVE_RIGHT = 3;
+    MOVE_BOTTOM_RIGHT = 4;
+    MOVE_DOWN = 5;
+    MOVE_BOTTOM_LEFT = 6;
+    MOVE_LEFT = 7;
+    MOVE_TOP_LEFT = 8;
+}
+
+enum CameraAction {
+    CAMERA_INVALID = 0;
+    CAMERA_CONNECT = 1;
+    CAMERA_DISCONNECT = 2;
+    CAMERA_IR_ENABLE = 3;
+    CAMERA_IR_DISABLE = 4;
+    CAMERA_SHOW = 5;
+    CAMERA_HIDE = 6;
+    CAMERA_MOVE = 7;
+}
+
+message CameraRequest {
+    CameraAction action = 1;
+    Move move = 2;
+}
+
+message CameraResponse {
+    Move move = 1;
+    bytes video = 2;
+    bool ir = 3;
+}
+
+service Camera {
+    rpc SetAction(CameraRequest) returns (CameraResponse);
+    rpc Video(CameraRequest) returns (stream CameraResponse);
+}
