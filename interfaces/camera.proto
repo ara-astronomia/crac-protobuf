@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "crac_protobuf/button.proto";
 
 enum Move {
     MOVE_STOP = 0;
@@ -23,6 +24,15 @@ enum CameraAction {
     CAMERA_MOVE = 7;
 }
 
+enum CameraStatus {
+    CAMERA_INVALID_STATUS = 0;
+    CAMERA_DISCONNECTED = 2;
+
+    // CAMERA CONNECTED
+    CAMERA_HIDDEN = 3;
+    CAMERA_SHOWN = 4;
+}
+
 message CameraRequest {
     CameraAction action = 1;
     Move move = 2;
@@ -32,6 +42,8 @@ message CameraResponse {
     Move move = 1;
     bytes video = 2;
     bool ir = 3;
+    CameraStatus status = 4;
+    repeated ButtonGui buttons_gui = 5;
 }
 
 service Camera {

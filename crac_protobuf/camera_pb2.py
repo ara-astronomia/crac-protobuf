@@ -16,12 +16,14 @@ _sym_db = _symbol_database.Default()
 from crac_protobuf import button_pb2 as crac__protobuf_dot_button__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x63rac_protobuf/camera.proto\x1a\x1a\x63rac_protobuf/button.proto\"C\n\rCameraRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.CameraAction\x12\x13\n\x04move\x18\x02 \x01(\x0e\x32\x05.Move\"@\n\x0e\x43\x61meraResponse\x12\x13\n\x04move\x18\x01 \x01(\x0e\x32\x05.Move\x12\r\n\x05video\x18\x02 \x01(\x0c\x12\n\n\x02ir\x18\x03 \x01(\x08*\xa4\x01\n\x04Move\x12\r\n\tMOVE_STOP\x10\x00\x12\x0b\n\x07MOVE_UP\x10\x01\x12\x12\n\x0eMOVE_TOP_RIGHT\x10\x02\x12\x0e\n\nMOVE_RIGHT\x10\x03\x12\x15\n\x11MOVE_BOTTOM_RIGHT\x10\x04\x12\r\n\tMOVE_DOWN\x10\x05\x12\x14\n\x10MOVE_BOTTOM_LEFT\x10\x06\x12\r\n\tMOVE_LEFT\x10\x07\x12\x11\n\rMOVE_TOP_LEFT\x10\x08*\xad\x01\n\x0c\x43\x61meraAction\x12\x12\n\x0e\x43\x41MERA_INVALID\x10\x00\x12\x12\n\x0e\x43\x41MERA_CONNECT\x10\x01\x12\x15\n\x11\x43\x41MERA_DISCONNECT\x10\x02\x12\x14\n\x10\x43\x41MERA_IR_ENABLE\x10\x03\x12\x15\n\x11\x43\x41MERA_IR_DISABLE\x10\x04\x12\x0f\n\x0b\x43\x41MERA_SHOW\x10\x05\x12\x0f\n\x0b\x43\x41MERA_HIDE\x10\x06\x12\x0f\n\x0b\x43\x41MERA_MOVE\x10\x07\x32\x62\n\x06\x43\x61mera\x12,\n\tSetAction\x12\x0e.CameraRequest\x1a\x0f.CameraResponse\x12*\n\x05Video\x12\x0e.CameraRequest\x1a\x0f.CameraResponse0\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x63rac_protobuf/camera.proto\x1a\x1a\x63rac_protobuf/button.proto\"C\n\rCameraRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.CameraAction\x12\x13\n\x04move\x18\x02 \x01(\x0e\x32\x05.Move\"\x80\x01\n\x0e\x43\x61meraResponse\x12\x13\n\x04move\x18\x01 \x01(\x0e\x32\x05.Move\x12\r\n\x05video\x18\x02 \x01(\x0c\x12\n\n\x02ir\x18\x03 \x01(\x08\x12\x1d\n\x06status\x18\x04 \x01(\x0e\x32\r.CameraStatus\x12\x1f\n\x0b\x62uttons_gui\x18\x05 \x03(\x0b\x32\n.ButtonGui*\xa4\x01\n\x04Move\x12\r\n\tMOVE_STOP\x10\x00\x12\x0b\n\x07MOVE_UP\x10\x01\x12\x12\n\x0eMOVE_TOP_RIGHT\x10\x02\x12\x0e\n\nMOVE_RIGHT\x10\x03\x12\x15\n\x11MOVE_BOTTOM_RIGHT\x10\x04\x12\r\n\tMOVE_DOWN\x10\x05\x12\x14\n\x10MOVE_BOTTOM_LEFT\x10\x06\x12\r\n\tMOVE_LEFT\x10\x07\x12\x11\n\rMOVE_TOP_LEFT\x10\x08*\xad\x01\n\x0c\x43\x61meraAction\x12\x12\n\x0e\x43\x41MERA_INVALID\x10\x00\x12\x12\n\x0e\x43\x41MERA_CONNECT\x10\x01\x12\x15\n\x11\x43\x41MERA_DISCONNECT\x10\x02\x12\x14\n\x10\x43\x41MERA_IR_ENABLE\x10\x03\x12\x15\n\x11\x43\x41MERA_IR_DISABLE\x10\x04\x12\x0f\n\x0b\x43\x41MERA_SHOW\x10\x05\x12\x0f\n\x0b\x43\x41MERA_HIDE\x10\x06\x12\x0f\n\x0b\x43\x41MERA_MOVE\x10\x07*}\n\x0c\x43\x61meraStatus\x12\x19\n\x15\x43\x41MERA_INVALID_STATUS\x10\x00\x12\x14\n\x10\x43\x41MERA_CONNECTED\x10\x01\x12\x17\n\x13\x43\x41MERA_DISCONNECTED\x10\x02\x12\x10\n\x0c\x43\x41MERA_SHOWN\x10\x03\x12\x11\n\rCAMERA_HIDDEN\x10\x04\x32\x62\n\x06\x43\x61mera\x12,\n\tSetAction\x12\x0e.CameraRequest\x1a\x0f.CameraResponse\x12*\n\x05Video\x12\x0e.CameraRequest\x1a\x0f.CameraResponse0\x01\x62\x06proto3')
 
 _MOVE = DESCRIPTOR.enum_types_by_name['Move']
 Move = enum_type_wrapper.EnumTypeWrapper(_MOVE)
 _CAMERAACTION = DESCRIPTOR.enum_types_by_name['CameraAction']
 CameraAction = enum_type_wrapper.EnumTypeWrapper(_CAMERAACTION)
+_CAMERASTATUS = DESCRIPTOR.enum_types_by_name['CameraStatus']
+CameraStatus = enum_type_wrapper.EnumTypeWrapper(_CAMERASTATUS)
 MOVE_STOP = 0
 MOVE_UP = 1
 MOVE_TOP_RIGHT = 2
@@ -39,6 +41,11 @@ CAMERA_IR_DISABLE = 4
 CAMERA_SHOW = 5
 CAMERA_HIDE = 6
 CAMERA_MOVE = 7
+CAMERA_INVALID_STATUS = 0
+CAMERA_CONNECTED = 1
+CAMERA_DISCONNECTED = 2
+CAMERA_SHOWN = 3
+CAMERA_HIDDEN = 4
 
 
 _CAMERAREQUEST = DESCRIPTOR.message_types_by_name['CameraRequest']
@@ -61,14 +68,16 @@ _CAMERA = DESCRIPTOR.services_by_name['Camera']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _MOVE._serialized_start=194
-  _MOVE._serialized_end=358
-  _CAMERAACTION._serialized_start=361
-  _CAMERAACTION._serialized_end=534
+  _MOVE._serialized_start=259
+  _MOVE._serialized_end=423
+  _CAMERAACTION._serialized_start=426
+  _CAMERAACTION._serialized_end=599
+  _CAMERASTATUS._serialized_start=601
+  _CAMERASTATUS._serialized_end=726
   _CAMERAREQUEST._serialized_start=58
   _CAMERAREQUEST._serialized_end=125
-  _CAMERARESPONSE._serialized_start=127
-  _CAMERARESPONSE._serialized_end=191
-  _CAMERA._serialized_start=536
-  _CAMERA._serialized_end=634
+  _CAMERARESPONSE._serialized_start=128
+  _CAMERARESPONSE._serialized_end=256
+  _CAMERA._serialized_start=728
+  _CAMERA._serialized_end=826
 # @@protoc_insertion_point(module_scope)
