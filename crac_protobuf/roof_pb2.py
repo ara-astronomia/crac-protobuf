@@ -16,7 +16,7 @@ _sym_db = _symbol_database.Default()
 from crac_protobuf import button_pb2 as crac__protobuf_dot_button__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x63rac_protobuf/roof.proto\x1a\x1a\x63rac_protobuf/button.proto\"*\n\x0bRoofRequest\x12\x1b\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0b.RoofAction\"K\n\x0cRoofResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.RoofStatus\x12\x1e\n\nbutton_gui\x18\x02 \x01(\x0b\x32\n.ButtonGui*J\n\nRoofAction\x12\x17\n\x13ROOF_DEFAULT_ACTION\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\t\n\x05\x43LOSE\x10\x02\x12\x0e\n\nCHECK_ROOF\x10\x03*\x9e\x01\n\nRoofStatus\x12\x17\n\x13ROOF_DEFAULT_STATUS\x10\x00\x12\x0f\n\x0bROOF_CLOSED\x10\x01\x12\x10\n\x0cROOF_STOPPED\x10\x02\x12\x0f\n\x0bROOF_OPENED\x10\x03\x12\x10\n\x0cROOF_CLOSING\x10\x04\x12\x10\n\x0cROOF_OPENING\x10\x05\x12\x0f\n\x0bROOF_DANGER\x10\x06\x12\x0e\n\nROOF_ERROR\x10\x07\x32\x30\n\x04Roof\x12(\n\tSetAction\x12\x0c.RoofRequest\x1a\r.RoofResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x63rac_protobuf/roof.proto\x1a\x1a\x63rac_protobuf/button.proto\"?\n\x0bRoofRequest\x12\x1b\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0b.RoofAction\x12\x13\n\x0b\x61utodisplay\x18\x02 \x01(\x08\"K\n\x0cRoofResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.RoofStatus\x12\x1e\n\nbutton_gui\x18\x02 \x01(\x0b\x32\n.ButtonGui*J\n\nRoofAction\x12\x17\n\x13ROOF_DEFAULT_ACTION\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\t\n\x05\x43LOSE\x10\x02\x12\x0e\n\nCHECK_ROOF\x10\x03*\x9e\x01\n\nRoofStatus\x12\x17\n\x13ROOF_DEFAULT_STATUS\x10\x00\x12\x0f\n\x0bROOF_CLOSED\x10\x01\x12\x10\n\x0cROOF_STOPPED\x10\x02\x12\x0f\n\x0bROOF_OPENED\x10\x03\x12\x10\n\x0cROOF_CLOSING\x10\x04\x12\x10\n\x0cROOF_OPENING\x10\x05\x12\x0f\n\x0bROOF_DANGER\x10\x06\x12\x0e\n\nROOF_ERROR\x10\x07\x32\x30\n\x04Roof\x12(\n\tSetAction\x12\x0c.RoofRequest\x1a\r.RoofResponseb\x06proto3')
 
 _ROOFACTION = DESCRIPTOR.enum_types_by_name['RoofAction']
 RoofAction = enum_type_wrapper.EnumTypeWrapper(_ROOFACTION)
@@ -56,14 +56,14 @@ _ROOF = DESCRIPTOR.services_by_name['Roof']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _ROOFACTION._serialized_start=177
-  _ROOFACTION._serialized_end=251
-  _ROOFSTATUS._serialized_start=254
-  _ROOFSTATUS._serialized_end=412
+  _ROOFACTION._serialized_start=198
+  _ROOFACTION._serialized_end=272
+  _ROOFSTATUS._serialized_start=275
+  _ROOFSTATUS._serialized_end=433
   _ROOFREQUEST._serialized_start=56
-  _ROOFREQUEST._serialized_end=98
-  _ROOFRESPONSE._serialized_start=100
-  _ROOFRESPONSE._serialized_end=175
-  _ROOF._serialized_start=414
-  _ROOF._serialized_end=462
+  _ROOFREQUEST._serialized_end=119
+  _ROOFRESPONSE._serialized_start=121
+  _ROOFRESPONSE._serialized_end=196
+  _ROOF._serialized_start=435
+  _ROOF._serialized_end=483
 # @@protoc_insertion_point(module_scope)

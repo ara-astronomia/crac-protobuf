@@ -20,6 +20,7 @@ message ButtonsRequest { }
 message ButtonRequest {
     ButtonAction action = 1;
     ButtonType type = 2;
+    bool autodisplay = 3;
 }
 
 enum ButtonStatus {

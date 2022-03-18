@@ -37,10 +37,11 @@ enum CameraStatus {
 message CameraRequest {
     CameraAction action = 1;
     Move move = 2;
+    string name = 3;
 }
 
 message CameraResponse {
-    Move move = 1;
+    string name = 1;
     bytes video = 2;
     bool ir = 3;
     CameraStatus status = 4;
