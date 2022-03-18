@@ -20,7 +20,6 @@ message ButtonsRequest { }
 message ButtonRequest {
     ButtonAction action = 1;
     ButtonType type = 2;
-    bool autodisplay = 3;
 }
 
 enum ButtonStatus {
@@ -106,6 +105,8 @@ enum ButtonKey {
     KEY_FLAT_LIGHT = 9;
     KEY_DOME_LIGHT = 10;
     KEY_TELESCOPE_CONNECTION_TOGGLE = 11;
-    KEY_CAMERA_CONNECTION = 12;
-    KEY_CAMERA_DISPLAY = 13;
+    KEY_CAMERA1_CONNECTION = 12;
+    KEY_CAMERA1_DISPLAY = 13;
+    KEY_CAMERA2_CONNECTION = 14;
+    KEY_CAMERA2_DISPLAY = 15;
 }

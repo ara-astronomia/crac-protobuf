@@ -10,7 +10,6 @@ enum RoofAction {
 
 message RoofRequest {
     RoofAction action = 1;
-    bool autodisplay = 2;
 }
 
 enum RoofStatus {

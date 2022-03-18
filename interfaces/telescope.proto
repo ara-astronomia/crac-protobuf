@@ -14,7 +14,6 @@ enum TelescopeAction {
 message TelescopeRequest {
     TelescopeAction action = 1;
     bool autolight = 2;
-    bool autodisplay = 3;
 }
 
 message TelescopeEquatorialMovementRequest {

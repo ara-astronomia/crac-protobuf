@@ -38,6 +38,7 @@ message CameraRequest {
     CameraAction action = 1;
     Move move = 2;
     string name = 3;
+    bool autodisplay = 4;
 }
 
 message CameraResponse {
