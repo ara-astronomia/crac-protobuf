@@ -2,85 +2,85 @@ syntax = "proto3";
 import "crac_protobuf/button.proto";
 
 enum TelescopeAction {
-    TELESCOPE_DEFAULT_ACTION = 0;
-    SYNC = 1;
-    PARK_POSITION = 2;
-    FLAT_POSITION = 3;
-    CHECK_TELESCOPE = 4;
-    TELESCOPE_CONNECT = 5;
-    TELESCOPE_DISCONNECT = 6;
+  TELESCOPE_DEFAULT_ACTION = 0;
+  SYNC = 1;
+  PARK_POSITION = 2;
+  FLAT_POSITION = 3;
+  CHECK_TELESCOPE = 4;
+  TELESCOPE_CONNECT = 5;
+  TELESCOPE_DISCONNECT = 6;
 }
 
 message TelescopeRequest {
-    TelescopeAction action = 1;
-    bool autolight = 2;
+  TelescopeAction action = 1;
+  bool autolight = 2;
 }
 
 message TelescopeEquatorialMovementRequest {
-    EquatorialCoords eq_coords = 1;
+  EquatorialCoords eq_coords = 1;
 }
 
 message TelescopeAltazimutalMovementRequest {
-    AltazimutalCoords az_coords = 1;
+  AltazimutalCoords az_coords = 1;
 }
 
 enum TelescopeStatus {
-    TELESCOPE_DEFAULT_STATUS = 0;
-    PARKED = 1;
-    FLATTER = 2;
-    SECURE = 3;
+  TELESCOPE_DEFAULT_STATUS = 0;
+  PARKED = 1;
+  FLATTER = 2;
+  SECURE = 3;
 
-    NORTHEAST = 4;
-    EAST = 5;
-    SOUTHEAST = 6;
-    SOUTHWEST = 7;
-    WEST = 8;
-    NORTHWEST = 9;
+  NORTHEAST = 4;
+  EAST = 5;
+  SOUTHEAST = 6;
+  SOUTHWEST = 7;
+  WEST = 8;
+  NORTHWEST = 9;
 
-    // danger zone - threat it as an operational status
-    // (but we hope it has stopped)
-    // user should manually reset the steps after checking visually
-    // the curtains status
-    LOST = 10;
-    ERROR = 11;
-    DISCONNECTED = 12;
+  // danger zone - threat it as an operational status
+  // (but we hope it has stopped)
+  // user should manually reset the steps after checking visually
+  // the curtains status
+  LOST = 10;
+  ERROR = 11;
+  DISCONNECTED = 12;
 }
 
 enum PierSide {
-    DEFAULT_PIERSIDE = 0;
-    EAST_SIDE = 1;
-    WEST_SIDE = 2;
+  DEFAULT_PIERSIDE = 0;
+  EAST_SIDE = 1;
+  WEST_SIDE = 2;
 }
 
 enum TelescopeSpeed {
-    SPEED_NOT_TRACKING = 0;
-    SPEED_TRACKING = 1;
-    SPEED_CENTERING = 2;
-    SPEED_SLEWING = 3;
-    SPEED_ERROR = 4;
+  SPEED_NOT_TRACKING = 0;
+  SPEED_TRACKING = 1;
+  SPEED_CENTERING = 2;
+  SPEED_SLEWING = 3;
+  SPEED_ERROR = 4;
 }
 
 message EquatorialCoords {
-    double ra = 1;
-    double dec = 2;
+  double ra = 1;
+  double dec = 2;
 }
 
 message AltazimutalCoords {
-    double alt = 1;
-    double az = 2;
+  double alt = 1;
+  double az = 2;
 }
 
 message TelescopeResponse {
-    TelescopeStatus status = 1;
-    EquatorialCoords eq_coords = 2;
-    AltazimutalCoords aa_coords = 3;
-    TelescopeSpeed speed = 4;
-    PierSide pierSide = 6;
-    repeated ButtonGui buttons_gui = 7;
+  TelescopeStatus status = 1;
+  EquatorialCoords eq_coords = 2;
+  AltazimutalCoords aa_coords = 3;
+  TelescopeSpeed speed = 4;
+  PierSide pier_side = 6;
+  repeated ButtonGui buttons_gui = 7;
 }
 
 service Telescope {
-    rpc SetAction(TelescopeRequest) returns (TelescopeResponse);
-    rpc EqMove(TelescopeEquatorialMovementRequest) returns (TelescopeResponse);
-    rpc AAMove(TelescopeAltazimutalMovementRequest) returns (TelescopeResponse);
+  rpc SetAction(TelescopeRequest) returns (TelescopeResponse);
+  rpc EqMove(TelescopeEquatorialMovementRequest) returns (TelescopeResponse);
+  rpc AAMove(TelescopeAltazimutalMovementRequest) returns (TelescopeResponse);
 }

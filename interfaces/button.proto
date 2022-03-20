@@ -1,112 +1,112 @@
 syntax = "proto3";
 
 enum ButtonAction {
-    BUTTON_DEFAULT_ACTION = 0;
-    TURN_ON = 1;
-    TURN_OFF = 2;
-    CHECK_BUTTON = 3;
+  BUTTON_DEFAULT_ACTION = 0;
+  TURN_ON = 1;
+  TURN_OFF = 2;
+  CHECK_BUTTON = 3;
 }
 
 enum ButtonType {
-    BUTTON_DEFAULT_TYPE = 0;
-    CCD_SWITCH = 1;
-    TELE_SWITCH = 2;
-    FLAT_LIGHT = 3;
-    DOME_LIGHT = 4;
+  BUTTON_DEFAULT_TYPE = 0;
+  CCD_SWITCH = 1;
+  TELE_SWITCH = 2;
+  FLAT_LIGHT = 3;
+  DOME_LIGHT = 4;
 }
 
 message ButtonsRequest { }
 
 message ButtonRequest {
-    ButtonAction action = 1;
-    ButtonType type = 2;
+  ButtonAction action = 1;
+  ButtonType type = 2;
 }
 
 enum ButtonStatus {
-    BUTTON_DEFAULT_STATUS = 0;
-    ON = 1;
-    OFF = 2;
+  BUTTON_DEFAULT_STATUS = 0;
+  ON = 1;
+  OFF = 2;
 }
 
 message ButtonsResponse {
-    repeated ButtonResponse buttons = 1;
+  repeated ButtonResponse buttons = 1;
 }
 
 message ButtonResponse {
-    ButtonStatus status = 1;
-    ButtonType type = 2;
-    ButtonGui button_gui = 3;
+  ButtonStatus status = 1;
+  ButtonType type = 2;
+  ButtonGui button_gui = 3;
 }
 
 service Button {
-    rpc SetAction(ButtonRequest) returns (ButtonResponse);
-    rpc GetStatus(ButtonsRequest) returns (ButtonsResponse);
+  rpc SetAction(ButtonRequest) returns (ButtonResponse);
+  rpc GetStatus(ButtonsRequest) returns (ButtonsResponse);
 }
 
 message ButtonGui {
-    int32 metadata = 1;
-    ButtonLabel label = 2;
-    bool is_disabled = 3;
-    ButtonColor button_color = 4;
-    bool is_visible = 5;
-    ButtonColor disabled_button_color = 6;
-    ButtonImage button_image = 7;
-    ButtonKey key = 8;
+  int32 metadata = 1;
+  ButtonLabel label = 2;
+  bool is_disabled = 3;
+  ButtonColor button_color = 4;
+  bool is_visible = 5;
+  ButtonColor disabled_button_color = 6;
+  ButtonImage button_image = 7;
+  ButtonKey key = 8;
 }
 
 message ButtonColor {
-    string text_color = 1;
-    string background_color = 2;
+  string text_color = 1;
+  string background_color = 2;
 }
 
 message ButtonImage {
-    string image_data = 1;
-    int32 image_subsample = 2;
-    ButtonImageSize size = 3;
+  string image_data = 1;
+  int32 image_subsample = 2;
+  ButtonImageSize size = 3;
 }
 
 message ButtonImageSize {
-    int32 width = 1;
-    int32 height = 2;
+  int32 width = 1;
+  int32 height = 2;
 }
 
 enum ButtonLabel {
-    DEFAULT_LABEL = 0;
-    LABEL_ON = 1;
-    LABEL_OFF = 2;
-    LABEL_ENABLE = 3;
-    LABEL_DISABLE = 4;
-    LABEL_SYNC = 5;
-    LABEL_PARK = 6;
-    LABEL_FLAT = 7;
-    LABEL_OPEN = 8;
-    LABEL_CLOSE = 9;
-    LABEL_OPENING = 10;
-    LABEL_CLOSING = 11;
-    LABEL_CALIBRATE = 12;
-    LABEL_TELESCOPE_CONNECTED = 13;
-    LABEL_TELESCOPE_DISCONNECTED = 14;
-    LABEL_CAMERA_DISCONNECTED = 15;
-    LABEL_CAMERA_CONNECTED = 16;
-    LABEL_CAMERA_HIDDEN = 17;
-    LABEL_CAMERA_SHOWN = 18;
+  DEFAULT_LABEL = 0;
+  LABEL_ON = 1;
+  LABEL_OFF = 2;
+  LABEL_ENABLE = 3;
+  LABEL_DISABLE = 4;
+  LABEL_SYNC = 5;
+  LABEL_PARK = 6;
+  LABEL_FLAT = 7;
+  LABEL_OPEN = 8;
+  LABEL_CLOSE = 9;
+  LABEL_OPENING = 10;
+  LABEL_CLOSING = 11;
+  LABEL_CALIBRATE = 12;
+  LABEL_TELESCOPE_CONNECTED = 13;
+  LABEL_TELESCOPE_DISCONNECTED = 14;
+  LABEL_CAMERA_DISCONNECTED = 15;
+  LABEL_CAMERA_CONNECTED = 16;
+  LABEL_CAMERA_HIDDEN = 17;
+  LABEL_CAMERA_SHOWN = 18;
 }
 
 enum ButtonKey {
-    DEFAULT_KEY = 0;
-    KEY_SYNC = 1;
-    KEY_PARK = 2;
-    KEY_FLAT = 3;
-    KEY_CURTAINS = 4;
-    KEY_CALIBRATE = 5;
-    KEY_ROOF = 6;
-    KEY_TELE_SWITCH = 7;
-    KEY_CCD_SWITCH = 8;
-    KEY_FLAT_LIGHT = 9;
-    KEY_DOME_LIGHT = 10;
-    KEY_TELESCOPE_CONNECTION_TOGGLE = 11;
-    KEY_CAMERA1_CONNECTION = 12;
-    KEY_CAMERA1_DISPLAY = 13;
-    KEY_CAMERA2_CONNECTION = 14;
-    KEY_CAMERA2_DISPLAY = 15;
+  DEFAULT_KEY = 0;
+  KEY_SYNC = 1;
+  KEY_PARK = 2;
+  KEY_FLAT = 3;
+  KEY_CURTAINS = 4;
+  KEY_CALIBRATE = 5;
+  KEY_ROOF = 6;
+  KEY_TELE_SWITCH = 7;
+  KEY_CCD_SWITCH = 8;
+  KEY_FLAT_LIGHT = 9;
+  KEY_DOME_LIGHT = 10;
+  KEY_TELESCOPE_CONNECTION_TOGGLE = 11;
+  KEY_CAMERA1_CONNECTION = 12;
+  KEY_CAMERA1_DISPLAY = 13;
+  KEY_CAMERA2_CONNECTION = 14;
+  KEY_CAMERA2_DISPLAY = 15;
 }

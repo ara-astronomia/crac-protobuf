@@ -2,37 +2,37 @@ syntax = "proto3";
 import "crac_protobuf/button.proto";
 
 enum RoofAction {
-    ROOF_DEFAULT_ACTION = 0;
-    OPEN = 1;
-    CLOSE = 2;
-    CHECK_ROOF = 3;
+  ROOF_DEFAULT_ACTION = 0;
+  OPEN = 1;
+  CLOSE = 2;
+  CHECK_ROOF = 3;
 }
 
 message RoofRequest {
-    RoofAction action = 1;
+  RoofAction action = 1;
 }
 
 enum RoofStatus {
-    ROOF_DEFAULT_STATUS = 0;
-    ROOF_CLOSED = 1;
-    ROOF_STOPPED = 2;
-    ROOF_OPENED = 3;
-    ROOF_CLOSING = 4;
-    ROOF_OPENING = 5;
+  ROOF_DEFAULT_STATUS = 0;
+  ROOF_CLOSED = 1;
+  ROOF_STOPPED = 2;
+  ROOF_OPENED = 3;
+  ROOF_CLOSING = 4;
+  ROOF_OPENING = 5;
 
-    // danger zone - threat it as a movement statuses
-    // (but we hope it has stopped)
-    // user should manually reset the steps after checking visually
-    // the curtains status
-    ROOF_DANGER = 6;
-    ROOF_ERROR = 7;
+  // danger zone - threat it as a movement statuses
+  // (but we hope it has stopped)
+  // user should manually reset the steps after checking visually
+  // the curtains status
+  ROOF_DANGER = 6;
+  ROOF_ERROR = 7;
 }
 
 message RoofResponse {
-    RoofStatus status = 1;
-    ButtonGui button_gui = 2;
+  RoofStatus status = 1;
+  ButtonGui button_gui = 2;
 }
 
 service Roof {
-    rpc SetAction(RoofRequest) returns (RoofResponse);
+  rpc SetAction(RoofRequest) returns (RoofResponse);
 }

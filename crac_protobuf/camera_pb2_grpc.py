@@ -24,6 +24,11 @@ class CameraStub(object):
                 request_serializer=crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
                 response_deserializer=crac__protobuf_dot_camera__pb2.CameraResponse.FromString,
                 )
+        self.ListCameras = channel.unary_unary(
+                '/Camera/ListCameras',
+                request_serializer=crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_camera__pb2.CamerasResponse.FromString,
+                )
 
 
 class CameraServicer(object):
@@ -41,6 +46,12 @@ class CameraServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListCameras(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CameraServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -53,6 +64,11 @@ def add_CameraServicer_to_server(servicer, server):
                     servicer.Video,
                     request_deserializer=crac__protobuf_dot_camera__pb2.CameraRequest.FromString,
                     response_serializer=crac__protobuf_dot_camera__pb2.CameraResponse.SerializeToString,
+            ),
+            'ListCameras': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCameras,
+                    request_deserializer=crac__protobuf_dot_camera__pb2.CameraRequest.FromString,
+                    response_serializer=crac__protobuf_dot_camera__pb2.CamerasResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -95,5 +111,22 @@ class Camera(object):
         return grpc.experimental.unary_stream(request, target, '/Camera/Video',
             crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
             crac__protobuf_dot_camera__pb2.CameraResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListCameras(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/Camera/ListCameras',
+            crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
+            crac__protobuf_dot_camera__pb2.CamerasResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
