@@ -1,0 +1,62 @@
+syntax = "proto3";
+import "crac_protobuf/button.proto";
+
+enum Move {
+  MOVE_UNSPECIFIED = 0;
+  MOVE_UP = 1;
+  MOVE_TOP_RIGHT = 2;
+  MOVE_RIGHT = 3;
+  MOVE_BOTTOM_RIGHT = 4;
+  MOVE_DOWN = 5;
+  MOVE_BOTTOM_LEFT = 6;
+  MOVE_LEFT = 7;
+  MOVE_TOP_LEFT = 8;
+  MOVE_STOP = 9;
+}
+
+enum CameraAction {
+  CAMERA_INVALID = 0;
+  CAMERA_CONNECT = 1;
+  CAMERA_DISCONNECT = 2;
+  CAMERA_IR_ENABLE = 3;
+  CAMERA_IR_DISABLE = 4;
+  CAMERA_SHOW = 5;
+  CAMERA_HIDE = 6;
+  CAMERA_MOVE = 7;
+  CAMERA_CHECK = 8;
+}
+
+enum CameraStatus {
+  CAMERA_INVALID_STATUS = 0;
+  CAMERA_DISCONNECTED = 2;
+
+  // CAMERA CONNECTED
+  CAMERA_HIDDEN = 3;
+  CAMERA_SHOWN = 4;
+}
+
+message CameraRequest {
+  CameraAction action = 1;
+  Move move = 2;
+  string name = 3;
+  bool autodisplay = 4;
+}
+
+message CameraResponse {
+  string name = 1;
+  bytes video = 2;
+  bool ir = 3;
+  CameraStatus status = 4;
+  repeated ButtonGui buttons_gui = 5;
+}
+
+message CamerasResponse {
+  string camera1 = 1;
+  string camera2 = 2;
+}
+
+service Camera {
+  rpc SetAction(CameraRequest) returns (CameraResponse);
+  rpc Video(CameraRequest) returns (stream CameraResponse);
+  rpc ListCameras(CameraRequest) returns (CamerasResponse);
+}

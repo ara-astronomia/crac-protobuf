@@ -2,63 +2,63 @@ syntax = "proto3";
 import "crac_protobuf/button.proto";
 
 enum CurtainsAction {
-    CURTAIN_DEFAULT_ACTION = 0;
-    ENABLE = 1;
-    DISABLE = 2;
-    CALIBRATE_CURTAINS = 3;
-    CHECK_CURTAIN = 4;
+  CURTAIN_DEFAULT_ACTION = 0;
+  ENABLE = 1;
+  DISABLE = 2;
+  CALIBRATE_CURTAINS = 3;
+  CHECK_CURTAIN = 4;
 }
 
 enum CurtainOrientation {
-    CURTAIN_DEFAULT_ORIENTATION = 0;
-    CURTAIN_EAST = 1;
-    CURTAIN_WEST = 2;
+  CURTAIN_DEFAULT_ORIENTATION = 0;
+  CURTAIN_EAST = 1;
+  CURTAIN_WEST = 2;
 }
 
 message CurtainMovementEntryRequest {
-    CurtainOrientation orientation = 1;
-    int32 steps = 2;
+  CurtainOrientation orientation = 1;
+  int32 steps = 2;
 }
 
 message CurtainsRequest {
-    CurtainsAction action = 1;
+  CurtainsAction action = 1;
 }
 
 message CurtainsMovementRequest {
-    repeated CurtainMovementEntryRequest curtains = 1;
+  repeated CurtainMovementEntryRequest curtains = 1;
 }
 
 enum CurtainStatus {
-    CURTAIN_DEFAULT_STATUS = 0;
-    CURTAIN_DISABLED = 1;
-    CURTAIN_CLOSED = 2;
-    CURTAIN_STOPPED = 3;
-    CURTAIN_OPENED = 4;
+  CURTAIN_DEFAULT_STATUS = 0;
+  CURTAIN_DISABLED = 1;
+  CURTAIN_CLOSED = 2;
+  CURTAIN_STOPPED = 3;
+  CURTAIN_OPENED = 4;
 
-    CURTAIN_CLOSING = 5;
-    CURTAIN_OPENING = 6;
-    CURTAIN_DISABLING = 7;
+  CURTAIN_CLOSING = 5;
+  CURTAIN_OPENING = 6;
+  CURTAIN_DISABLING = 7;
 
-    // danger zone - threat it as a movement statuses
-    // (but we hope it has stopped)
-    // user should manually reset the steps after checking
-    // visually the curtains status
-    CURTAIN_DANGER = 8;
-    CURTAIN_ERROR = 9;
+  // danger zone - threat it as a movement statuses
+  // (but we hope it has stopped)
+  // user should manually reset the steps after checking
+  // visually the curtains status
+  CURTAIN_DANGER = 8;
+  CURTAIN_ERROR = 9;
 }
 
 message CurtainEntryResponse {
-    CurtainOrientation orientation = 1;
-    int32 steps = 2;
-    CurtainStatus status = 3;
+  CurtainOrientation orientation = 1;
+  int32 steps = 2;
+  CurtainStatus status = 3;
 }
 
 message CurtainsResponse {
-    repeated CurtainEntryResponse curtains = 1;
-    repeated ButtonGui buttons_gui = 2;
+  repeated CurtainEntryResponse curtains = 1;
+  repeated ButtonGui buttons_gui = 2;
 }
 
 service Curtain {
-    rpc SetAction(CurtainsRequest) returns (CurtainsResponse);
-    rpc Move(CurtainsMovementRequest) returns (CurtainsResponse);
+  rpc SetAction(CurtainsRequest) returns (CurtainsResponse);
+  rpc Move(CurtainsMovementRequest) returns (CurtainsResponse);
 }
