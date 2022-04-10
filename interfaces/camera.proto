@@ -51,8 +51,13 @@ message CameraResponse {
 }
 
 message CamerasResponse {
-  string camera1 = 1;
-  string camera2 = 2;
+  CameraDevice camera1 = 1;
+  CameraDevice camera2 = 2;
+}
+
+message CameraDevice {
+  string name = 1;
+  repeated ButtonKey features = 2;
 }
 
 service Camera {
