@@ -24,6 +24,7 @@ enum CameraAction {
   CAMERA_HIDE = 6;
   CAMERA_MOVE = 7;
   CAMERA_CHECK = 8;
+  CAMERA_IR_AUTO = 9;
 }
 
 enum CameraStatus {
