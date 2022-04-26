@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+message Chart {
+  float value = 1;
+  string title = 2;
+  string unit_of_measurement = 7;
+  repeated Threshold thresholds = 6;
+}
+
+message Threshold {
+  float warning = 1;
+  float error = 2;
+  float upper_bound = 3;
+  float lower_bound = 4;
+}
+
+message WeatherRequest {
+}
+
+message WeatherResponse {
+  Chart wind_speed = 1;
+  Chart wind_gust_speed = 2;
+  Chart temperature = 3;
+  Chart humidity = 4;
+  Chart rain_rate = 5;
+  Chart barometer = 6;
+  int32 updated_at = 7;
+}
+
+service Weather {
+  rpc GetStatus(WeatherRequest) returns (WeatherResponse);
+}
