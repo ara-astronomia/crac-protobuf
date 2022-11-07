@@ -9,7 +9,7 @@ def generate_proto_code():
     if not os.path.exists(generated_src_dir):
         os.mkdir(generated_src_dir)
     proto_it = pathlib.Path().glob(proto_interface_dir + "/**/*.proto")
-    proto_path = "crac_protobuf=./"
+    proto_path = "crac-protobuf=./"
     protos = [str(proto) for proto in proto_it if proto.is_file()]
     check_call(
         [
