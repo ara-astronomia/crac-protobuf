@@ -5,8 +5,9 @@ message Chart {
   string title = 2;
   float min = 3;
   float max = 4;
-  string unit_of_measurement = 7;
+  string urn = 5;
   repeated Threshold thresholds = 6;
+  string unit_of_measurement = 7;
 }
 
 message Threshold {
@@ -26,13 +27,14 @@ message WeatherRequest {
 }
 
 message WeatherResponse {
-  Chart wind_speed = 1;
-  Chart wind_gust_speed = 2;
-  Chart temperature = 3;
-  Chart humidity = 4;
-  Chart rain_rate = 5;
-  Chart barometer = 6;
+  Chart wind_speed = 1 [deprecated=true];
+  Chart wind_gust_speed = 2 [deprecated=true];
+  Chart temperature = 3 [deprecated=true];
+  Chart humidity = 4 [deprecated=true];
+  Chart rain_rate = 5 [deprecated=true];
+  Chart barometer = 6 [deprecated=true];
   int32 updated_at = 7;
+  repeated Chart charts = 8;
 }
 
 service Weather {
