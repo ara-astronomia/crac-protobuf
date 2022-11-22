@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+message Chart {
+  float value = 1;
+  string title = 2;
+  float min = 3;
+  float max = 4;
+  string urn = 5;
+  repeated Threshold thresholds = 6;
+  string unit_of_measurement = 7;
+}
+
+message Threshold {
+  ThresholdType threshold_type = 1;
+  float upper_bound = 2;
+  float lower_bound = 3;
+}
+
+enum ThresholdType {
+  THRESHOLD_TYPE_UNSPECIFIED = 0;
+  THRESHOLD_TYPE_NORMAL = 1;
+  THRESHOLD_TYPE_WARNING = 2;
+  THRESHOLD_TYPE_DANGER = 3;
+}
+
+message WeatherRequest {
+}
+
+message WeatherResponse {
+  Chart wind_speed = 1 [deprecated=true];
+  Chart wind_gust_speed = 2 [deprecated=true];
+  Chart temperature = 3 [deprecated=true];
+  Chart humidity = 4 [deprecated=true];
+  Chart rain_rate = 5 [deprecated=true];
+  Chart barometer = 6 [deprecated=true];
+  int32 updated_at = 7;
+  repeated Chart charts = 8;
+}
+
+service Weather {
+  rpc GetStatus(WeatherRequest) returns (WeatherResponse);
+}
