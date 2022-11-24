@@ -8,12 +8,20 @@ message Chart {
   string urn = 5;
   repeated Threshold thresholds = 6;
   string unit_of_measurement = 7;
+  ChartStatus status = 8;
 }
 
 message Threshold {
   ThresholdType threshold_type = 1;
   float upper_bound = 2;
   float lower_bound = 3;
+}
+
+enum ChartStatus {
+  CHART_STATUS_UNSPECIFIED = 0;
+  CHART_STATUS_NORMAL = 1;
+  CHART_STATUS_WARNING = 2;
+  CHART_STATUS_DANGER = 3;
 }
 
 enum ThresholdType {
@@ -23,18 +31,20 @@ enum ThresholdType {
   THRESHOLD_TYPE_DANGER = 3;
 }
 
+enum WeatherStatus {
+  WEATHER_STATUS_UNSPECIFIED = 0;
+  WEATHER_STATUS_NORMAL = 1;
+  WEATHER_STATUS_WARNING = 2;
+  WEATHER_STATUS_DANGER = 3;
+}
+
 message WeatherRequest {
 }
 
 message WeatherResponse {
-  Chart wind_speed = 1 [deprecated=true];
-  Chart wind_gust_speed = 2 [deprecated=true];
-  Chart temperature = 3 [deprecated=true];
-  Chart humidity = 4 [deprecated=true];
-  Chart rain_rate = 5 [deprecated=true];
-  Chart barometer = 6 [deprecated=true];
   int32 updated_at = 7;
   repeated Chart charts = 8;
+  WeatherStatus status = 9;
 }
 
 service Weather {
