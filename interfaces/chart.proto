@@ -45,6 +45,7 @@ message WeatherResponse {
   int32 updated_at = 7;
   repeated Chart charts = 8;
   WeatherStatus status = 9;
+  int32 interval = 10;
 }
 
 service Weather {
