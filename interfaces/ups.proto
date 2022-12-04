@@ -1,0 +1,24 @@
+syntax = "proto3";
+import "crac_protobuf/chart.proto";
+
+message UpsResponse {
+  int32 updated_at = 7;
+  repeated Chart charts = 8;
+  UpsStatus status = 9;
+  int32 interval = 10;
+}
+
+message UpsRequest {
+
+}
+
+enum UpsStatus {
+  UPS_STATUS_UNSPECIFIED = 0;
+  UPS_STATUS_NORMAL = 1;
+  UPS_STATUS_WARNING = 2;
+  UPS_STATUS_DANGER = 3;
+}
+
+service Ups {
+  rpc GetStatus(UpsRequest) returns (UpsResponse);
+}
