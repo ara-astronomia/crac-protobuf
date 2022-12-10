@@ -6,6 +6,7 @@ message UpsResponse {
   repeated Chart charts = 8;
   UpsStatus status = 9;
   int32 interval = 10;
+  repeated string devices = 11; 
 }
 
 message UpsRequest {
