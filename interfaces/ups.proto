@@ -3,7 +3,7 @@ import "crac_protobuf/chart.proto";
 
 message UpsResponse {
   int32 updated_at = 7;
-  repeated Chart charts = 8;
+  repeated UpsChart charts = 8;
   UpsStatus status = 9;
   int32 interval = 10;
   repeated string devices = 11; 
@@ -18,6 +18,19 @@ enum UpsStatus {
   UPS_STATUS_NORMAL = 1;
   UPS_STATUS_WARNING = 2;
   UPS_STATUS_DANGER = 3;
+}
+
+enum BatteryStatus {
+  BATTERY_STATUS_UNSPECIFIED = 0;
+  BATTERY_STATUS_DISCHARGE = 1;
+  BATTERY_STATUS_ONLINE = 2;
+  BATTERY_STATUS_ONBATTERY = 3;
+  BATTERY_STATUS_LOWBATTERY = 4;
+}
+
+message UpsChart {
+  Chart chart = 1;
+  repeated BatteryStatus battery_statuses = 2;
 }
 
 service Ups {
