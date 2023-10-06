@@ -92,6 +92,7 @@ enum ButtonLabel {
   LABEL_CAMERA_SHOWN = 18;
   LABEL_CAMERA_IR_ENABLED = 19;
   LABEL_CAMERA_IR_DISABLED = 20;
+  LABEL_ERROR = 21;
 }
 
 enum ButtonKey {
