@@ -91,7 +91,7 @@ message TelescopeResponse {
   repeated ButtonGui buttons_gui = 7;
   Airmass airmass = 8;
   Transit transit = 9;
-  TimeToTransit time_to_transit = 10
+  TimeToTransit time_to_transit = 10;
 
 }
 
