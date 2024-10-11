@@ -75,7 +75,7 @@ message Airmass {
 }
 
 message Transit {
-  double transit_time = 0;
+  double transit = 0;
 }
 
 message TimeToTransit {
@@ -90,7 +90,7 @@ message TelescopeResponse {
   PierSide pier_side = 6;
   repeated ButtonGui buttons_gui = 7;
   Airmass airmass = 8;
-  Transit transit_time = 9;
+  Transit transit = 9;
   TimeToTransit time_to_transit = 10
 
 }
