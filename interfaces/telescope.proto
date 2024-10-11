@@ -70,6 +70,18 @@ message AltazimutalCoords {
   double az = 2;
 }
 
+message Airmass {
+  double airmass = 0
+}
+
+message Transit {
+  double transit_time = 0 
+}
+
+message TimeToTransit {
+  double time_to_transit = 0
+}
+
 message TelescopeResponse {
   TelescopeStatus status = 1;
   EquatorialCoords eq_coords = 2;
@@ -77,6 +89,10 @@ message TelescopeResponse {
   TelescopeSpeed speed = 4;
   PierSide pier_side = 6;
   repeated ButtonGui buttons_gui = 7;
+  Airmass airmass = 8;
+  Transit transit_time = 9;
+  TimeToTransit time_to_transit = 10
+
 }
 
 service Telescope {
