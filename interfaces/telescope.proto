@@ -71,15 +71,15 @@ message AltazimutalCoords {
 }
 
 message Airmass {
-  double airmass = 0;
+  double airmass = 1;
 }
 
 message Transit {
-  double transit = 0;
+  double transit = 1;
 }
 
 message TimeToTransit {
-  double time_to_transit = 0;
+  double time_to_transit = 1;
 }
 
 message TelescopeResponse {
