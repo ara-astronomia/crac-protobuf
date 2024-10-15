@@ -75,7 +75,7 @@ message Airmass {
 }
 
 message Transit {
-  double transit = 1;
+  string transit = 1;
 }
 
 message TimeToTransit {
