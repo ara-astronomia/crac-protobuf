@@ -74,14 +74,6 @@ message Airmass {
   double airmass = 1;
 }
 
-message Transit {
-  string transit = 1;
-}
-
-message TimeToTransit {
-  string time_to_transit = 1;
-}
-
 message TelescopeResponse {
   TelescopeStatus status = 1;
   EquatorialCoords eq_coords = 2;
