@@ -1,5 +1,5 @@
 syntax = "proto3";
-import "crac_protobuf/button.proto";
+import "interfaces/button.proto";
 
 enum TelescopeAction {
   TELESCOPE_DEFAULT_ACTION = 0;

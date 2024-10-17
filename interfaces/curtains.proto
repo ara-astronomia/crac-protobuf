@@ -1,5 +1,5 @@
 syntax = "proto3";
-import "crac_protobuf/button.proto";
+import "interfaces/button.proto";
 
 enum CurtainsAction {
   CURTAIN_DEFAULT_ACTION = 0;
