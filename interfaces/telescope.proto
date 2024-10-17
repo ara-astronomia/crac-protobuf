@@ -1,5 +1,5 @@
 syntax = "proto3";
-import "interfaces/button.proto";
+import "crac_protobuf/button.proto";
 
 enum TelescopeAction {
   TELESCOPE_DEFAULT_ACTION = 0;
@@ -79,7 +79,7 @@ message Transit {
 }
 
 message TimeToTransit {
-  double time_to_transit = 1;
+  string time_to_transit = 1;
 }
 
 message TelescopeResponse {
