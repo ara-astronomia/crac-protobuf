@@ -77,6 +77,8 @@ message TelescopeResponse {
   TelescopeSpeed speed = 4;
   PierSide pier_side = 6;
   repeated ButtonGui buttons_gui = 7;
+  double airmass = 8;
+
 }
 
 service Telescope {
