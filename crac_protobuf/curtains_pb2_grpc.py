@@ -3,12 +3,10 @@
 import grpc
 import warnings
 
-from crac_protobuf import curtains_pb2 as crac__protobuf_dot_curtains__pb2
+import curtains_pb2 as curtains__pb2
 
-GRPC_GENERATED_VERSION = '1.65.1'
+GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
-EXPECTED_ERROR_RELEASE = '1.66.0'
-SCHEDULED_RELEASE_DATE = 'August 6, 2024'
 _version_not_supported = False
 
 try:
@@ -18,15 +16,12 @@ except ImportError:
     _version_not_supported = True
 
 if _version_not_supported:
-    warnings.warn(
+    raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in crac_protobuf/curtains_pb2_grpc.py depends on'
+        + f' but the generated code in curtains_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
-        + f' This warning will become an error in {EXPECTED_ERROR_RELEASE},'
-        + f' scheduled for release on {SCHEDULED_RELEASE_DATE}.',
-        RuntimeWarning
     )
 
 
@@ -41,13 +36,13 @@ class CurtainStub(object):
         """
         self.SetAction = channel.unary_unary(
                 '/Curtain/SetAction',
-                request_serializer=crac__protobuf_dot_curtains__pb2.CurtainsRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
+                request_serializer=curtains__pb2.CurtainsRequest.SerializeToString,
+                response_deserializer=curtains__pb2.CurtainsResponse.FromString,
                 _registered_method=True)
         self.Move = channel.unary_unary(
                 '/Curtain/Move',
-                request_serializer=crac__protobuf_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
+                request_serializer=curtains__pb2.CurtainsMovementRequest.SerializeToString,
+                response_deserializer=curtains__pb2.CurtainsResponse.FromString,
                 _registered_method=True)
 
 
@@ -71,13 +66,13 @@ def add_CurtainServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsRequest.FromString,
-                    response_serializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.SerializeToString,
+                    request_deserializer=curtains__pb2.CurtainsRequest.FromString,
+                    response_serializer=curtains__pb2.CurtainsResponse.SerializeToString,
             ),
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
-                    request_deserializer=crac__protobuf_dot_curtains__pb2.CurtainsMovementRequest.FromString,
-                    response_serializer=crac__protobuf_dot_curtains__pb2.CurtainsResponse.SerializeToString,
+                    request_deserializer=curtains__pb2.CurtainsMovementRequest.FromString,
+                    response_serializer=curtains__pb2.CurtainsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -105,8 +100,8 @@ class Curtain(object):
             request,
             target,
             '/Curtain/SetAction',
-            crac__protobuf_dot_curtains__pb2.CurtainsRequest.SerializeToString,
-            crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
+            curtains__pb2.CurtainsRequest.SerializeToString,
+            curtains__pb2.CurtainsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -132,8 +127,8 @@ class Curtain(object):
             request,
             target,
             '/Curtain/Move',
-            crac__protobuf_dot_curtains__pb2.CurtainsMovementRequest.SerializeToString,
-            crac__protobuf_dot_curtains__pb2.CurtainsResponse.FromString,
+            curtains__pb2.CurtainsMovementRequest.SerializeToString,
+            curtains__pb2.CurtainsResponse.FromString,
             options,
             channel_credentials,
             insecure,

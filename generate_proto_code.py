@@ -1,26 +1,55 @@
+#funzionamento da verificare
+
+
 import pathlib
 import os
 from subprocess import check_call
 
 def generate_proto_code():
     proto_interface_dir = "./interfaces"
-    generated_src_dir = "./crac_protobuf/"
-    out_folder = "./"
-    if not os.path.exists(generated_src_dir):
-        os.mkdir(generated_src_dir)
-    proto_it = pathlib.Path().glob(proto_interface_dir + "/**/*.proto")
-    proto_path = "crac_protobuf=./"
-    protos = [str(proto) for proto in proto_it if proto.is_file()]
+    
+    # Output per i file Python (backend)
+    py_out_dir = "./crac_protobuf"
+
+    # Output per i file JS (frontend web)
+    js_out_dir = "../crac-client-web/crac_client_web/static/js/proto"
+
+    # Crea le directory se non esistono
+    os.makedirs(py_out_dir, exist_ok=True)
+    os.makedirs(js_out_dir, exist_ok=True)
+
+    # Trova tutti i file .proto
+    protos = [
+        str(p) for p in pathlib.Path(proto_interface_dir).rglob("*.proto")
+    ]
+
+    # ✅ Generazione dei file Python
     check_call(
         [
-            "python", 
-            "-m", 
-            "grpc_tools.protoc", 
-            "-Icrac_protobuf=" + proto_interface_dir
-        ] + protos + [
-            "--python_out=" + out_folder, 
-            "--grpc_python_out=" + out_folder
-        ]
+            "python", "-m", "grpc_tools.protoc",
+            f"--proto_path={proto_interface_dir}",
+            f"--python_out={py_out_dir}",
+            f"--grpc_python_out={py_out_dir}",
+        ] + protos
     )
 
-generate_proto_code()
+    # ✅ Generazione dei file JS
+    #check_call(
+    #  [
+    #       "protoc-gen-ts",
+    #       f"--proto_path={proto_interface_dir}",
+    #       f"--js_out=import_style=es6,binary:{js_out_dir}",
+    #   ] + protos
+    #
+    protos=["button.proto","chart.proto","curtains.proto","roof.proto","telescope.proto"]
+    for proto in protos:
+        check_call([
+            "npx", "pbjs",
+            "--es6", f"{js_out_dir}/{proto.replace('.proto', '_pb.js')}",
+            f"{proto_interface_dir}/{proto}"
+        ])
+
+    print("✅ Generazione completata per Python e JS.")
+
+if __name__ == "__main__":
+    generate_proto_code()

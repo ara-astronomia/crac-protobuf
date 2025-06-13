@@ -3,12 +3,10 @@
 import grpc
 import warnings
 
-from crac_protobuf import roof_pb2 as crac__protobuf_dot_roof__pb2
+import roof_pb2 as roof__pb2
 
-GRPC_GENERATED_VERSION = '1.65.1'
+GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
-EXPECTED_ERROR_RELEASE = '1.66.0'
-SCHEDULED_RELEASE_DATE = 'August 6, 2024'
 _version_not_supported = False
 
 try:
@@ -18,15 +16,12 @@ except ImportError:
     _version_not_supported = True
 
 if _version_not_supported:
-    warnings.warn(
+    raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in crac_protobuf/roof_pb2_grpc.py depends on'
+        + f' but the generated code in roof_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
-        + f' This warning will become an error in {EXPECTED_ERROR_RELEASE},'
-        + f' scheduled for release on {SCHEDULED_RELEASE_DATE}.',
-        RuntimeWarning
     )
 
 
@@ -41,8 +36,8 @@ class RoofStub(object):
         """
         self.SetAction = channel.unary_unary(
                 '/Roof/SetAction',
-                request_serializer=crac__protobuf_dot_roof__pb2.RoofRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_roof__pb2.RoofResponse.FromString,
+                request_serializer=roof__pb2.RoofRequest.SerializeToString,
+                response_deserializer=roof__pb2.RoofResponse.FromString,
                 _registered_method=True)
 
 
@@ -60,8 +55,8 @@ def add_RoofServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=crac__protobuf_dot_roof__pb2.RoofRequest.FromString,
-                    response_serializer=crac__protobuf_dot_roof__pb2.RoofResponse.SerializeToString,
+                    request_deserializer=roof__pb2.RoofRequest.FromString,
+                    response_serializer=roof__pb2.RoofResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -89,8 +84,8 @@ class Roof(object):
             request,
             target,
             '/Roof/SetAction',
-            crac__protobuf_dot_roof__pb2.RoofRequest.SerializeToString,
-            crac__protobuf_dot_roof__pb2.RoofResponse.FromString,
+            roof__pb2.RoofRequest.SerializeToString,
+            roof__pb2.RoofResponse.FromString,
             options,
             channel_credentials,
             insecure,

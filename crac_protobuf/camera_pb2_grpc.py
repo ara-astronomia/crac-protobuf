@@ -3,12 +3,10 @@
 import grpc
 import warnings
 
-from crac_protobuf import camera_pb2 as crac__protobuf_dot_camera__pb2
+import camera_pb2 as camera__pb2
 
-GRPC_GENERATED_VERSION = '1.65.1'
+GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
-EXPECTED_ERROR_RELEASE = '1.66.0'
-SCHEDULED_RELEASE_DATE = 'August 6, 2024'
 _version_not_supported = False
 
 try:
@@ -18,15 +16,12 @@ except ImportError:
     _version_not_supported = True
 
 if _version_not_supported:
-    warnings.warn(
+    raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in crac_protobuf/camera_pb2_grpc.py depends on'
+        + f' but the generated code in camera_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
-        + f' This warning will become an error in {EXPECTED_ERROR_RELEASE},'
-        + f' scheduled for release on {SCHEDULED_RELEASE_DATE}.',
-        RuntimeWarning
     )
 
 
@@ -41,18 +36,18 @@ class CameraStub(object):
         """
         self.SetAction = channel.unary_unary(
                 '/Camera/SetAction',
-                request_serializer=crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_camera__pb2.CameraResponse.FromString,
+                request_serializer=camera__pb2.CameraRequest.SerializeToString,
+                response_deserializer=camera__pb2.CameraResponse.FromString,
                 _registered_method=True)
         self.Video = channel.unary_stream(
                 '/Camera/Video',
-                request_serializer=crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_camera__pb2.CameraResponse.FromString,
+                request_serializer=camera__pb2.CameraRequest.SerializeToString,
+                response_deserializer=camera__pb2.CameraResponse.FromString,
                 _registered_method=True)
         self.ListCameras = channel.unary_unary(
                 '/Camera/ListCameras',
-                request_serializer=crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_camera__pb2.CamerasResponse.FromString,
+                request_serializer=camera__pb2.CameraRequest.SerializeToString,
+                response_deserializer=camera__pb2.CamerasResponse.FromString,
                 _registered_method=True)
 
 
@@ -82,18 +77,18 @@ def add_CameraServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetAction': grpc.unary_unary_rpc_method_handler(
                     servicer.SetAction,
-                    request_deserializer=crac__protobuf_dot_camera__pb2.CameraRequest.FromString,
-                    response_serializer=crac__protobuf_dot_camera__pb2.CameraResponse.SerializeToString,
+                    request_deserializer=camera__pb2.CameraRequest.FromString,
+                    response_serializer=camera__pb2.CameraResponse.SerializeToString,
             ),
             'Video': grpc.unary_stream_rpc_method_handler(
                     servicer.Video,
-                    request_deserializer=crac__protobuf_dot_camera__pb2.CameraRequest.FromString,
-                    response_serializer=crac__protobuf_dot_camera__pb2.CameraResponse.SerializeToString,
+                    request_deserializer=camera__pb2.CameraRequest.FromString,
+                    response_serializer=camera__pb2.CameraResponse.SerializeToString,
             ),
             'ListCameras': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCameras,
-                    request_deserializer=crac__protobuf_dot_camera__pb2.CameraRequest.FromString,
-                    response_serializer=crac__protobuf_dot_camera__pb2.CamerasResponse.SerializeToString,
+                    request_deserializer=camera__pb2.CameraRequest.FromString,
+                    response_serializer=camera__pb2.CamerasResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -121,8 +116,8 @@ class Camera(object):
             request,
             target,
             '/Camera/SetAction',
-            crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
-            crac__protobuf_dot_camera__pb2.CameraResponse.FromString,
+            camera__pb2.CameraRequest.SerializeToString,
+            camera__pb2.CameraResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -148,8 +143,8 @@ class Camera(object):
             request,
             target,
             '/Camera/Video',
-            crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
-            crac__protobuf_dot_camera__pb2.CameraResponse.FromString,
+            camera__pb2.CameraRequest.SerializeToString,
+            camera__pb2.CameraResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -175,8 +170,8 @@ class Camera(object):
             request,
             target,
             '/Camera/ListCameras',
-            crac__protobuf_dot_camera__pb2.CameraRequest.SerializeToString,
-            crac__protobuf_dot_camera__pb2.CamerasResponse.FromString,
+            camera__pb2.CameraRequest.SerializeToString,
+            camera__pb2.CamerasResponse.FromString,
             options,
             channel_credentials,
             insecure,
