@@ -1,4 +1,5 @@
 syntax = "proto3";
+package crac_protobuf;
 
 message Chart {
   float value = 1;

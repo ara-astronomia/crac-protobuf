@@ -13,6 +13,7 @@ PROTO_FILES=(
   curtains.proto
   chart.proto
   telescope.proto
+  envelope.proto
 )
 npx pbjs \
     -t static-module \

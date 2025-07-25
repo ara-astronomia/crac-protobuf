@@ -1,4 +1,5 @@
 syntax = "proto3";
+package crac_protobuf;
 import "button.proto";
 
 enum RoofAction {

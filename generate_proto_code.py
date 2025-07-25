@@ -41,13 +41,13 @@ def generate_proto_code():
     #       f"--js_out=import_style=es6,binary:{js_out_dir}",
     #   ] + protos
     #
-    protos=["button.proto","chart.proto","curtains.proto","roof.proto","telescope.proto"]
-    for proto in protos:
-        check_call([
-            "npx", "pbjs",
-            "--es6", f"{js_out_dir}/{proto.replace('.proto', '_pb.js')}",
-            f"{proto_interface_dir}/{proto}"
-        ])
+    #protos=["button.proto","chart.proto","curtains.proto","roof.proto","telescope.proto","envelope.proto"]
+    #for proto in protos:
+    #    check_call([
+    #        "npx", "pbjs",
+    #        "--es6", f"{js_out_dir}/{proto.replace('.proto', '_pb.js')}",
+    #        f"{proto_interface_dir}/{proto}"
+    #    ])
 
     print("✅ Generazione completata per Python e JS.")
 
