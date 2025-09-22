@@ -35,12 +35,12 @@ class ButtonStub(object):
             channel: A grpc.Channel.
         """
         self.SetAction = channel.unary_unary(
-                '/Button/SetAction',
+                '/crac_protobuf.Button/SetAction',
                 request_serializer=button__pb2.ButtonRequest.SerializeToString,
                 response_deserializer=button__pb2.ButtonResponse.FromString,
                 _registered_method=True)
         self.GetStatus = channel.unary_unary(
-                '/Button/GetStatus',
+                '/crac_protobuf.Button/GetStatus',
                 request_serializer=button__pb2.ButtonsRequest.SerializeToString,
                 response_deserializer=button__pb2.ButtonsResponse.FromString,
                 _registered_method=True)
@@ -76,9 +76,9 @@ def add_ButtonServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Button', rpc_method_handlers)
+            'crac_protobuf.Button', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Button', rpc_method_handlers)
+    server.add_registered_method_handlers('crac_protobuf.Button', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -99,7 +99,7 @@ class Button(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Button/SetAction',
+            '/crac_protobuf.Button/SetAction',
             button__pb2.ButtonRequest.SerializeToString,
             button__pb2.ButtonResponse.FromString,
             options,
@@ -126,7 +126,7 @@ class Button(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Button/GetStatus',
+            '/crac_protobuf.Button/GetStatus',
             button__pb2.ButtonsRequest.SerializeToString,
             button__pb2.ButtonsResponse.FromString,
             options,

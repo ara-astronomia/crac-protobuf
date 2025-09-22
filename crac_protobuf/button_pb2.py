@@ -24,39 +24,39 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x62utton.proto\"\x10\n\x0e\x42uttonsRequest\"I\n\rButtonRequest\x12\x1d\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\r.ButtonAction\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\"3\n\x0f\x42uttonsResponse\x12 \n\x07\x62uttons\x18\x01 \x03(\x0b\x32\x0f.ButtonResponse\"j\n\x0e\x42uttonResponse\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ButtonStatus\x12\x19\n\x04type\x18\x02 \x01(\x0e\x32\x0b.ButtonType\x12\x1e\n\nbutton_gui\x18\x03 \x01(\x0b\x32\n.ButtonGui\"\xf1\x01\n\tButtonGui\x12\x10\n\x08metadata\x18\x01 \x01(\x05\x12\x1b\n\x05label\x18\x02 \x01(\x0e\x32\x0c.ButtonLabel\x12\x13\n\x0bis_disabled\x18\x03 \x01(\x08\x12\"\n\x0c\x62utton_color\x18\x04 \x01(\x0b\x32\x0c.ButtonColor\x12\x12\n\nis_visible\x18\x05 \x01(\x08\x12+\n\x15\x64isabled_button_color\x18\x06 \x01(\x0b\x32\x0c.ButtonColor\x12\"\n\x0c\x62utton_image\x18\x07 \x01(\x0b\x32\x0c.ButtonImage\x12\x17\n\x03key\x18\x08 \x01(\x0e\x32\n.ButtonKey\";\n\x0b\x42uttonColor\x12\x12\n\ntext_color\x18\x01 \x01(\t\x12\x18\n\x10\x62\x61\x63kground_color\x18\x02 \x01(\t\"Z\n\x0b\x42uttonImage\x12\x12\n\nimage_data\x18\x01 \x01(\t\x12\x17\n\x0fimage_subsample\x18\x02 \x01(\x05\x12\x1e\n\x04size\x18\x03 \x01(\x0b\x32\x10.ButtonImageSize\"0\n\x0f\x42uttonImageSize\x12\r\n\x05width\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02*\xc0\x02\n\x0b\x42uttonLabel\x12\x11\n\rDEFAULT_LABEL\x10\x00\x12\x0c\n\x08LABEL_ON\x10\x01\x12\r\n\tLABEL_OFF\x10\x02\x12\x10\n\x0cLABEL_ENABLE\x10\x03\x12\x11\n\rLABEL_DISABLE\x10\x04\x12\x0e\n\nLABEL_SYNC\x10\x05\x12\x0e\n\nLABEL_PARK\x10\x06\x12\x0e\n\nLABEL_FLAT\x10\x07\x12\x0e\n\nLABEL_OPEN\x10\x08\x12\x0f\n\x0bLABEL_CLOSE\x10\t\x12\x11\n\rLABEL_OPENING\x10\n\x12\x11\n\rLABEL_CLOSING\x10\x0b\x12\x13\n\x0fLABEL_CALIBRATE\x10\x0c\x12\x1d\n\x19LABEL_TELESCOPE_CONNECTED\x10\r\x12 \n\x1cLABEL_TELESCOPE_DISCONNECTED\x10\x0e\x12\x0f\n\x0bLABEL_ERROR\x10\x15*\xef\x01\n\tButtonKey\x12\x0f\n\x0b\x44\x45\x46\x41ULT_KEY\x10\x00\x12\x0c\n\x08KEY_SYNC\x10\x01\x12\x0c\n\x08KEY_PARK\x10\x02\x12\x0c\n\x08KEY_FLAT\x10\x03\x12\x10\n\x0cKEY_CURTAINS\x10\x04\x12\x11\n\rKEY_CALIBRATE\x10\x05\x12\x0c\n\x08KEY_ROOF\x10\x06\x12\x13\n\x0fKEY_TELE_SWITCH\x10\x07\x12\x12\n\x0eKEY_CCD_SWITCH\x10\x08\x12\x12\n\x0eKEY_FLAT_LIGHT\x10\t\x12\x12\n\x0eKEY_DOME_LIGHT\x10\n\x12#\n\x1fKEY_TELESCOPE_CONNECTION_TOGGLE\x10\x0b\x32\x66\n\x06\x42utton\x12,\n\tSetAction\x12\x0e.ButtonRequest\x1a\x0f.ButtonResponse\x12.\n\tGetStatus\x12\x0f.ButtonsRequest\x1a\x10.ButtonsResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x62utton.proto\x12\rcrac_protobuf\"\x10\n\x0e\x42uttonsRequest\"e\n\rButtonRequest\x12+\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x1b.crac_protobuf.ButtonAction\x12\'\n\x04type\x18\x02 \x01(\x0e\x32\x19.crac_protobuf.ButtonType\"A\n\x0f\x42uttonsResponse\x12.\n\x07\x62uttons\x18\x01 \x03(\x0b\x32\x1d.crac_protobuf.ButtonResponse\"\x94\x01\n\x0e\x42uttonResponse\x12+\n\x06status\x18\x01 \x01(\x0e\x32\x1b.crac_protobuf.ButtonStatus\x12\'\n\x04type\x18\x02 \x01(\x0e\x32\x19.crac_protobuf.ButtonType\x12,\n\nbutton_gui\x18\x03 \x01(\x0b\x32\x18.crac_protobuf.ButtonGui\"\xb7\x02\n\tButtonGui\x12\x10\n\x08metadata\x18\x01 \x01(\x05\x12)\n\x05label\x18\x02 \x01(\x0e\x32\x1a.crac_protobuf.ButtonLabel\x12\x13\n\x0bis_disabled\x18\x03 \x01(\x08\x12\x30\n\x0c\x62utton_color\x18\x04 \x01(\x0b\x32\x1a.crac_protobuf.ButtonColor\x12\x12\n\nis_visible\x18\x05 \x01(\x08\x12\x39\n\x15\x64isabled_button_color\x18\x06 \x01(\x0b\x32\x1a.crac_protobuf.ButtonColor\x12\x30\n\x0c\x62utton_image\x18\x07 \x01(\x0b\x32\x1a.crac_protobuf.ButtonImage\x12%\n\x03key\x18\x08 \x01(\x0e\x32\x18.crac_protobuf.ButtonKey\";\n\x0b\x42uttonColor\x12\x12\n\ntext_color\x18\x01 \x01(\t\x12\x18\n\x10\x62\x61\x63kground_color\x18\x02 \x01(\t\"h\n\x0b\x42uttonImage\x12\x12\n\nimage_data\x18\x01 \x01(\t\x12\x17\n\x0fimage_subsample\x18\x02 \x01(\x05\x12,\n\x04size\x18\x03 \x01(\x0b\x32\x1e.crac_protobuf.ButtonImageSize\"0\n\x0f\x42uttonImageSize\x12\r\n\x05width\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05*V\n\x0c\x42uttonAction\x12\x19\n\x15\x42UTTON_DEFAULT_ACTION\x10\x00\x12\x0b\n\x07TURN_ON\x10\x01\x12\x0c\n\x08TURN_OFF\x10\x02\x12\x10\n\x0c\x43HECK_BUTTON\x10\x03*f\n\nButtonType\x12\x17\n\x13\x42UTTON_DEFAULT_TYPE\x10\x00\x12\x0e\n\nCCD_SWITCH\x10\x01\x12\x0f\n\x0bTELE_SWITCH\x10\x02\x12\x0e\n\nFLAT_LIGHT\x10\x03\x12\x0e\n\nDOME_LIGHT\x10\x04*:\n\x0c\x42uttonStatus\x12\x19\n\x15\x42UTTON_DEFAULT_STATUS\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x07\n\x03OFF\x10\x02*\xc0\x02\n\x0b\x42uttonLabel\x12\x11\n\rDEFAULT_LABEL\x10\x00\x12\x0c\n\x08LABEL_ON\x10\x01\x12\r\n\tLABEL_OFF\x10\x02\x12\x10\n\x0cLABEL_ENABLE\x10\x03\x12\x11\n\rLABEL_DISABLE\x10\x04\x12\x0e\n\nLABEL_SYNC\x10\x05\x12\x0e\n\nLABEL_PARK\x10\x06\x12\x0e\n\nLABEL_FLAT\x10\x07\x12\x0e\n\nLABEL_OPEN\x10\x08\x12\x0f\n\x0bLABEL_CLOSE\x10\t\x12\x11\n\rLABEL_OPENING\x10\n\x12\x11\n\rLABEL_CLOSING\x10\x0b\x12\x13\n\x0fLABEL_CALIBRATE\x10\x0c\x12\x1d\n\x19LABEL_TELESCOPE_CONNECTED\x10\r\x12 \n\x1cLABEL_TELESCOPE_DISCONNECTED\x10\x0e\x12\x0f\n\x0bLABEL_ERROR\x10\x15*\xef\x01\n\tButtonKey\x12\x0f\n\x0b\x44\x45\x46\x41ULT_KEY\x10\x00\x12\x0c\n\x08KEY_SYNC\x10\x01\x12\x0c\n\x08KEY_PARK\x10\x02\x12\x0c\n\x08KEY_FLAT\x10\x03\x12\x10\n\x0cKEY_CURTAINS\x10\x04\x12\x11\n\rKEY_CALIBRATE\x10\x05\x12\x0c\n\x08KEY_ROOF\x10\x06\x12\x13\n\x0fKEY_TELE_SWITCH\x10\x07\x12\x12\n\x0eKEY_CCD_SWITCH\x10\x08\x12\x12\n\x0eKEY_FLAT_LIGHT\x10\t\x12\x12\n\x0eKEY_DOME_LIGHT\x10\n\x12#\n\x1fKEY_TELESCOPE_CONNECTION_TOGGLE\x10\x0b\x32\x9e\x01\n\x06\x42utton\x12H\n\tSetAction\x12\x1c.crac_protobuf.ButtonRequest\x1a\x1d.crac_protobuf.ButtonResponse\x12J\n\tGetStatus\x12\x1d.crac_protobuf.ButtonsRequest\x1a\x1e.crac_protobuf.ButtonsResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'button_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_BUTTONACTION']._serialized_start=717
-  _globals['_BUTTONACTION']._serialized_end=803
-  _globals['_BUTTONTYPE']._serialized_start=805
-  _globals['_BUTTONTYPE']._serialized_end=907
-  _globals['_BUTTONSTATUS']._serialized_start=909
-  _globals['_BUTTONSTATUS']._serialized_end=967
-  _globals['_BUTTONLABEL']._serialized_start=970
-  _globals['_BUTTONLABEL']._serialized_end=1290
-  _globals['_BUTTONKEY']._serialized_start=1293
-  _globals['_BUTTONKEY']._serialized_end=1532
-  _globals['_BUTTONSREQUEST']._serialized_start=16
-  _globals['_BUTTONSREQUEST']._serialized_end=32
-  _globals['_BUTTONREQUEST']._serialized_start=34
-  _globals['_BUTTONREQUEST']._serialized_end=107
-  _globals['_BUTTONSRESPONSE']._serialized_start=109
-  _globals['_BUTTONSRESPONSE']._serialized_end=160
-  _globals['_BUTTONRESPONSE']._serialized_start=162
-  _globals['_BUTTONRESPONSE']._serialized_end=268
-  _globals['_BUTTONGUI']._serialized_start=271
-  _globals['_BUTTONGUI']._serialized_end=512
-  _globals['_BUTTONCOLOR']._serialized_start=514
-  _globals['_BUTTONCOLOR']._serialized_end=573
-  _globals['_BUTTONIMAGE']._serialized_start=575
-  _globals['_BUTTONIMAGE']._serialized_end=665
-  _globals['_BUTTONIMAGESIZE']._serialized_start=667
-  _globals['_BUTTONIMAGESIZE']._serialized_end=715
-  _globals['_BUTTON']._serialized_start=1534
-  _globals['_BUTTON']._serialized_end=1636
+  _globals['_BUTTONACTION']._serialized_start=901
+  _globals['_BUTTONACTION']._serialized_end=987
+  _globals['_BUTTONTYPE']._serialized_start=989
+  _globals['_BUTTONTYPE']._serialized_end=1091
+  _globals['_BUTTONSTATUS']._serialized_start=1093
+  _globals['_BUTTONSTATUS']._serialized_end=1151
+  _globals['_BUTTONLABEL']._serialized_start=1154
+  _globals['_BUTTONLABEL']._serialized_end=1474
+  _globals['_BUTTONKEY']._serialized_start=1477
+  _globals['_BUTTONKEY']._serialized_end=1716
+  _globals['_BUTTONSREQUEST']._serialized_start=31
+  _globals['_BUTTONSREQUEST']._serialized_end=47
+  _globals['_BUTTONREQUEST']._serialized_start=49
+  _globals['_BUTTONREQUEST']._serialized_end=150
+  _globals['_BUTTONSRESPONSE']._serialized_start=152
+  _globals['_BUTTONSRESPONSE']._serialized_end=217
+  _globals['_BUTTONRESPONSE']._serialized_start=220
+  _globals['_BUTTONRESPONSE']._serialized_end=368
+  _globals['_BUTTONGUI']._serialized_start=371
+  _globals['_BUTTONGUI']._serialized_end=682
+  _globals['_BUTTONCOLOR']._serialized_start=684
+  _globals['_BUTTONCOLOR']._serialized_end=743
+  _globals['_BUTTONIMAGE']._serialized_start=745
+  _globals['_BUTTONIMAGE']._serialized_end=849
+  _globals['_BUTTONIMAGESIZE']._serialized_start=851
+  _globals['_BUTTONIMAGESIZE']._serialized_end=899
+  _globals['_BUTTON']._serialized_start=1719
+  _globals['_BUTTON']._serialized_end=1877
 # @@protoc_insertion_point(module_scope)
