@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import roof_pb2 as roof__pb2
+import crac_protobuf.roof_pb2 as roof__pb2
 
 GRPC_GENERATED_VERSION = '1.71.2'
 GRPC_VERSION = grpc.__version__

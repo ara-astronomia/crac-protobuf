@@ -5,6 +5,21 @@ import pathlib
 import os
 from subprocess import check_call
 
+
+def fix_imports_in_pb2(py_out_dir):
+    import re
+    for py_file in pathlib.Path(py_out_dir).glob("*_pb2*.py"):
+        with open(py_file, "r") as f:
+            content = f.read()
+        # Sostituisci import locali con quelli relativi al package
+        new_content = re.sub(
+            r"import ([a-zA-Z0-9_]+_pb2) as ([a-zA-Z0-9_]+__pb2)",
+            r"import crac_protobuf.\1 as \2",
+            content
+        )
+        with open(py_file, "w") as f:
+            f.write(new_content)
+
 def generate_proto_code():
     proto_interface_dir = "./interfaces"
     
@@ -53,3 +68,4 @@ def generate_proto_code():
 
 if __name__ == "__main__":
     generate_proto_code()
+    fix_imports_in_pb2("./crac_protobuf")
