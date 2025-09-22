@@ -25,39 +25,39 @@ _sym_db = _symbol_database.Default()
 import button_pb2 as button__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ftelescope.proto\x1a\x0c\x62utton.proto\"G\n\x10TelescopeRequest\x12 \n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x10.TelescopeAction\x12\x11\n\tautolight\x18\x02 \x01(\x08\"J\n\"TelescopeEquatorialMovementRequest\x12$\n\teq_coords\x18\x01 \x01(\x0b\x32\x11.EquatorialCoords\"L\n#TelescopeAltazimutalMovementRequest\x12%\n\taz_coords\x18\x01 \x01(\x0b\x32\x12.AltazimutalCoords\"+\n\x10\x45quatorialCoords\x12\n\n\x02ra\x18\x01 \x01(\x01\x12\x0b\n\x03\x64\x65\x63\x18\x02 \x01(\x01\",\n\x11\x41ltazimutalCoords\x12\x0b\n\x03\x61lt\x18\x01 \x01(\x01\x12\n\n\x02\x61z\x18\x02 \x01(\x01\"\x1a\n\x07\x41irmass\x12\x0f\n\x07\x61irmass\x18\x01 \x01(\x01\"\x1a\n\x07Transit\x12\x0f\n\x07transit\x18\x01 \x01(\t\"(\n\rTimeToTransit\x12\x17\n\x0ftime_to_transit\x18\x01 \x01(\x01\"\xfc\x01\n\x11TelescopeResponse\x12 \n\x06status\x18\x01 \x01(\x0e\x32\x10.TelescopeStatus\x12$\n\teq_coords\x18\x02 \x01(\x0b\x32\x11.EquatorialCoords\x12%\n\taa_coords\x18\x03 \x01(\x0b\x32\x12.AltazimutalCoords\x12\x1e\n\x05speed\x18\x04 \x01(\x0e\x32\x0f.TelescopeSpeed\x12\x1c\n\tpier_side\x18\x06 \x01(\x0e\x32\t.PierSide\x12\x1f\n\x0b\x62uttons_gui\x18\x07 \x03(\x0b\x32\n.ButtonGui\x12\x19\n\x07\x61irmass\x18\x08 \x01(\x0b\x32\x08.Airmass*\xa5\x01\n\x0fTelescopeAction\x12\x1c\n\x18TELESCOPE_DEFAULT_ACTION\x10\x00\x12\x08\n\x04SYNC\x10\x01\x12\x11\n\rPARK_POSITION\x10\x02\x12\x11\n\rFLAT_POSITION\x10\x03\x12\x13\n\x0f\x43HECK_TELESCOPE\x10\x04\x12\x15\n\x11TELESCOPE_CONNECT\x10\x05\x12\x18\n\x14TELESCOPE_DISCONNECT\x10\x06*\xcb\x01\n\x0fTelescopeStatus\x12\x1c\n\x18TELESCOPE_DEFAULT_STATUS\x10\x00\x12\n\n\x06PARKED\x10\x01\x12\x0b\n\x07\x46LATTER\x10\x02\x12\n\n\x06SECURE\x10\x03\x12\r\n\tNORTHEAST\x10\x04\x12\x08\n\x04\x45\x41ST\x10\x05\x12\r\n\tSOUTHEAST\x10\x06\x12\r\n\tSOUTHWEST\x10\x07\x12\x08\n\x04WEST\x10\x08\x12\r\n\tNORTHWEST\x10\t\x12\x08\n\x04LOST\x10\n\x12\t\n\x05\x45RROR\x10\x0b\x12\x10\n\x0c\x44ISCONNECTED\x10\x0c*>\n\x08PierSide\x12\x14\n\x10\x44\x45\x46\x41ULT_PIERSIDE\x10\x00\x12\r\n\tEAST_SIDE\x10\x01\x12\r\n\tWEST_SIDE\x10\x02*u\n\x0eTelescopeSpeed\x12\x16\n\x12SPEED_NOT_TRACKING\x10\x00\x12\x12\n\x0eSPEED_TRACKING\x10\x01\x12\x13\n\x0fSPEED_CENTERING\x10\x02\x12\x11\n\rSPEED_SLEWING\x10\x03\x12\x0f\n\x0bSPEED_ERROR\x10\x04\x32\xc6\x01\n\tTelescope\x12\x32\n\tSetAction\x12\x11.TelescopeRequest\x1a\x12.TelescopeResponse\x12\x41\n\x06\x45qMove\x12#.TelescopeEquatorialMovementRequest\x1a\x12.TelescopeResponse\x12\x42\n\x06\x41\x41Move\x12$.TelescopeAltazimutalMovementRequest\x1a\x12.TelescopeResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ftelescope.proto\x12\rcrac_protobuf\x1a\x0c\x62utton.proto\"U\n\x10TelescopeRequest\x12.\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x1e.crac_protobuf.TelescopeAction\x12\x11\n\tautolight\x18\x02 \x01(\x08\"X\n\"TelescopeEquatorialMovementRequest\x12\x32\n\teq_coords\x18\x01 \x01(\x0b\x32\x1f.crac_protobuf.EquatorialCoords\"Z\n#TelescopeAltazimutalMovementRequest\x12\x33\n\taz_coords\x18\x01 \x01(\x0b\x32 .crac_protobuf.AltazimutalCoords\"+\n\x10\x45quatorialCoords\x12\n\n\x02ra\x18\x01 \x01(\x01\x12\x0b\n\x03\x64\x65\x63\x18\x02 \x01(\x01\",\n\x11\x41ltazimutalCoords\x12\x0b\n\x03\x61lt\x18\x01 \x01(\x01\x12\n\n\x02\x61z\x18\x02 \x01(\x01\"\x1a\n\x07\x41irmass\x12\x0f\n\x07\x61irmass\x18\x01 \x01(\x01\"\x1a\n\x07Transit\x12\x0f\n\x07transit\x18\x01 \x01(\t\"(\n\rTimeToTransit\x12\x17\n\x0ftime_to_transit\x18\x01 \x01(\x01\"\xd0\x02\n\x11TelescopeResponse\x12.\n\x06status\x18\x01 \x01(\x0e\x32\x1e.crac_protobuf.TelescopeStatus\x12\x32\n\teq_coords\x18\x02 \x01(\x0b\x32\x1f.crac_protobuf.EquatorialCoords\x12\x33\n\taa_coords\x18\x03 \x01(\x0b\x32 .crac_protobuf.AltazimutalCoords\x12,\n\x05speed\x18\x04 \x01(\x0e\x32\x1d.crac_protobuf.TelescopeSpeed\x12*\n\tpier_side\x18\x06 \x01(\x0e\x32\x17.crac_protobuf.PierSide\x12\x1f\n\x0b\x62uttons_gui\x18\x07 \x03(\x0b\x32\n.ButtonGui\x12\'\n\x07\x61irmass\x18\x08 \x01(\x0b\x32\x16.crac_protobuf.Airmass*\xa5\x01\n\x0fTelescopeAction\x12\x1c\n\x18TELESCOPE_DEFAULT_ACTION\x10\x00\x12\x08\n\x04SYNC\x10\x01\x12\x11\n\rPARK_POSITION\x10\x02\x12\x11\n\rFLAT_POSITION\x10\x03\x12\x13\n\x0f\x43HECK_TELESCOPE\x10\x04\x12\x15\n\x11TELESCOPE_CONNECT\x10\x05\x12\x18\n\x14TELESCOPE_DISCONNECT\x10\x06*\xcb\x01\n\x0fTelescopeStatus\x12\x1c\n\x18TELESCOPE_DEFAULT_STATUS\x10\x00\x12\n\n\x06PARKED\x10\x01\x12\x0b\n\x07\x46LATTER\x10\x02\x12\n\n\x06SECURE\x10\x03\x12\r\n\tNORTHEAST\x10\x04\x12\x08\n\x04\x45\x41ST\x10\x05\x12\r\n\tSOUTHEAST\x10\x06\x12\r\n\tSOUTHWEST\x10\x07\x12\x08\n\x04WEST\x10\x08\x12\r\n\tNORTHWEST\x10\t\x12\x08\n\x04LOST\x10\n\x12\t\n\x05\x45RROR\x10\x0b\x12\x10\n\x0c\x44ISCONNECTED\x10\x0c*>\n\x08PierSide\x12\x14\n\x10\x44\x45\x46\x41ULT_PIERSIDE\x10\x00\x12\r\n\tEAST_SIDE\x10\x01\x12\r\n\tWEST_SIDE\x10\x02*u\n\x0eTelescopeSpeed\x12\x16\n\x12SPEED_NOT_TRACKING\x10\x00\x12\x12\n\x0eSPEED_TRACKING\x10\x01\x12\x13\n\x0fSPEED_CENTERING\x10\x02\x12\x11\n\rSPEED_SLEWING\x10\x03\x12\x0f\n\x0bSPEED_ERROR\x10\x04\x32\x9a\x02\n\tTelescope\x12N\n\tSetAction\x12\x1f.crac_protobuf.TelescopeRequest\x1a .crac_protobuf.TelescopeResponse\x12]\n\x06\x45qMove\x12\x31.crac_protobuf.TelescopeEquatorialMovementRequest\x1a .crac_protobuf.TelescopeResponse\x12^\n\x06\x41\x41Move\x12\x32.crac_protobuf.TelescopeAltazimutalMovementRequest\x1a .crac_protobuf.TelescopeResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'telescope_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_TELESCOPEACTION']._serialized_start=705
-  _globals['_TELESCOPEACTION']._serialized_end=870
-  _globals['_TELESCOPESTATUS']._serialized_start=873
-  _globals['_TELESCOPESTATUS']._serialized_end=1076
-  _globals['_PIERSIDE']._serialized_start=1078
-  _globals['_PIERSIDE']._serialized_end=1140
-  _globals['_TELESCOPESPEED']._serialized_start=1142
-  _globals['_TELESCOPESPEED']._serialized_end=1259
-  _globals['_TELESCOPEREQUEST']._serialized_start=33
-  _globals['_TELESCOPEREQUEST']._serialized_end=104
-  _globals['_TELESCOPEEQUATORIALMOVEMENTREQUEST']._serialized_start=106
-  _globals['_TELESCOPEEQUATORIALMOVEMENTREQUEST']._serialized_end=180
-  _globals['_TELESCOPEALTAZIMUTALMOVEMENTREQUEST']._serialized_start=182
-  _globals['_TELESCOPEALTAZIMUTALMOVEMENTREQUEST']._serialized_end=258
-  _globals['_EQUATORIALCOORDS']._serialized_start=260
-  _globals['_EQUATORIALCOORDS']._serialized_end=303
-  _globals['_ALTAZIMUTALCOORDS']._serialized_start=305
-  _globals['_ALTAZIMUTALCOORDS']._serialized_end=349
-  _globals['_AIRMASS']._serialized_start=351
-  _globals['_AIRMASS']._serialized_end=377
-  _globals['_TRANSIT']._serialized_start=379
-  _globals['_TRANSIT']._serialized_end=405
-  _globals['_TIMETOTRANSIT']._serialized_start=407
-  _globals['_TIMETOTRANSIT']._serialized_end=447
-  _globals['_TELESCOPERESPONSE']._serialized_start=450
-  _globals['_TELESCOPERESPONSE']._serialized_end=702
-  _globals['_TELESCOPE']._serialized_start=1262
-  _globals['_TELESCOPE']._serialized_end=1460
+  _globals['_TELESCOPEACTION']._serialized_start=846
+  _globals['_TELESCOPEACTION']._serialized_end=1011
+  _globals['_TELESCOPESTATUS']._serialized_start=1014
+  _globals['_TELESCOPESTATUS']._serialized_end=1217
+  _globals['_PIERSIDE']._serialized_start=1219
+  _globals['_PIERSIDE']._serialized_end=1281
+  _globals['_TELESCOPESPEED']._serialized_start=1283
+  _globals['_TELESCOPESPEED']._serialized_end=1400
+  _globals['_TELESCOPEREQUEST']._serialized_start=48
+  _globals['_TELESCOPEREQUEST']._serialized_end=133
+  _globals['_TELESCOPEEQUATORIALMOVEMENTREQUEST']._serialized_start=135
+  _globals['_TELESCOPEEQUATORIALMOVEMENTREQUEST']._serialized_end=223
+  _globals['_TELESCOPEALTAZIMUTALMOVEMENTREQUEST']._serialized_start=225
+  _globals['_TELESCOPEALTAZIMUTALMOVEMENTREQUEST']._serialized_end=315
+  _globals['_EQUATORIALCOORDS']._serialized_start=317
+  _globals['_EQUATORIALCOORDS']._serialized_end=360
+  _globals['_ALTAZIMUTALCOORDS']._serialized_start=362
+  _globals['_ALTAZIMUTALCOORDS']._serialized_end=406
+  _globals['_AIRMASS']._serialized_start=408
+  _globals['_AIRMASS']._serialized_end=434
+  _globals['_TRANSIT']._serialized_start=436
+  _globals['_TRANSIT']._serialized_end=462
+  _globals['_TIMETOTRANSIT']._serialized_start=464
+  _globals['_TIMETOTRANSIT']._serialized_end=504
+  _globals['_TELESCOPERESPONSE']._serialized_start=507
+  _globals['_TELESCOPERESPONSE']._serialized_end=843
+  _globals['_TELESCOPE']._serialized_start=1403
+  _globals['_TELESCOPE']._serialized_end=1685
 # @@protoc_insertion_point(module_scope)

@@ -24,15 +24,15 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x65nvelope.proto\"7\n\x08\x45nvelope\x12\x1a\n\x04type\x18\x01 \x01(\x0e\x32\x0c.MessageType\x12\x0f\n\x07payload\x18\x02 \x01(\x0c*Y\n\x0bMessageType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04ROOF\x10\x01\x12\x0b\n\x07\x42UTTONS\x10\x02\x12\r\n\tTELESCOPE\x10\x03\x12\t\n\x05\x43HART\x10\x04\x12\x0c\n\x08\x43URTAINS\x10\x05\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x65nvelope.proto\x12\rcrac_protobuf\"E\n\x08\x45nvelope\x12(\n\x04type\x18\x01 \x01(\x0e\x32\x1a.crac_protobuf.MessageType\x12\x0f\n\x07payload\x18\x02 \x01(\x0c*Y\n\x0bMessageType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04ROOF\x10\x01\x12\x0b\n\x07\x42UTTONS\x10\x02\x12\r\n\tTELESCOPE\x10\x03\x12\t\n\x05\x43HART\x10\x04\x12\x0c\n\x08\x43URTAINS\x10\x05\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'envelope_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_MESSAGETYPE']._serialized_start=75
-  _globals['_MESSAGETYPE']._serialized_end=164
-  _globals['_ENVELOPE']._serialized_start=18
-  _globals['_ENVELOPE']._serialized_end=73
+  _globals['_MESSAGETYPE']._serialized_start=104
+  _globals['_MESSAGETYPE']._serialized_end=193
+  _globals['_ENVELOPE']._serialized_start=33
+  _globals['_ENVELOPE']._serialized_end=102
 # @@protoc_insertion_point(module_scope)

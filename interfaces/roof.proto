@@ -1,6 +1,6 @@
 syntax = "proto3";
 package crac_protobuf;
-import "interfaces/button.proto";
+import "button.proto";
 
 enum RoofAction {
   ROOF_DEFAULT_ACTION = 0;

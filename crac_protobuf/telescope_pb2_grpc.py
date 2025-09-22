@@ -35,17 +35,17 @@ class TelescopeStub(object):
             channel: A grpc.Channel.
         """
         self.SetAction = channel.unary_unary(
-                '/Telescope/SetAction',
+                '/crac_protobuf.Telescope/SetAction',
                 request_serializer=telescope__pb2.TelescopeRequest.SerializeToString,
                 response_deserializer=telescope__pb2.TelescopeResponse.FromString,
                 _registered_method=True)
         self.EqMove = channel.unary_unary(
-                '/Telescope/EqMove',
+                '/crac_protobuf.Telescope/EqMove',
                 request_serializer=telescope__pb2.TelescopeEquatorialMovementRequest.SerializeToString,
                 response_deserializer=telescope__pb2.TelescopeResponse.FromString,
                 _registered_method=True)
         self.AAMove = channel.unary_unary(
-                '/Telescope/AAMove',
+                '/crac_protobuf.Telescope/AAMove',
                 request_serializer=telescope__pb2.TelescopeAltazimutalMovementRequest.SerializeToString,
                 response_deserializer=telescope__pb2.TelescopeResponse.FromString,
                 _registered_method=True)
@@ -92,9 +92,9 @@ def add_TelescopeServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Telescope', rpc_method_handlers)
+            'crac_protobuf.Telescope', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Telescope', rpc_method_handlers)
+    server.add_registered_method_handlers('crac_protobuf.Telescope', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -115,7 +115,7 @@ class Telescope(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Telescope/SetAction',
+            '/crac_protobuf.Telescope/SetAction',
             telescope__pb2.TelescopeRequest.SerializeToString,
             telescope__pb2.TelescopeResponse.FromString,
             options,
@@ -142,7 +142,7 @@ class Telescope(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Telescope/EqMove',
+            '/crac_protobuf.Telescope/EqMove',
             telescope__pb2.TelescopeEquatorialMovementRequest.SerializeToString,
             telescope__pb2.TelescopeResponse.FromString,
             options,
@@ -169,7 +169,7 @@ class Telescope(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Telescope/AAMove',
+            '/crac_protobuf.Telescope/AAMove',
             telescope__pb2.TelescopeAltazimutalMovementRequest.SerializeToString,
             telescope__pb2.TelescopeResponse.FromString,
             options,

@@ -35,12 +35,12 @@ class CurtainStub(object):
             channel: A grpc.Channel.
         """
         self.SetAction = channel.unary_unary(
-                '/Curtain/SetAction',
+                '/crac_protobuf.Curtain/SetAction',
                 request_serializer=curtains__pb2.CurtainsRequest.SerializeToString,
                 response_deserializer=curtains__pb2.CurtainsResponse.FromString,
                 _registered_method=True)
         self.Move = channel.unary_unary(
-                '/Curtain/Move',
+                '/crac_protobuf.Curtain/Move',
                 request_serializer=curtains__pb2.CurtainsMovementRequest.SerializeToString,
                 response_deserializer=curtains__pb2.CurtainsResponse.FromString,
                 _registered_method=True)
@@ -76,9 +76,9 @@ def add_CurtainServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Curtain', rpc_method_handlers)
+            'crac_protobuf.Curtain', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Curtain', rpc_method_handlers)
+    server.add_registered_method_handlers('crac_protobuf.Curtain', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -99,7 +99,7 @@ class Curtain(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Curtain/SetAction',
+            '/crac_protobuf.Curtain/SetAction',
             curtains__pb2.CurtainsRequest.SerializeToString,
             curtains__pb2.CurtainsResponse.FromString,
             options,
@@ -126,7 +126,7 @@ class Curtain(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Curtain/Move',
+            '/crac_protobuf.Curtain/Move',
             curtains__pb2.CurtainsMovementRequest.SerializeToString,
             curtains__pb2.CurtainsResponse.FromString,
             options,

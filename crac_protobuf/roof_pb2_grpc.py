@@ -35,7 +35,7 @@ class RoofStub(object):
             channel: A grpc.Channel.
         """
         self.SetAction = channel.unary_unary(
-                '/Roof/SetAction',
+                '/crac_protobuf.Roof/SetAction',
                 request_serializer=roof__pb2.RoofRequest.SerializeToString,
                 response_deserializer=roof__pb2.RoofResponse.FromString,
                 _registered_method=True)
@@ -60,9 +60,9 @@ def add_RoofServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Roof', rpc_method_handlers)
+            'crac_protobuf.Roof', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Roof', rpc_method_handlers)
+    server.add_registered_method_handlers('crac_protobuf.Roof', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -83,7 +83,7 @@ class Roof(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Roof/SetAction',
+            '/crac_protobuf.Roof/SetAction',
             roof__pb2.RoofRequest.SerializeToString,
             roof__pb2.RoofResponse.FromString,
             options,

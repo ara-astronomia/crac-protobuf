@@ -20,7 +20,7 @@ def generate_proto_code():
 
     # Trova tutti i file .proto
     protos = [
-        str(p) for p in pathlib.Path(proto_interface_dir).rglob("*.proto")
+        p.name for p in pathlib.Path(proto_interface_dir).glob("*.proto")
     ]
 
     # ✅ Generazione dei file Python

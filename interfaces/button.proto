@@ -1,5 +1,4 @@
 syntax = "proto3";
-package crac_protobuf;
 
 enum ButtonAction {
   BUTTON_DEFAULT_ACTION = 0;

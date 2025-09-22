@@ -35,7 +35,7 @@ class WeatherStub(object):
             channel: A grpc.Channel.
         """
         self.GetStatus = channel.unary_unary(
-                '/Weather/GetStatus',
+                '/crac_protobuf.Weather/GetStatus',
                 request_serializer=chart__pb2.WeatherRequest.SerializeToString,
                 response_deserializer=chart__pb2.WeatherResponse.FromString,
                 _registered_method=True)
@@ -60,9 +60,9 @@ def add_WeatherServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Weather', rpc_method_handlers)
+            'crac_protobuf.Weather', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Weather', rpc_method_handlers)
+    server.add_registered_method_handlers('crac_protobuf.Weather', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -83,7 +83,7 @@ class Weather(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Weather/GetStatus',
+            '/crac_protobuf.Weather/GetStatus',
             chart__pb2.WeatherRequest.SerializeToString,
             chart__pb2.WeatherResponse.FromString,
             options,

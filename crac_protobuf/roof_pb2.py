@@ -25,21 +25,21 @@ _sym_db = _symbol_database.Default()
 import button_pb2 as button__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nroof.proto\x1a\x0c\x62utton.proto\"*\n\x0bRoofRequest\x12\x1b\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x0b.RoofAction\"K\n\x0cRoofResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.RoofStatus\x12\x1e\n\nbutton_gui\x18\x02 \x01(\x0b\x32\n.ButtonGui*J\n\nRoofAction\x12\x17\n\x13ROOF_DEFAULT_ACTION\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\t\n\x05\x43LOSE\x10\x02\x12\x0e\n\nCHECK_ROOF\x10\x03*\x9e\x01\n\nRoofStatus\x12\x17\n\x13ROOF_DEFAULT_STATUS\x10\x00\x12\x0f\n\x0bROOF_CLOSED\x10\x01\x12\x10\n\x0cROOF_STOPPED\x10\x02\x12\x0f\n\x0bROOF_OPENED\x10\x03\x12\x10\n\x0cROOF_CLOSING\x10\x04\x12\x10\n\x0cROOF_OPENING\x10\x05\x12\x0f\n\x0bROOF_DANGER\x10\x06\x12\x0e\n\nROOF_ERROR\x10\x07\x32\x30\n\x04Roof\x12(\n\tSetAction\x12\x0c.RoofRequest\x1a\r.RoofResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nroof.proto\x12\rcrac_protobuf\x1a\x0c\x62utton.proto\"8\n\x0bRoofRequest\x12)\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x19.crac_protobuf.RoofAction\"Y\n\x0cRoofResponse\x12)\n\x06status\x18\x01 \x01(\x0e\x32\x19.crac_protobuf.RoofStatus\x12\x1e\n\nbutton_gui\x18\x02 \x01(\x0b\x32\n.ButtonGui*J\n\nRoofAction\x12\x17\n\x13ROOF_DEFAULT_ACTION\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\t\n\x05\x43LOSE\x10\x02\x12\x0e\n\nCHECK_ROOF\x10\x03*\x9e\x01\n\nRoofStatus\x12\x17\n\x13ROOF_DEFAULT_STATUS\x10\x00\x12\x0f\n\x0bROOF_CLOSED\x10\x01\x12\x10\n\x0cROOF_STOPPED\x10\x02\x12\x0f\n\x0bROOF_OPENED\x10\x03\x12\x10\n\x0cROOF_CLOSING\x10\x04\x12\x10\n\x0cROOF_OPENING\x10\x05\x12\x0f\n\x0bROOF_DANGER\x10\x06\x12\x0e\n\nROOF_ERROR\x10\x07\x32L\n\x04Roof\x12\x44\n\tSetAction\x12\x1a.crac_protobuf.RoofRequest\x1a\x1b.crac_protobuf.RoofResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'roof_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_ROOFACTION']._serialized_start=149
-  _globals['_ROOFACTION']._serialized_end=223
-  _globals['_ROOFSTATUS']._serialized_start=226
-  _globals['_ROOFSTATUS']._serialized_end=384
-  _globals['_ROOFREQUEST']._serialized_start=28
-  _globals['_ROOFREQUEST']._serialized_end=70
-  _globals['_ROOFRESPONSE']._serialized_start=72
-  _globals['_ROOFRESPONSE']._serialized_end=147
-  _globals['_ROOF']._serialized_start=386
-  _globals['_ROOF']._serialized_end=434
+  _globals['_ROOFACTION']._serialized_start=192
+  _globals['_ROOFACTION']._serialized_end=266
+  _globals['_ROOFSTATUS']._serialized_start=269
+  _globals['_ROOFSTATUS']._serialized_end=427
+  _globals['_ROOFREQUEST']._serialized_start=43
+  _globals['_ROOFREQUEST']._serialized_end=99
+  _globals['_ROOFRESPONSE']._serialized_start=101
+  _globals['_ROOFRESPONSE']._serialized_end=190
+  _globals['_ROOF']._serialized_start=429
+  _globals['_ROOF']._serialized_end=505
 # @@protoc_insertion_point(module_scope)
