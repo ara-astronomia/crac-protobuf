@@ -1,0 +1,19 @@
+// data_image.proto
+
+syntax = "proto3";
+
+// Messaggio per trasportare la configurazione dell'immagine CCD
+message CCDImageData {
+    // Larghezza del campo visivo in minuti d'arco (arcminutes)
+    double field_of_view_width = 1;
+    // Altezza del campo visivo in minuti d'arco (arcminutes)
+    double field_of_view_height = 2;
+}
+
+// Servizio per richiedere le configurazioni di generazione immagini
+service ImageConfigService {
+    rpc GetCCDImageData (ImageConfigRequest) returns (CCDImageData);
+}
+
+// Richiesta vuota
+message ImageConfigRequest {}
