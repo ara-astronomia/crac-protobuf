@@ -38,3 +38,4 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GEOGRAPHICSERVICE']._serialized_start=122
   _globals['_GEOGRAPHICSERVICE']._serialized_end=199
 # @@protoc_insertion_point(module_scope)
+# End of geographic_pb2.py
