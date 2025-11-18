@@ -5,7 +5,7 @@ import warnings
 
 from crac_protobuf import ups_pb2 as crac__protobuf_dot_ups__pb2
 
-GRPC_GENERATED_VERSION = '1.67.0'
+GRPC_GENERATED_VERSION = '1.71.2'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

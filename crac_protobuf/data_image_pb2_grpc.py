@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import data_image_pb2 as data__image__pb2
+from crac_protobuf import data_image_pb2 as crac__protobuf_dot_data__image__pb2
 
 GRPC_GENERATED_VERSION = '1.71.2'
 GRPC_VERSION = grpc.__version__
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in data_image_pb2_grpc.py depends on'
+        + f' but the generated code in crac_protobuf/data_image_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -37,8 +37,8 @@ class ImageConfigServiceStub(object):
         """
         self.GetCCDImageData = channel.unary_unary(
                 '/ImageConfigService/GetCCDImageData',
-                request_serializer=data__image__pb2.ImageConfigRequest.SerializeToString,
-                response_deserializer=data__image__pb2.CCDImageData.FromString,
+                request_serializer=crac__protobuf_dot_data__image__pb2.ImageConfigRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_data__image__pb2.CCDImageData.FromString,
                 _registered_method=True)
 
 
@@ -57,8 +57,8 @@ def add_ImageConfigServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetCCDImageData': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCCDImageData,
-                    request_deserializer=data__image__pb2.ImageConfigRequest.FromString,
-                    response_serializer=data__image__pb2.CCDImageData.SerializeToString,
+                    request_deserializer=crac__protobuf_dot_data__image__pb2.ImageConfigRequest.FromString,
+                    response_serializer=crac__protobuf_dot_data__image__pb2.CCDImageData.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -87,8 +87,8 @@ class ImageConfigService(object):
             request,
             target,
             '/ImageConfigService/GetCCDImageData',
-            data__image__pb2.ImageConfigRequest.SerializeToString,
-            data__image__pb2.CCDImageData.FromString,
+            crac__protobuf_dot_data__image__pb2.ImageConfigRequest.SerializeToString,
+            crac__protobuf_dot_data__image__pb2.CCDImageData.FromString,
             options,
             channel_credentials,
             insecure,
