@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from crac_protobuf import roof_pb2 as crac__protobuf_dot_roof__pb2
+from crac_protobuf import ups_pb2 as crac__protobuf_dot_ups__pb2
 
 GRPC_GENERATED_VERSION = '1.71.2'
 GRPC_VERSION = grpc.__version__
@@ -18,14 +18,14 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in crac_protobuf/roof_pb2_grpc.py depends on'
+        + f' but the generated code in crac_protobuf/ups_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class RoofStub(object):
+class UpsStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -34,43 +34,43 @@ class RoofStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SetAction = channel.unary_unary(
-                '/Roof/SetAction',
-                request_serializer=crac__protobuf_dot_roof__pb2.RoofRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_roof__pb2.RoofResponse.FromString,
+        self.GetStatus = channel.unary_unary(
+                '/Ups/GetStatus',
+                request_serializer=crac__protobuf_dot_ups__pb2.UpsRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_ups__pb2.UpsResponse.FromString,
                 _registered_method=True)
 
 
-class RoofServicer(object):
+class UpsServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def SetAction(self, request, context):
+    def GetStatus(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_RoofServicer_to_server(servicer, server):
+def add_UpsServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SetAction': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetAction,
-                    request_deserializer=crac__protobuf_dot_roof__pb2.RoofRequest.FromString,
-                    response_serializer=crac__protobuf_dot_roof__pb2.RoofResponse.SerializeToString,
+            'GetStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStatus,
+                    request_deserializer=crac__protobuf_dot_ups__pb2.UpsRequest.FromString,
+                    response_serializer=crac__protobuf_dot_ups__pb2.UpsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Roof', rpc_method_handlers)
+            'Ups', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Roof', rpc_method_handlers)
+    server.add_registered_method_handlers('Ups', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class Roof(object):
+class Ups(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SetAction(request,
+    def GetStatus(request,
             target,
             options=(),
             channel_credentials=None,
@@ -83,9 +83,9 @@ class Roof(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Roof/SetAction',
-            crac__protobuf_dot_roof__pb2.RoofRequest.SerializeToString,
-            crac__protobuf_dot_roof__pb2.RoofResponse.FromString,
+            '/Ups/GetStatus',
+            crac__protobuf_dot_ups__pb2.UpsRequest.SerializeToString,
+            crac__protobuf_dot_ups__pb2.UpsResponse.FromString,
             options,
             channel_credentials,
             insecure,

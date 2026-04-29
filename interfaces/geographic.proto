@@ -1,0 +1,19 @@
+// geographic.proto
+
+syntax = "proto3";
+
+// Il messaggio per trasportare i dati geografici
+message GeographicData {
+    double latitude = 1;
+    double longitude = 2;
+    // L'elevazione è importante per l'astroplan, opzionale se non necessaria
+    double elevation_meters = 3; 
+}
+
+// Il servizio gRPC per richiedere le informazioni geografiche
+service GeographicService {
+    rpc GetGeographicInfo (GeographicRequest) returns (GeographicData);
+}
+
+// Richiesta vuota, se non servono parametri
+message GeographicRequest {}
