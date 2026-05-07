@@ -1,20 +1,22 @@
-[tool.poetry]
-name = "crac_protobuf"
-version = "0.1.21.0"
+[project]
+name = "crac-protobuf"
+version = "0.1.21.1"
 description = "Protobuf contracts for client/server communication"
-authors = ["Alessio Caradossi <alessio@theeyes.org>"]
-license = "GPL3"
+authors = [{ name = "Alessio Caradossi", email = "alessio@theeyes.org" }]
+license = "GPL-3.0-only"
+requires-python = ">=3.9"
+dependencies = [
+    "grpcio-tools>=1.43.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
+[project.optional-dependencies]
+dev = [
+    "autopep8>=1.6.0",
+]
 
-[tool.poetry.dev-dependencies]
-grpcio-tools = "^1.43.0"
+[tool.setuptools.packages.find]
+include = ["crac_protobuf*"]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-#[[tool.poetry.source]]
-#name = "piwheels"
-#url = "https://www.piwheels.org/simple/"
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
