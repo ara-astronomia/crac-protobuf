@@ -15,17 +15,16 @@ message CoverMirrorRequest {
 enum  CoverMirrorStatus {
   COVER_MIRROR_DEFAULT_STATUS = 0;
   COVER_MIRROR_CLOSED = 1;
-  COVER_MIRROR_STOPPED = 2;
-  COVER_MIRROR_OPENED = 3;
-  COVER_MIRROR_CLOSING = 4;
-  COVER_MIRROR_OPENING = 5;
+  COVER_MIRROR_OPENED = 2;
+  COVER_MIRROR_CLOSING = 3;
+  COVER_MIRROR_OPENING = 4;
 
   // danger zone - threat it as a movement statuses
   // (but we hope it has stopped)
   // user should manually reset the steps after checking visually
   // the curtains status
-  COVER_MIRROR_DANGER = 6;
-  COVER_MIRROR_ERROR = 7;
+  COVER_MIRROR_DANGER = 5;
+  COVER_MIRROR_ERROR = 6;
 }
 
 message CoverMirrorResponse {
