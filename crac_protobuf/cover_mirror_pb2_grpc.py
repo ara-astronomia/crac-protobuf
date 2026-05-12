@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from crac_protobuf import data_image_pb2 as crac__protobuf_dot_data__image__pb2
+from crac_protobuf import cover_mirror_pb2 as crac__protobuf_dot_cover__mirror__pb2
 
 GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__
@@ -18,16 +18,15 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in crac_protobuf/data_image_pb2_grpc.py depends on'
+        + ' but the generated code in crac_protobuf/cover_mirror_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class ImageConfigServiceStub(object):
-    """Servizio per richiedere le configurazioni di generazione immagini
-    """
+class CoverMirrorStub(object):
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -35,45 +34,43 @@ class ImageConfigServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetCCDImageData = channel.unary_unary(
-                '/ImageConfigService/GetCCDImageData',
-                request_serializer=crac__protobuf_dot_data__image__pb2.ImageConfigRequest.SerializeToString,
-                response_deserializer=crac__protobuf_dot_data__image__pb2.CCDImageData.FromString,
+        self.SetAction = channel.unary_unary(
+                '/CoverMirror/SetAction',
+                request_serializer=crac__protobuf_dot_cover__mirror__pb2.CoverMirrorRequest.SerializeToString,
+                response_deserializer=crac__protobuf_dot_cover__mirror__pb2.CoverMirrorResponse.FromString,
                 _registered_method=True)
 
 
-class ImageConfigServiceServicer(object):
-    """Servizio per richiedere le configurazioni di generazione immagini
-    """
+class CoverMirrorServicer(object):
+    """Missing associated documentation comment in .proto file."""
 
-    def GetCCDImageData(self, request, context):
+    def SetAction(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ImageConfigServiceServicer_to_server(servicer, server):
+def add_CoverMirrorServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetCCDImageData': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCCDImageData,
-                    request_deserializer=crac__protobuf_dot_data__image__pb2.ImageConfigRequest.FromString,
-                    response_serializer=crac__protobuf_dot_data__image__pb2.CCDImageData.SerializeToString,
+            'SetAction': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetAction,
+                    request_deserializer=crac__protobuf_dot_cover__mirror__pb2.CoverMirrorRequest.FromString,
+                    response_serializer=crac__protobuf_dot_cover__mirror__pb2.CoverMirrorResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'ImageConfigService', rpc_method_handlers)
+            'CoverMirror', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('ImageConfigService', rpc_method_handlers)
+    server.add_registered_method_handlers('CoverMirror', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class ImageConfigService(object):
-    """Servizio per richiedere le configurazioni di generazione immagini
-    """
+class CoverMirror(object):
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GetCCDImageData(request,
+    def SetAction(request,
             target,
             options=(),
             channel_credentials=None,
@@ -86,9 +83,9 @@ class ImageConfigService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/ImageConfigService/GetCCDImageData',
-            crac__protobuf_dot_data__image__pb2.ImageConfigRequest.SerializeToString,
-            crac__protobuf_dot_data__image__pb2.CCDImageData.FromString,
+            '/CoverMirror/SetAction',
+            crac__protobuf_dot_cover__mirror__pb2.CoverMirrorRequest.SerializeToString,
+            crac__protobuf_dot_cover__mirror__pb2.CoverMirrorResponse.FromString,
             options,
             channel_credentials,
             insecure,
