@@ -1,0 +1,48 @@
+name: Tag on version bump
+
+# Crea il tag corrispondente alla version di pyproject.toml appena questa
+# cambia su main, cosi' tag e version non divergono come e' successo fino
+# alla 0.1.22 (due commit oltre l'ultimo tag). I consumatori puntano ai tag:
+# senza tag non possono aggiornarsi.
+
+on:
+  push:
+    branches: [main]
+    paths: ['pyproject.toml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Leggi la version da pyproject.toml
+        id: version
+        run: |
+          set -euo pipefail
+          version="$(sed -nE 's/^version[[:space:]]*=[[:space:]]*"([^"]+)".*/\1/p' pyproject.toml | head -1)"
+          if [ -z "$version" ]; then
+            echo "::error file=pyproject.toml::version non trovata"
+            exit 1
+          fi
+          echo "Version dichiarata: $version"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Crea il tag se non esiste
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --tags origin "refs/tags/$VERSION" >/dev/null 2>&1; then
+            echo "Il tag $VERSION esiste gia': niente da fare."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$VERSION" -m "$VERSION"
+          git push origin "refs/tags/$VERSION"
+          echo "Creato il tag $VERSION su $GITHUB_SHA"
