@@ -1,9 +1,12 @@
-name: Tag on version bump
+name: Tag and release on version bump
 
-# Crea il tag corrispondente alla version di pyproject.toml appena questa
-# cambia su main, cosi' tag e version non divergono come e' successo fino
-# alla 0.1.22 (due commit oltre l'ultimo tag). I consumatori puntano ai tag:
-# senza tag non possono aggiornarsi.
+# Crea tag e Release corrispondenti alla version di pyproject.toml appena
+# questa cambia su main, cosi' tag e version non divergono come e' successo
+# fino alla 0.1.22 (due commit oltre l'ultimo tag). I consumatori puntano ai
+# tag: senza tag non possono aggiornarsi.
+#
+# Tag e Release sono verificati in modo indipendente, cosi' un tag creato a
+# mano senza Release (o viceversa) si recupera con un workflow_dispatch.
 
 on:
   push:
@@ -38,11 +41,24 @@ jobs:
         run: |
           set -euo pipefail
           if git ls-remote --exit-code --tags origin "refs/tags/$VERSION" >/dev/null 2>&1; then
-            echo "Il tag $VERSION esiste gia': niente da fare."
+            echo "Il tag $VERSION esiste gia'."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git tag -a "$VERSION" -m "$VERSION"
+            git push origin "refs/tags/$VERSION"
+            echo "Creato il tag $VERSION su $GITHUB_SHA"
+          fi
+
+      - name: Crea la Release se non esiste
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            echo "La Release $VERSION esiste gia': niente da fare."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag -a "$VERSION" -m "$VERSION"
-          git push origin "refs/tags/$VERSION"
-          echo "Creato il tag $VERSION su $GITHUB_SHA"
+          gh release create "$VERSION" --title "$VERSION" --generate-notes
+          echo "Creata la Release $VERSION"
