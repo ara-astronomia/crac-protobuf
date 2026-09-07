@@ -26,7 +26,7 @@ if _version_not_supported:
 
 
 class ImageConfigServiceStub(object):
-    """Servizio per richiedere le configurazioni di generazione immagini
+    """Service to request image generation settings
     """
 
     def __init__(self, channel):
@@ -43,7 +43,7 @@ class ImageConfigServiceStub(object):
 
 
 class ImageConfigServiceServicer(object):
-    """Servizio per richiedere le configurazioni di generazione immagini
+    """Service to request image generation settings
     """
 
     def GetCCDImageData(self, request, context):
@@ -69,7 +69,7 @@ def add_ImageConfigServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ImageConfigService(object):
-    """Servizio per richiedere le configurazioni di generazione immagini
+    """Service to request image generation settings
     """
 
     @staticmethod

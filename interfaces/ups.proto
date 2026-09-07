@@ -4,9 +4,20 @@ import "crac_protobuf/chart.proto";
 message UpsResponse {
   int32 updated_at = 7;
   repeated UpsChart charts = 8;
+  // Worst state across devices, UPS_STATUS_UNSPECIFIED if any device is
+  // unreadable. See device_states to tell which device is failing.
   UpsStatus status = 9;
   int32 interval = 10;
-  repeated string devices = 11; 
+  // Only the devices that answered. Deprecated by device_states.
+  repeated string devices = 11;
+  repeated UpsDevice device_states = 12;
+}
+
+message UpsDevice {
+  string name = 1;
+  // UPS_STATUS_UNSPECIFIED when the device could not be read: unlike
+  // devices, an unreachable device is still listed here.
+  UpsStatus status = 2;
 }
 
 message UpsRequest {
@@ -30,6 +41,8 @@ enum BatteryStatus {
 
 message UpsChart {
   Chart chart = 1;
+  // NUT ups.status flags, on the battery chart. Repeated because NUT
+  // reports several at once ("OL CHRG", "OB LB").
   repeated BatteryStatus battery_statuses = 2;
 }
 
