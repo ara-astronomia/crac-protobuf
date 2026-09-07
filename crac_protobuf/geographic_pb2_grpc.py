@@ -26,7 +26,7 @@ if _version_not_supported:
 
 
 class GeographicServiceStub(object):
-    """Il servizio gRPC per richiedere le informazioni geografiche
+    """gRPC service to request geographic information
     """
 
     def __init__(self, channel):
@@ -43,7 +43,7 @@ class GeographicServiceStub(object):
 
 
 class GeographicServiceServicer(object):
-    """Il servizio gRPC per richiedere le informazioni geografiche
+    """gRPC service to request geographic information
     """
 
     def GetGeographicInfo(self, request, context):
@@ -69,7 +69,7 @@ def add_GeographicServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class GeographicService(object):
-    """Il servizio gRPC per richiedere le informazioni geografiche
+    """gRPC service to request geographic information
     """
 
     @staticmethod
