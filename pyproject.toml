@@ -9,7 +9,12 @@ license = "GPL3"
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
-grpcio-tools = "^1.43.0"
+# Pinned, not a caret range: the generated code embeds the protobuf gencode
+# version and refuses to import on an older runtime. 1.80.0 emits gencode
+# 6.31.1, which the consumers can load (crac-server runs protobuf 6.33.6).
+# A newer grpcio-tools emits gencode 7.x, which breaks their import until
+# their protobuf runtime is bumped too: change this only together with them.
+grpcio-tools = "1.80.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
