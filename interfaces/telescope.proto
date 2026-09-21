@@ -61,8 +61,8 @@ enum TelescopeSpeed {
 }
 
 message EquatorialCoords {
-  double ra = 1;
-  double dec = 2;
+  double ra = 1;   // decimal hours
+  double dec = 2;  // decimal degrees
 }
 
 message AltazimutalCoords {
