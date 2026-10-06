@@ -1,5 +1,6 @@
 syntax = "proto3";
 import "crac_protobuf/chart.proto";
+import "crac_protobuf/emergency_closure.proto";
 
 message UpsResponse {
   int32 updated_at = 7;
@@ -11,6 +12,7 @@ message UpsResponse {
   // Only the devices that answered. Deprecated by device_states.
   repeated string devices = 11;
   repeated UpsDevice device_states = 12;
+  EmergencyClosure emergency_closure = 13;
 }
 
 message UpsDevice {

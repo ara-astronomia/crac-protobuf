@@ -23,27 +23,28 @@ _sym_db = _symbol_database.Default()
 
 
 from crac_protobuf import chart_pb2 as crac__protobuf_dot_chart__pb2
+from crac_protobuf import emergency_closure_pb2 as crac__protobuf_dot_emergency__closure__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63rac_protobuf/ups.proto\x1a\x19\x63rac_protobuf/chart.proto\"\x9e\x01\n\x0bUpsResponse\x12\x12\n\nupdated_at\x18\x07 \x01(\x05\x12\x19\n\x06\x63harts\x18\x08 \x03(\x0b\x32\t.UpsChart\x12\x1a\n\x06status\x18\t \x01(\x0e\x32\n.UpsStatus\x12\x10\n\x08interval\x18\n \x01(\x05\x12\x0f\n\x07\x64\x65vices\x18\x0b \x03(\t\x12!\n\rdevice_states\x18\x0c \x03(\x0b\x32\n.UpsDevice\"5\n\tUpsDevice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1a\n\x06status\x18\x02 \x01(\x0e\x32\n.UpsStatus\"\x0c\n\nUpsRequest\"K\n\x08UpsChart\x12\x15\n\x05\x63hart\x18\x01 \x01(\x0b\x32\x06.Chart\x12(\n\x10\x62\x61ttery_statuses\x18\x02 \x03(\x0e\x32\x0e.BatteryStatus*m\n\tUpsStatus\x12\x1a\n\x16UPS_STATUS_UNSPECIFIED\x10\x00\x12\x15\n\x11UPS_STATUS_NORMAL\x10\x01\x12\x16\n\x12UPS_STATUS_WARNING\x10\x02\x12\x15\n\x11UPS_STATUS_DANGER\x10\x03*\xa5\x01\n\rBatteryStatus\x12\x1e\n\x1a\x42\x41TTERY_STATUS_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x42\x41TTERY_STATUS_DISCHARGE\x10\x01\x12\x19\n\x15\x42\x41TTERY_STATUS_ONLINE\x10\x02\x12\x1c\n\x18\x42\x41TTERY_STATUS_ONBATTERY\x10\x03\x12\x1d\n\x19\x42\x41TTERY_STATUS_LOWBATTERY\x10\x04\x32-\n\x03Ups\x12&\n\tGetStatus\x12\x0b.UpsRequest\x1a\x0c.UpsResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63rac_protobuf/ups.proto\x1a\x19\x63rac_protobuf/chart.proto\x1a%crac_protobuf/emergency_closure.proto\"\xcc\x01\n\x0bUpsResponse\x12\x12\n\nupdated_at\x18\x07 \x01(\x05\x12\x19\n\x06\x63harts\x18\x08 \x03(\x0b\x32\t.UpsChart\x12\x1a\n\x06status\x18\t \x01(\x0e\x32\n.UpsStatus\x12\x10\n\x08interval\x18\n \x01(\x05\x12\x0f\n\x07\x64\x65vices\x18\x0b \x03(\t\x12!\n\rdevice_states\x18\x0c \x03(\x0b\x32\n.UpsDevice\x12,\n\x11\x65mergency_closure\x18\r \x01(\x0b\x32\x11.EmergencyClosure\"5\n\tUpsDevice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1a\n\x06status\x18\x02 \x01(\x0e\x32\n.UpsStatus\"\x0c\n\nUpsRequest\"K\n\x08UpsChart\x12\x15\n\x05\x63hart\x18\x01 \x01(\x0b\x32\x06.Chart\x12(\n\x10\x62\x61ttery_statuses\x18\x02 \x03(\x0e\x32\x0e.BatteryStatus*m\n\tUpsStatus\x12\x1a\n\x16UPS_STATUS_UNSPECIFIED\x10\x00\x12\x15\n\x11UPS_STATUS_NORMAL\x10\x01\x12\x16\n\x12UPS_STATUS_WARNING\x10\x02\x12\x15\n\x11UPS_STATUS_DANGER\x10\x03*\xa5\x01\n\rBatteryStatus\x12\x1e\n\x1a\x42\x41TTERY_STATUS_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x42\x41TTERY_STATUS_DISCHARGE\x10\x01\x12\x19\n\x15\x42\x41TTERY_STATUS_ONLINE\x10\x02\x12\x1c\n\x18\x42\x41TTERY_STATUS_ONBATTERY\x10\x03\x12\x1d\n\x19\x42\x41TTERY_STATUS_LOWBATTERY\x10\x04\x32-\n\x03Ups\x12&\n\tGetStatus\x12\x0b.UpsRequest\x1a\x0c.UpsResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'crac_protobuf.ups_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_UPSSTATUS']._serialized_start=361
-  _globals['_UPSSTATUS']._serialized_end=470
-  _globals['_BATTERYSTATUS']._serialized_start=473
-  _globals['_BATTERYSTATUS']._serialized_end=638
-  _globals['_UPSRESPONSE']._serialized_start=55
-  _globals['_UPSRESPONSE']._serialized_end=213
-  _globals['_UPSDEVICE']._serialized_start=215
-  _globals['_UPSDEVICE']._serialized_end=268
-  _globals['_UPSREQUEST']._serialized_start=270
-  _globals['_UPSREQUEST']._serialized_end=282
-  _globals['_UPSCHART']._serialized_start=284
-  _globals['_UPSCHART']._serialized_end=359
-  _globals['_UPS']._serialized_start=640
-  _globals['_UPS']._serialized_end=685
+  _globals['_UPSSTATUS']._serialized_start=446
+  _globals['_UPSSTATUS']._serialized_end=555
+  _globals['_BATTERYSTATUS']._serialized_start=558
+  _globals['_BATTERYSTATUS']._serialized_end=723
+  _globals['_UPSRESPONSE']._serialized_start=94
+  _globals['_UPSRESPONSE']._serialized_end=298
+  _globals['_UPSDEVICE']._serialized_start=300
+  _globals['_UPSDEVICE']._serialized_end=353
+  _globals['_UPSREQUEST']._serialized_start=355
+  _globals['_UPSREQUEST']._serialized_end=367
+  _globals['_UPSCHART']._serialized_start=369
+  _globals['_UPSCHART']._serialized_end=444
+  _globals['_UPS']._serialized_start=725
+  _globals['_UPS']._serialized_end=770
 # @@protoc_insertion_point(module_scope)

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// One closure procedure serves every trigger, so weather and UPS
+// responses carry the same state.
+message EmergencyClosure {
+  EmergencyClosureStatus status = 1;
+  // EMERGENCY_CLOSURE_TRIGGER_UNSPECIFIED while the closure is idle.
+  EmergencyClosureTrigger trigger = 2;
+}
+
+enum EmergencyClosureStatus {
+  EMERGENCY_CLOSURE_STATUS_UNSPECIFIED = 0;
+  EMERGENCY_CLOSURE_STATUS_IDLE = 1;
+  EMERGENCY_CLOSURE_STATUS_IN_PROGRESS = 2;
+  EMERGENCY_CLOSURE_STATUS_COMPLETED = 3;
+  // Blocked: the procedure stops and the roof does not move.
+  EMERGENCY_CLOSURE_STATUS_BLOCKED_TELESCOPE_UNKNOWN = 4;
+  EMERGENCY_CLOSURE_STATUS_BLOCKED_PARK_NOT_REACHED = 5;
+  EMERGENCY_CLOSURE_STATUS_BLOCKED_CURTAINS_NOT_DISABLED = 6;
+  EMERGENCY_CLOSURE_STATUS_BLOCKED_ROOF_NOT_CLOSED = 7;
+}
+
+enum EmergencyClosureTrigger {
+  EMERGENCY_CLOSURE_TRIGGER_UNSPECIFIED = 0;
+  EMERGENCY_CLOSURE_TRIGGER_WEATHER = 1;
+  EMERGENCY_CLOSURE_TRIGGER_UPS = 2;
+}
