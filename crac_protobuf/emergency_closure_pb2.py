@@ -24,17 +24,19 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%crac_protobuf/emergency_closure.proto\"f\n\x10\x45mergencyClosure\x12\'\n\x06status\x18\x01 \x01(\x0e\x32\x17.EmergencyClosureStatus\x12)\n\x07trigger\x18\x02 \x01(\x0e\x32\x18.EmergencyClosureTrigger*\x98\x03\n\x16\x45mergencyClosureStatus\x12(\n$EMERGENCY_CLOSURE_STATUS_UNSPECIFIED\x10\x00\x12!\n\x1d\x45MERGENCY_CLOSURE_STATUS_IDLE\x10\x01\x12(\n$EMERGENCY_CLOSURE_STATUS_IN_PROGRESS\x10\x02\x12&\n\"EMERGENCY_CLOSURE_STATUS_COMPLETED\x10\x03\x12\x36\n2EMERGENCY_CLOSURE_STATUS_BLOCKED_TELESCOPE_UNKNOWN\x10\x04\x12\x35\n1EMERGENCY_CLOSURE_STATUS_BLOCKED_PARK_NOT_REACHED\x10\x05\x12:\n6EMERGENCY_CLOSURE_STATUS_BLOCKED_CURTAINS_NOT_DISABLED\x10\x06\x12\x34\n0EMERGENCY_CLOSURE_STATUS_BLOCKED_ROOF_NOT_CLOSED\x10\x07*\x8e\x01\n\x17\x45mergencyClosureTrigger\x12)\n%EMERGENCY_CLOSURE_TRIGGER_UNSPECIFIED\x10\x00\x12%\n!EMERGENCY_CLOSURE_TRIGGER_WEATHER\x10\x01\x12!\n\x1d\x45MERGENCY_CLOSURE_TRIGGER_UPS\x10\x02\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%crac_protobuf/emergency_closure.proto\"\xb1\x01\n\x10\x45mergencyClosure\x12\'\n\x06status\x18\x01 \x01(\x0e\x32\x17.EmergencyClosureStatus\x12*\n\x08triggers\x18\x02 \x03(\x0e\x32\x18.EmergencyClosureTrigger\x12\x32\n\x0c\x62lock_reason\x18\x03 \x01(\x0e\x32\x1c.EmergencyClosureBlockReason\x12\x14\n\x0cstatus_since\x18\x04 \x01(\x05*\xdd\x01\n\x16\x45mergencyClosureStatus\x12(\n$EMERGENCY_CLOSURE_STATUS_UNSPECIFIED\x10\x00\x12!\n\x1d\x45MERGENCY_CLOSURE_STATUS_IDLE\x10\x01\x12(\n$EMERGENCY_CLOSURE_STATUS_IN_PROGRESS\x10\x02\x12&\n\"EMERGENCY_CLOSURE_STATUS_COMPLETED\x10\x03\x12$\n EMERGENCY_CLOSURE_STATUS_BLOCKED\x10\x04*\xd9\x02\n\x1b\x45mergencyClosureBlockReason\x12.\n*EMERGENCY_CLOSURE_BLOCK_REASON_UNSPECIFIED\x10\x00\x12\x34\n0EMERGENCY_CLOSURE_BLOCK_REASON_TELESCOPE_UNKNOWN\x10\x01\x12\x33\n/EMERGENCY_CLOSURE_BLOCK_REASON_PARK_NOT_REACHED\x10\x02\x12\x38\n4EMERGENCY_CLOSURE_BLOCK_REASON_CURTAINS_NOT_DISABLED\x10\x03\x12\x32\n.EMERGENCY_CLOSURE_BLOCK_REASON_ROOF_NOT_CLOSED\x10\x04\x12\x31\n-EMERGENCY_CLOSURE_BLOCK_REASON_INTERNAL_ERROR\x10\x05*\x8e\x01\n\x17\x45mergencyClosureTrigger\x12)\n%EMERGENCY_CLOSURE_TRIGGER_UNSPECIFIED\x10\x00\x12%\n!EMERGENCY_CLOSURE_TRIGGER_WEATHER\x10\x01\x12!\n\x1d\x45MERGENCY_CLOSURE_TRIGGER_UPS\x10\x02\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'crac_protobuf.emergency_closure_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_EMERGENCYCLOSURESTATUS']._serialized_start=146
-  _globals['_EMERGENCYCLOSURESTATUS']._serialized_end=554
-  _globals['_EMERGENCYCLOSURETRIGGER']._serialized_start=557
-  _globals['_EMERGENCYCLOSURETRIGGER']._serialized_end=699
-  _globals['_EMERGENCYCLOSURE']._serialized_start=41
-  _globals['_EMERGENCYCLOSURE']._serialized_end=143
+  _globals['_EMERGENCYCLOSURESTATUS']._serialized_start=222
+  _globals['_EMERGENCYCLOSURESTATUS']._serialized_end=443
+  _globals['_EMERGENCYCLOSUREBLOCKREASON']._serialized_start=446
+  _globals['_EMERGENCYCLOSUREBLOCKREASON']._serialized_end=791
+  _globals['_EMERGENCYCLOSURETRIGGER']._serialized_start=794
+  _globals['_EMERGENCYCLOSURETRIGGER']._serialized_end=936
+  _globals['_EMERGENCYCLOSURE']._serialized_start=42
+  _globals['_EMERGENCYCLOSURE']._serialized_end=219
 # @@protoc_insertion_point(module_scope)

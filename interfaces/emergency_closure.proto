@@ -1,23 +1,36 @@
 syntax = "proto3";
 
-// One closure procedure serves every trigger, so weather and UPS
-// responses carry the same state.
+// One closure procedure serves every trigger, so WeatherResponse and
+// UpsResponse carry the same state: use the one received most recently.
 message EmergencyClosure {
   EmergencyClosureStatus status = 1;
-  // EMERGENCY_CLOSURE_TRIGGER_UNSPECIFIED while the closure is idle.
-  EmergencyClosureTrigger trigger = 2;
+  // Every trigger critical at this moment, empty while IDLE.
+  repeated EmergencyClosureTrigger triggers = 2;
+  // Set only while status is BLOCKED.
+  EmergencyClosureBlockReason block_reason = 3;
+  // Unix time, in seconds, when status took its current value.
+  int32 status_since = 4;
 }
 
 enum EmergencyClosureStatus {
+  // The server does not report the closure: never treat it as IDLE.
   EMERGENCY_CLOSURE_STATUS_UNSPECIFIED = 0;
   EMERGENCY_CLOSURE_STATUS_IDLE = 1;
   EMERGENCY_CLOSURE_STATUS_IN_PROGRESS = 2;
+  // Kept while a trigger is still critical, then IDLE.
   EMERGENCY_CLOSURE_STATUS_COMPLETED = 3;
-  // Blocked: the procedure stops and the roof does not move.
-  EMERGENCY_CLOSURE_STATUS_BLOCKED_TELESCOPE_UNKNOWN = 4;
-  EMERGENCY_CLOSURE_STATUS_BLOCKED_PARK_NOT_REACHED = 5;
-  EMERGENCY_CLOSURE_STATUS_BLOCKED_CURTAINS_NOT_DISABLED = 6;
-  EMERGENCY_CLOSURE_STATUS_BLOCKED_ROOF_NOT_CLOSED = 7;
+  // The procedure stops; the roof is not commanded further.
+  EMERGENCY_CLOSURE_STATUS_BLOCKED = 4;
+}
+
+enum EmergencyClosureBlockReason {
+  EMERGENCY_CLOSURE_BLOCK_REASON_UNSPECIFIED = 0;
+  EMERGENCY_CLOSURE_BLOCK_REASON_TELESCOPE_UNKNOWN = 1;
+  EMERGENCY_CLOSURE_BLOCK_REASON_PARK_NOT_REACHED = 2;
+  EMERGENCY_CLOSURE_BLOCK_REASON_CURTAINS_NOT_DISABLED = 3;
+  EMERGENCY_CLOSURE_BLOCK_REASON_ROOF_NOT_CLOSED = 4;
+  // The procedure failed with an unexpected exception.
+  EMERGENCY_CLOSURE_BLOCK_REASON_INTERNAL_ERROR = 5;
 }
 
 enum EmergencyClosureTrigger {
