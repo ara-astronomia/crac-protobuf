@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "crac_protobuf/emergency_closure.proto";
 
 message Chart {
   float value = 1;
@@ -46,6 +47,7 @@ message WeatherResponse {
   repeated Chart charts = 8;
   WeatherStatus status = 9;
   int32 interval = 10;
+  EmergencyClosure emergency_closure = 11;
 }
 
 service Weather {

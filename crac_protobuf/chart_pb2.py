@@ -22,29 +22,30 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from crac_protobuf import emergency_closure_pb2 as crac__protobuf_dot_emergency__closure__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x63rac_protobuf/chart.proto\"\xa7\x01\n\x05\x43hart\x12\r\n\x05value\x18\x01 \x01(\x02\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x02\x12\x0b\n\x03max\x18\x04 \x01(\x02\x12\x0b\n\x03urn\x18\x05 \x01(\t\x12\x1e\n\nthresholds\x18\x06 \x03(\x0b\x32\n.Threshold\x12\x1b\n\x13unit_of_measurement\x18\x07 \x01(\t\x12\x1c\n\x06status\x18\x08 \x01(\x0e\x32\x0c.ChartStatus\"]\n\tThreshold\x12&\n\x0ethreshold_type\x18\x01 \x01(\x0e\x32\x0e.ThresholdType\x12\x13\n\x0bupper_bound\x18\x02 \x01(\x02\x12\x13\n\x0blower_bound\x18\x03 \x01(\x02\"\x10\n\x0eWeatherRequest\"o\n\x0fWeatherResponse\x12\x12\n\nupdated_at\x18\x07 \x01(\x05\x12\x16\n\x06\x63harts\x18\x08 \x03(\x0b\x32\x06.Chart\x12\x1e\n\x06status\x18\t \x01(\x0e\x32\x0e.WeatherStatus\x12\x10\n\x08interval\x18\n \x01(\x05*w\n\x0b\x43hartStatus\x12\x1c\n\x18\x43HART_STATUS_UNSPECIFIED\x10\x00\x12\x17\n\x13\x43HART_STATUS_NORMAL\x10\x01\x12\x18\n\x14\x43HART_STATUS_WARNING\x10\x02\x12\x17\n\x13\x43HART_STATUS_DANGER\x10\x03*\x81\x01\n\rThresholdType\x12\x1e\n\x1aTHRESHOLD_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15THRESHOLD_TYPE_NORMAL\x10\x01\x12\x1a\n\x16THRESHOLD_TYPE_WARNING\x10\x02\x12\x19\n\x15THRESHOLD_TYPE_DANGER\x10\x03*\x81\x01\n\rWeatherStatus\x12\x1e\n\x1aWEATHER_STATUS_UNSPECIFIED\x10\x00\x12\x19\n\x15WEATHER_STATUS_NORMAL\x10\x01\x12\x1a\n\x16WEATHER_STATUS_WARNING\x10\x02\x12\x19\n\x15WEATHER_STATUS_DANGER\x10\x03\x32\x39\n\x07Weather\x12.\n\tGetStatus\x12\x0f.WeatherRequest\x1a\x10.WeatherResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x63rac_protobuf/chart.proto\x1a%crac_protobuf/emergency_closure.proto\"\xa7\x01\n\x05\x43hart\x12\r\n\x05value\x18\x01 \x01(\x02\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x02\x12\x0b\n\x03max\x18\x04 \x01(\x02\x12\x0b\n\x03urn\x18\x05 \x01(\t\x12\x1e\n\nthresholds\x18\x06 \x03(\x0b\x32\n.Threshold\x12\x1b\n\x13unit_of_measurement\x18\x07 \x01(\t\x12\x1c\n\x06status\x18\x08 \x01(\x0e\x32\x0c.ChartStatus\"]\n\tThreshold\x12&\n\x0ethreshold_type\x18\x01 \x01(\x0e\x32\x0e.ThresholdType\x12\x13\n\x0bupper_bound\x18\x02 \x01(\x02\x12\x13\n\x0blower_bound\x18\x03 \x01(\x02\"\x10\n\x0eWeatherRequest\"\x9d\x01\n\x0fWeatherResponse\x12\x12\n\nupdated_at\x18\x07 \x01(\x05\x12\x16\n\x06\x63harts\x18\x08 \x03(\x0b\x32\x06.Chart\x12\x1e\n\x06status\x18\t \x01(\x0e\x32\x0e.WeatherStatus\x12\x10\n\x08interval\x18\n \x01(\x05\x12,\n\x11\x65mergency_closure\x18\x0b \x01(\x0b\x32\x11.EmergencyClosure*w\n\x0b\x43hartStatus\x12\x1c\n\x18\x43HART_STATUS_UNSPECIFIED\x10\x00\x12\x17\n\x13\x43HART_STATUS_NORMAL\x10\x01\x12\x18\n\x14\x43HART_STATUS_WARNING\x10\x02\x12\x17\n\x13\x43HART_STATUS_DANGER\x10\x03*\x81\x01\n\rThresholdType\x12\x1e\n\x1aTHRESHOLD_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15THRESHOLD_TYPE_NORMAL\x10\x01\x12\x1a\n\x16THRESHOLD_TYPE_WARNING\x10\x02\x12\x19\n\x15THRESHOLD_TYPE_DANGER\x10\x03*\x81\x01\n\rWeatherStatus\x12\x1e\n\x1aWEATHER_STATUS_UNSPECIFIED\x10\x00\x12\x19\n\x15WEATHER_STATUS_NORMAL\x10\x01\x12\x1a\n\x16WEATHER_STATUS_WARNING\x10\x02\x12\x19\n\x15WEATHER_STATUS_DANGER\x10\x03\x32\x39\n\x07Weather\x12.\n\tGetStatus\x12\x0f.WeatherRequest\x1a\x10.WeatherResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'crac_protobuf.chart_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_CHARTSTATUS']._serialized_start=425
-  _globals['_CHARTSTATUS']._serialized_end=544
-  _globals['_THRESHOLDTYPE']._serialized_start=547
-  _globals['_THRESHOLDTYPE']._serialized_end=676
-  _globals['_WEATHERSTATUS']._serialized_start=679
-  _globals['_WEATHERSTATUS']._serialized_end=808
-  _globals['_CHART']._serialized_start=30
-  _globals['_CHART']._serialized_end=197
-  _globals['_THRESHOLD']._serialized_start=199
-  _globals['_THRESHOLD']._serialized_end=292
-  _globals['_WEATHERREQUEST']._serialized_start=294
-  _globals['_WEATHERREQUEST']._serialized_end=310
-  _globals['_WEATHERRESPONSE']._serialized_start=312
-  _globals['_WEATHERRESPONSE']._serialized_end=423
-  _globals['_WEATHER']._serialized_start=810
-  _globals['_WEATHER']._serialized_end=867
+  _globals['_CHARTSTATUS']._serialized_start=511
+  _globals['_CHARTSTATUS']._serialized_end=630
+  _globals['_THRESHOLDTYPE']._serialized_start=633
+  _globals['_THRESHOLDTYPE']._serialized_end=762
+  _globals['_WEATHERSTATUS']._serialized_start=765
+  _globals['_WEATHERSTATUS']._serialized_end=894
+  _globals['_CHART']._serialized_start=69
+  _globals['_CHART']._serialized_end=236
+  _globals['_THRESHOLD']._serialized_start=238
+  _globals['_THRESHOLD']._serialized_end=331
+  _globals['_WEATHERREQUEST']._serialized_start=333
+  _globals['_WEATHERREQUEST']._serialized_end=349
+  _globals['_WEATHERRESPONSE']._serialized_start=352
+  _globals['_WEATHERRESPONSE']._serialized_end=509
+  _globals['_WEATHER']._serialized_start=896
+  _globals['_WEATHER']._serialized_end=953
 # @@protoc_insertion_point(module_scope)
