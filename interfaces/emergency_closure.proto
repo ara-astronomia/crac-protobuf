@@ -4,7 +4,7 @@ syntax = "proto3";
 // UpsResponse carry the same state: use the one received most recently.
 message EmergencyClosure {
   EmergencyClosureStatus status = 1;
-  // Every trigger critical at this moment, empty while IDLE.
+  // Every trigger critical since the procedure started, empty only while IDLE.
   repeated EmergencyClosureTrigger triggers = 2;
   // Set only while status is BLOCKED.
   EmergencyClosureBlockReason block_reason = 3;
@@ -17,9 +17,11 @@ enum EmergencyClosureStatus {
   EMERGENCY_CLOSURE_STATUS_UNSPECIFIED = 0;
   EMERGENCY_CLOSURE_STATUS_IDLE = 1;
   EMERGENCY_CLOSURE_STATUS_IN_PROGRESS = 2;
+  // Also when a trigger becomes critical with the roof already closed.
   // Kept while a trigger is still critical, then IDLE.
   EMERGENCY_CLOSURE_STATUS_COMPLETED = 3;
   // The procedure stops; the roof is not commanded further.
+  // Kept while a trigger is still critical, then IDLE.
   EMERGENCY_CLOSURE_STATUS_BLOCKED = 4;
 }
 
