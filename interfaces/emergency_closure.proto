@@ -18,10 +18,12 @@ enum EmergencyClosureStatus {
   EMERGENCY_CLOSURE_STATUS_IDLE = 1;
   EMERGENCY_CLOSURE_STATUS_IN_PROGRESS = 2;
   // Also when a trigger becomes critical with the roof already closed.
-  // Kept while a trigger is still critical, then IDLE.
+  // Kept while a trigger is still critical and the roof stays closed:
+  // a roof opened again starts the procedure again.
   EMERGENCY_CLOSURE_STATUS_COMPLETED = 3;
   // The procedure stops; the roof is not commanded further.
-  // Kept while a trigger is still critical, then IDLE.
+  // Left when the procedure resumes, the roof is found closed, or no
+  // trigger is critical any more.
   EMERGENCY_CLOSURE_STATUS_BLOCKED = 4;
 }
 
